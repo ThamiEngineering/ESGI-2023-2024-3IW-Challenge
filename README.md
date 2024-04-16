@@ -33,10 +33,10 @@
 - Sécurité et déploiement de l'application.
 
 ## Arborescence :
-projet-react/
+projet-challenge-react/
 │
 ├── src/
-│   ├── framework/
+│   ├── lib/
 │   │   ├── components/
 │   │   │   ├── Component.js // Classe de base pour tous les composants
 │   │   │   └── ... // Autres composants spécifiques à votre framework
@@ -47,16 +47,17 @@ projet-react/
 │   │   └── utils/
 │   │       └── propValidation.js // Fonctions pour la validation des propriétés
 │   │
-│   ├── app/
-│   │   ├── components/ // Composants spécifiques à votre application
-│   │   ├── pages/ // Pages de votre application
-│   │   ├── App.js // Point d'entrée de l'application
-│   │   └── index.js // Point d'entrée du projet, attache l'application au DOM
-│   │
-│   └── styles/ // Styles globaux de votre application
+│   │── components/ // Composants spécifiques à votre application
+│   │── pages/ // Pages de votre application
+│   └── index.js // Point d'entrée du projet, attache l'application au DOM
 │
 ├── public/
 │   └── index.html // Fichier HTML principal
+│
+├── assets/
+│   ├── fonts/ // les fonts du site
+│   ├── images/ // les images du site
+│   └── styles/ // les styles du site
 │
 ├── tests/
 │   ├── framework/ // Tests unitaires pour votre framework
