@@ -60,7 +60,7 @@ projet-challenge-react/
 │   └── styles/ // Dossier styles du site
 │
 ├── tests/
-│   ├── framework/ // Tests unitaires pour votre framework
+│   ├── lib/ // Tests unitaires pour votre framework
 │   └── app/ // Tests unitaires pour votre application
 │
 ├── .gitignore // Liste des fichiers/dossiers à ignorer par Git
