@@ -12,7 +12,7 @@
 - **GitHub**: @Florddev
 
 ### 4. Victor Jacquin
-- **GitHub**: @Victorjacquin02
+- **GitHub**: @VictorJqn
 
 ## Contributions des membres
 
@@ -55,9 +55,9 @@ projet-challenge-react/
 │   └── index.html // Fichier HTML principal
 │
 ├── assets/
-│   ├── fonts/ // les fonts du site
-│   ├── images/ // les images du site
-│   └── styles/ // les styles du site
+│   ├── fonts/ // Dossier fonts du site
+│   ├── images/ // Dossier images du site
+│   └── styles/ // Dossier styles du site
 │
 ├── tests/
 │   ├── framework/ // Tests unitaires pour votre framework
