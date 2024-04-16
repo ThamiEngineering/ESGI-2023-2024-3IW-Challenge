@@ -47,8 +47,8 @@ projet-challenge-react/
 │   │   └── utils/
 │   │       └── propValidation.js // Fonctions pour la validation des propriétés
 │   │
-│   │── components/ // Composants spécifiques à votre application
-│   │── pages/ // Pages de votre application
+│   ├── components/ // Composants spécifiques à votre application
+│   ├── pages/ // Pages de votre application
 │   └── index.js // Point d'entrée du projet, attache l'application au DOM
 │
 ├── public/
