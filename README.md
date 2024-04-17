@@ -8,7 +8,7 @@
 ### 2. Jeremy Ly
 - **GitHub**: @Jeyrem75
 
-### 3. Dlorian Defay
+### 3. Florian Defay
 - **GitHub**: @Florddev
 
 ### 4. Victor Jacquin
