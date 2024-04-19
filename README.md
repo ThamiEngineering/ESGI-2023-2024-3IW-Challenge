@@ -65,4 +65,6 @@ projet-challenge-react/
 │
 ├── .gitignore // Liste des fichiers/dossiers à ignorer par Git
 ├── package.json // Fichier de gestion des dépendances et scripts NPM
+├── CODE_OF_CONDUCT.md // Fichier qui explique le code de conduite
+├── CONTRIBUTING.md // Fichier qui liste les règles de contribution
 └── README.md // Documentation du projet
