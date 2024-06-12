@@ -1,5 +1,6 @@
 import HistoryRouter from "./lib/router/HistoryRouter.js";
 import PageHome from "./pages/PageHome.js";
+import PageHomeJSX from "./outputs/PageHome.js";
 import PageAbout from "./pages/PageAbout.js";
 import PageLogin from "./pages/PageLogin.js";
 import Page404 from "./pages/Page404.js";
@@ -7,7 +8,7 @@ import Page404 from "./pages/Page404.js";
 const root = document.getElementById("root");
 
 const routes = {
-    "/": PageHome,
+    "/": PageHomeJSX,
     "/about": PageAbout,
     "/login": PageLogin,
     "*": Page404,

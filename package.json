@@ -2,13 +2,18 @@
   "name": "esgi-2023-2024-3iw-challenge",
   "version": "1.0.0",
   "description": "- **GitHub**: @ThamiEngineering",
+  "type": "module",
   "main": "index.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node index.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "node-html-parser": "^6.1.1"
+  }
 }
