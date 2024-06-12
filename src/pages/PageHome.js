@@ -1,4 +1,3 @@
-import { Button } from "../components/Button.js";
 import { HistoryLink as Link } from "../lib/router/HistoryRouter.js";
 
 export default function Home() {
@@ -7,11 +6,6 @@ export default function Home() {
     h1.appendChild(document.createTextNode("Je suis sur ma page Home"));
     div.appendChild(h1);
     div.appendChild(Link("/about", "Aller sur la page About"));
-
-    const button = new Button();
-    div.appendChild(button.render());
-
-    div.appendChild(Link("/login", "Aller sur la page Login"));
 
     return div;
 }
