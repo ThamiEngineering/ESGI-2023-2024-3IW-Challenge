@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  web:
+    build: Docker/site
+    ports:
+      - "80:80"
+    volumes:
+      - ./www:/var/www/html/
+      - ./Docker/server/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./Docker/server/apache2.conf:/etc/apache2/apache2.conf
+    networks : 
+      - default
