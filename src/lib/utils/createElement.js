@@ -1,12 +1,24 @@
-export function createElement(type, props, ...children) {
-    return {
-        type,
-        props: {
-            ...props,
-            children: children.map(child => {
-                return typeof child === 'object' ? child : createTextElement(child);
-            })
-        }
+import { isClass } from "./utils.js";
+
+export function createElement(tagOrElement, attributes, ...children) {
+    if (isClass(tagOrElement)) {
+        let classElement = new tagOrElement(attributes);
+        tagOrElement = classElement.render();
+    } else if (typeof tagOrElement === 'function') {
+        tagOrElement = tagOrElement(attributes);
+    }
+
+    if (typeof tagOrElement === "object") {
+        tagOrElement.attributes = { ...tagOrElement.attributes, ...attributes };
+
+        if (!tagOrElement.children) tagOrElement.children = [];
+        children.forEach(child => tagOrElement.children.push(child));
+
+        return tagOrElement;
+    } else return {
+        type: tagOrElement,
+        attributes: attributes,
+        children: children
     }
 }
 
