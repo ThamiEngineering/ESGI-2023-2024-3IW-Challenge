@@ -1,10 +1,23 @@
 import Button from "../components/Button.js";
 import { HistoryLink as Link } from "../../lib/router/HistoryRouter.js";
 import Blink from "../../lib/composents/Blink.js";
+import { useState } from "../../lib/composents/state.js";
 
 export default class HomePage extends Blink.Component {
     constructor(props) {
-        super(props);
+    super(props);
+
+    const [name, setName] = useState('Compteur Blink');
+    const [count, setCount] = useState(0);
+
+    this.name = name;
+    this.setName = setName;
+    this.count = count;
+    this.setCount = setCount;
+}
+
+    incrementCount = () => {
+        this.setCount(this.count + 1);
     }
 
     sayHi() {
@@ -22,6 +35,11 @@ export default class HomePage extends Blink.Component {
                 <button onClick={this.sayHi}>Click me !</button>
                 <Button>Simple button</Button>
                 <Button text="Autre exemple"></Button>
+                <div>
+                    <p>{this.name}</p>
+                    <p>{this.count}</p>
+                    <button onClick={this.incrementCount}>Incrémenter</button>
+                </div>
             </div>
         );
     }

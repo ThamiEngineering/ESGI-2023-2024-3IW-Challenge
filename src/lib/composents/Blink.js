@@ -1,4 +1,5 @@
 import { isClass } from "../utils/utils.js";
+import { useState } from "./state.js";
 
 export function createElement(tagOrElement, attributes, ...children) {
 
@@ -39,6 +40,7 @@ export class Component {
 const Blink = {
     createElement: createElement,
     Component: Component,
+    useState: useState,
 };
 
 export default Blink;
