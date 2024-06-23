@@ -1,6 +1,7 @@
 import Button from "../components/Button.js";
 import { HistoryLink as Link } from "../../lib/router/HistoryRouter.js";
 import Blink from "../../lib/composents/Blink.js";
+import Counter from "../components/Counter.js";
 
 export default class HomePage extends Blink.Component {
     constructor(props) {
@@ -22,6 +23,7 @@ export default class HomePage extends Blink.Component {
                 <button onClick={this.sayHi}>Click me !</button>
                 <Button>Simple button</Button>
                 <Button text="Autre exemple"></Button>
+                <Counter />
             </div>
         );
     }

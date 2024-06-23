@@ -8,7 +8,7 @@ export default class AboutPage extends Blink.Component {
 
     render() {
         return (
-            Blink.createElement("div",{}, Blink.createElement("h1",{}, "Vous êtes sur la page about"),Blink.createElement(Link,{"path":"/","title":"PageHome"}))
+            Blink.createElement("div",{}, Blink.createElement("h1",{}, `Vous êtes sur la page about`),Blink.createElement(Link,{"path":"/","title":"PageHome"}))
         );
     }
 }

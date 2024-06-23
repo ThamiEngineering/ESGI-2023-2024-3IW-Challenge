@@ -51,19 +51,22 @@ function replaceInterpolations(txt, isOnJSON = false, surrounded = true) {
     while (interpolations = JSX_INTERPOLATION.exec(txt)) {
 
         if (`{${interpolations[1]}}` === txt.replace(/[\s\uFEFF\xA0]+/g, '')) {
+            if (interpolations[1]) {
+                return `\${${interpolations[1]}}`;
+            }
             return `{${interpolations[1]}}`;
         }
 
         if (isOnJSON) {
             txt = txt.replace(`"{${interpolations[1]}}"`, interpolations[1])
         } else {
-            txt = txt.replace(`{${interpolations[1]}}`, `"+ ${interpolations[1]} +"`)
+            txt = txt.replace(`{${interpolations[1]}}`, `\${${interpolations[1]}}`)
         }
 
     }
 
     if (surrounded) {
-        return `"${txt}"`
+        return `${txt}`;
     }
     return txt
 }
@@ -84,7 +87,7 @@ function translate(root) {
         for (let i = 0; i < children.length; i++) {
             if (!children[i].startsWith('createElement')) {
                 if (!(children[i].startsWith("{") && children[i].endsWith("}"))) {
-                    children[i] = `"${children[i]}"`;
+                    children[i] = `\`${children[i]}\``;
                 } else {
                     children[i] = children[i].replace("{", "").replace("}", "");
                 }
@@ -116,6 +119,7 @@ async function parseJSXFile(fname, outputName = null) {
         const root = parse(HTML);
         let translated = translate(root.firstChild);
         str = str.replace(matches[1] + ">", translated).replaceAll("createElement", "Blink.createElement");
+        str = str.replaceAll('.jsx', '.js');
     }
 
     const outputFileName = outputName ? outputName : fname.replace('.jsx', '.js');

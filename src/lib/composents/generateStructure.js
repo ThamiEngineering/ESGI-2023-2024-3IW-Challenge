@@ -1,3 +1,4 @@
+// generateStructure.js
 export default function generateStructure(structure) {
     const element = document.createElement(structure.type);
     if (structure.attributes) {
@@ -23,6 +24,10 @@ export default function generateStructure(structure) {
             }
             element.appendChild(subElement);
         }
+    }
+
+    if (structure.instance && structure.instance.attachRootElement) {
+        structure.instance.attachRootElement(element);
     }
 
     return element;

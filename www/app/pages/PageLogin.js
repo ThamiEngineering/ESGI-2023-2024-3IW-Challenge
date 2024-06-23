@@ -9,7 +9,7 @@ export default class LoginPage extends Blink.Component {
 
     render() {
         return (
-            Blink.createElement("div",{}, Blink.createElement("h1",{}, "Vous êtes sur la page Login"),Blink.createElement(Form,{}),Blink.createElement(Link,{"path":"/","title":"PageHome"}))
+            Blink.createElement("div",{}, Blink.createElement("h1",{}, `Vous êtes sur la page Login`),Blink.createElement(Form,{}),Blink.createElement(Link,{"path":"/","title":"PageHome"}))
         );
     }
 }
