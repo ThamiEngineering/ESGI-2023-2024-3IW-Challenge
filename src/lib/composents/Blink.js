@@ -1,5 +1,5 @@
 import { isClass } from "../utils/utils.js";
-import { useState } from "./state.js";
+import { useState } from "../utils/state.js";
 
 export function createElement(tagOrElement, attributes, ...children) {
 
