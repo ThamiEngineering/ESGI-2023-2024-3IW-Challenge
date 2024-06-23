@@ -1,15 +1,19 @@
-import generatePage from "../composents/generatePage.js";
+import generateStructure from "../composents/generateStructure.js";
+import { isClass } from "../utils/utils.js";
 
-export function HistoryLink(path, title) {
-    const link = document.createElement("a");
-    link.href = path;
-    link.appendChild(document.createTextNode(title));
-    link.addEventListener("click", (e) => {
-        e.preventDefault();
-        window.history.pushState({}, undefined, path);
-        window.dispatchEvent(new Event("pushstate"));
-    });
-    return link;
+export function HistoryLink(props) {
+    return {
+        type: "a",
+        attributes: {
+            href: props.path ?? "#",
+            onClick: function (e) {
+                e.preventDefault();
+                window.history.pushState({}, undefined, props.path);
+                window.dispatchEvent(new Event("pushstate"));
+            }
+        },
+        children: props.title ? [props.title] : []
+    }
 }
 
 export default function HistoryRouter(routes, rootElement) {
@@ -18,12 +22,23 @@ export default function HistoryRouter(routes, rootElement) {
         if (!routes[path]) path = "*";
 
         const page = routes[path];
-        const pageGenerator =
-            typeof page === "function" ? page : () => generatePage(page);
-        if (root.childNodes[0]) {
-            rootElement.replaceChild(pageGenerator(), root.childNodes[0]);
+        let generatedPage;
+
+        if (isClass(page)) {
+            let pageClass = new page();
+            generatedPage = generateStructure(pageClass.render());
+        } else if (typeof page === "function") {
+            generatedPage = page();
         } else {
-            rootElement.appendChild(pageGenerator());
+            generatedPage = generateStructure(page);
+        }
+
+        generatedPage = typeof generatedPage === "function" ? generatedPage() : generatedPage;
+
+        if (root.childNodes[0]) {
+            rootElement.replaceChild(generatedPage, root.childNodes[0]);
+        } else {
+            rootElement.appendChild(generatedPage);
         }
     }
 

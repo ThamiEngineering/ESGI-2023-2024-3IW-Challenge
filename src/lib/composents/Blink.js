@@ -1,6 +1,7 @@
-import { isClass } from "./utils.js";
+import { isClass } from "../utils/utils.js";
 
 export function createElement(tagOrElement, attributes, ...children) {
+
     if (isClass(tagOrElement)) {
         let classElement = new tagOrElement(attributes);
         tagOrElement = classElement.render();
@@ -22,12 +23,22 @@ export function createElement(tagOrElement, attributes, ...children) {
     }
 }
 
-export function createTextElement(text) {
-    return {
-        type: 'TEXT_ELEMENT',
-        props: {
-            nodeValue: text,
-            children: []
+export class Component {
+    constructor(props = {}) {
+        if (this.constructor === Component) {
+            throw new Error("Can't instantiate abstract class!");
         }
+        this.props = props;
+    }
+
+    render() {
+        throw new Error("You have to implement the method render!");
     }
 }
+
+const Blink = {
+    createElement: createElement,
+    Component: Component,
+};
+
+export default Blink;

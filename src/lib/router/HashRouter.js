@@ -1,4 +1,4 @@
-import generatePage from "../lib/generatePage.js";
+import generateStructure from "../lib/generateStructure.js";
 
 export function HashLink(path, title) {
     const link = document.createElement("a");
@@ -14,7 +14,7 @@ export default function HashRouter(routes, rootElement) {
 
         const page = routes[path];
         const pageGenerator =
-            typeof page === "function" ? page : () => generatePage(page);
+            typeof page === "function" ? page : () => generateStructure(page);
         if (root.childNodes[0]) {
             rootElement.replaceChild(pageGenerator(), root.childNodes[0]);
         } else {

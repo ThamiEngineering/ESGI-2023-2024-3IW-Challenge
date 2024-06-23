@@ -1,4 +1,4 @@
-export default function generatePage(structure) {
+export default function generateStructure(structure) {
     const element = document.createElement(structure.type);
     if (structure.attributes) {
         for (let attrName in structure.attributes) {
@@ -19,7 +19,7 @@ export default function generatePage(structure) {
             if (typeof child === "string") {
                 subElement = document.createTextNode(child);
             } else {
-                subElement = generatePage(child);
+                subElement = generateStructure(child);
             }
             element.appendChild(subElement);
         }
