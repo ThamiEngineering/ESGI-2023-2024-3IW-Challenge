@@ -155,8 +155,8 @@ function listFiles(dir, fileList = []) {
 
 
 (async () => {
-    const input = "src\\app";
-    const output = "src\\outputs";
+    const input = "src";
+    const output = "www";
 
     try {
         const jsxFiles = listFiles(input);
