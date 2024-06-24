@@ -8,7 +8,7 @@ export default class Page404 extends Blink.Component {
 
     render() {
         return (
-            Blink.createElement("div",{}, Blink.createElement("h1",{}, "Vous êtes sur la page 404"),Blink.createElement(Link,{"path":"/"}, "Retour à la page home"))
+            Blink.createElement("div",{}, Blink.createElement("h1",{}, `Vous êtes sur la page 404`),Blink.createElement(Link,{"path":"/"}, `Retour à la page home`))
         );
     }
 }
