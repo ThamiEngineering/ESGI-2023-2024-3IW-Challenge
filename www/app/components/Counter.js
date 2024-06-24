@@ -1,10 +1,17 @@
 // CounterComponent.js
 import Blink from "../../lib/composents/Blink.js";
+import { validateProps, PropValidators } from "../../lib/utils/propValidation.js";
 
 export default class CounterComponent extends Blink.Component {
     constructor(props) {
         super(props);
-        this.state = { count: 0 };
+
+        const propTypes = {
+            initialCount: PropValidators.number,
+        };
+        validateProps(props, propTypes);
+
+        this.state = { count: props.initialCount || 0 };
         this.increment = this.increment.bind(this);
         this.decrement = this.decrement.bind(this);
     }

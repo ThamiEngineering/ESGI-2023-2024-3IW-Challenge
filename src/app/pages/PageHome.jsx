@@ -23,7 +23,7 @@ export default class HomePage extends Blink.Component {
                 <button onClick={this.sayHi}>Click me !</button>
                 <Button>Simple button</Button>
                 <Button text="Autre exemple"></Button>
-                <Counter />
+                <Counter initialCount={10}/>
             </div>
         );
     }
