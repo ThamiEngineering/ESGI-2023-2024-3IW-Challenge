@@ -1,6 +1,7 @@
 // Blinck.js
 import generateStructure from "../composents/generateStructure.js";
 import { isClass } from "../utils/utils.js";
+import { validateProps } from "../utils/propValidation.js";
 
 export function createElement(tagOrElement, attributes, ...children) {
     if (isClass(tagOrElement)) {
@@ -32,6 +33,14 @@ export class Component {
         }
         this.props = props;
         this.state = {};
+    }
+
+    validateProps(validators) {
+        for (const props in validators) {
+            const type = validators[props];
+            console.log(props, type);
+            validateProps(this.props[props], type);
+        }
     }
 
     setState(newState) {

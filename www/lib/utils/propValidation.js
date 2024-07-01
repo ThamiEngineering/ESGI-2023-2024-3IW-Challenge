@@ -5,6 +5,7 @@
  */
 function validateProps(props, propTypes) {
     Object.keys(propTypes).forEach(key => {
+        console.log(key, propTypes[key], props[key]);
         const validator = propTypes[key];
         if (!validator(props[key])) {
             console.error(`Validation failed for prop ${key}. Expected type ${validator.name}.`);
