@@ -7,7 +7,7 @@ export default class Button extends Blink.Component {
 
     render() {
         return (
-            <button>{this.props.text ?? ""}</button>
+            <button>{this.props.text ?? "..."}</button>
         );
     };
 }
