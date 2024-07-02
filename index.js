@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { parse } from 'node-html-parser';
+import { exit } from 'process';
 
 const JSX_STRING = /\(\s*(<.*)>\s*\)/gs
 const JSX_INTERPOLATION = /\{([^"]*)\}/gs
@@ -158,15 +159,14 @@ function listFiles(dir, fileList = []) {
 
 
 
-(async () => {
+(() => {
     const input = "src";
     const output = "www";
 
     try {
         const jsxFiles = listFiles(input);
-        await jsxFiles.forEach(async function (file) {
-
-            await parseJSXFile(file, file.replace(input, output).replace('jsx', 'js'));
+        jsxFiles.forEach(async function (file) {
+            parseJSXFile(file, file.replace(input, output).replace('jsx', 'js'));
         });
     } catch (err) {
         console.error('Erreur lors de la lecture du dossier ou du traitement des fichiers:', err);

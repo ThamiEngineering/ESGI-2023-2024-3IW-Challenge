@@ -8,12 +8,12 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "nodemon --watch src -e jsx,js index.js",
-    "build": "node index.js",
-    "dev": "npm run watch",
-    "tailwind": "npx tailwindcss -i ./src/assets/styles/input.css -o ./src/assets/styles/output.css --watch",
-    "all": "docker-compose up -d && npm run tailwind"
+    "watch:node": "nodemon -L --watch src -e jsx,js --exec node index.js",
+    "watch:tailwind": "npx tailwindcss -p -i ./src/assets/styles/input.css -o ./src/assets/styles/output.css --watch",
+    "build:node": "node index.js",
+    "build:tailwind": "npx tailwindcss -i ./src/assets/styles/input.css -o ./src/assets/styles/output.css",
+    "build": "npm run build:tailwind && npm run build:node",
+    "dev": "nodemon -L --watch src -e jsx,js --exec npm run build"
   },
   "author": "",
   "license": "ISC",

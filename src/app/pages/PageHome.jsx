@@ -14,7 +14,7 @@ export default class HomePage extends Blink.Component {
 
     render() {
         return (
-            <div class="bg-teal-500">
+            <div class="bg-red-500">
                 <div style="display: flex; gap: 20px">
                     <Link path="/login" title="Go to login !" />
                     <Link path="/about">PageAbout</Link>
@@ -23,7 +23,7 @@ export default class HomePage extends Blink.Component {
                 <button onClick={this.sayHi}>Click me !</button>
                 <Button>Simple button</Button>
                 <Button text="Autre exemple"></Button>
-                <Counter initialCount={10}/>
+                <Counter initialCount={10} />
             </div>
         );
     }
