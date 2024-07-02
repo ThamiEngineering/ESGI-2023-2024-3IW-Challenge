@@ -6,7 +6,7 @@ export function isClass(v) {
         v();
         return false;
     } catch (error) {
-        if (/^Class constructor/.test(error.message)) {
+        if (/^[C|c]lass constructor/.test(error.message)) {
             return true;
         }
         return false;

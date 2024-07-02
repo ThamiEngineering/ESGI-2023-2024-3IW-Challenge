@@ -14,7 +14,7 @@ export default class HomePage extends Blink.Component {
 
     render() {
         return (
-            <div>
+            <div class="bg-teal-500">
                 <div style="display: flex; gap: 20px">
                     <Link path="/login" title="Go to login !" />
                     <Link path="/about">PageAbout</Link>

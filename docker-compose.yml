@@ -1,12 +1,16 @@
-version: '3.3'
 services:
   web:
-    build: Docker/site
+    image: httpd
     ports:
       - "80:80"
     volumes:
-      - ./www:/var/www/html/
-      - ./Docker/server/000-default.conf:/etc/apache2/sites-available/000-default.conf
-      - ./Docker/server/apache2.conf:/etc/apache2/apache2.conf
+      - ./www:/usr/local/apache2/htdocs
     networks : 
       - default
+  dev:
+    image: node:alpine
+    volumes:
+      - ./:/home/node/app
+      - ./Docker/node/docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh
+    working_dir: /home/node/app
+    command: "npm run dev"
