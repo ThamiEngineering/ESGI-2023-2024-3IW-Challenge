@@ -11,7 +11,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "nodemon --watch src -e jsx,js index.js",
     "build": "node index.js",
-    "dev": "docker compose up -d && npm run watch"
+    "dev": "npm run watch",
+    "tailwind": "npx tailwindcss -i ./src/assets/styles/input.css -o ./src/assets/styles/output.css --watch",
+    "all": "docker-compose up -d && npm run tailwind"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +21,7 @@
     "node-html-parser": "^6.1.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "tailwindcss": "^3.4.4"
   }
 }
