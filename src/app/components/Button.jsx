@@ -7,7 +7,7 @@ export default class Button extends Blink.Component {
 
     render() {
         return (
-            <button>{this.props.text ?? "..."}</button>
+            <button class="bg-blue-500 rounded-full w-[150px] h-[39px] text-white">{this.props.text ?? "..."}</button>
         );
     };
 }
