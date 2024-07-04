@@ -2,8 +2,19 @@
 export default {
   content: ["./src/**/**/*.{html,js,jsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        headline: ['"Olympic Headline"', 'sans-serif'],
+        sans: ['"Olympic Sans"', 'sans-serif'],
+        sansBold: ['"Olympic Sans Bold"', 'sans-serif'],
+      },
+    },
   },
-  plugins: [],
+  daisyui: {
+    themes: ["light", "dark"],
+  },
+  plugins: [
+    require('daisyui'),
+  ],
 }
 
