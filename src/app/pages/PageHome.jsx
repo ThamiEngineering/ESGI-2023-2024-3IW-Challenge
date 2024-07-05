@@ -28,24 +28,24 @@ export default class HomePage extends Blink.Component {
                 </div>
                 <div clas="my-12">
                     <Subtitle title="Informations" />
-                    <div class="grid grid-cols-2 space-x-10 mx-[88px]">
-                        <img src="../assets/images/Background.svg" alt="img" class="h-full w-auto object-cover" />
+                    <div class=" min-[769px]:grid min-[769px]:grid-cols-2 space-x-10 mx-[88px]">
+                        <img src="../assets/images/Background.svg" alt="img" class="h-full w-auto object-cover " />
                         <TextHome title="Retrouvez le meilleur des JO de Paris 2024" />
                     </div>
                 </div>
                 <div class="my-12">
                     <SubtitleWithButton title="Événements à venir" />
-                    <div class="flex mx-[88px] gap-10">
+                    <div class="flex mx-[88px] gap-10 grid grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1">
                         <CardEvents />
                         <CardEvents />
                         <CardEvents />
                     </div>
                 </div>
-                <div class="flex my-12">
+                <div class="min-[769px]:flex my-12">
                     <div>
                         <Subtitle title="Actualités" />
                     </div>
-                    <div class="grid grid-cols-3 flex-row gap-10 mr-[88px] ml-[200px]">
+                    <div class="grid grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1 flex-row gap-10 mr-[88px] ml-[200px] max-[768px]:mx-[88px]">
                         <CardEvents />
                         <CardEvents />
                         <CardEvents />
