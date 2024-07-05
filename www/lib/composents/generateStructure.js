@@ -28,6 +28,9 @@ export default function generateStructure(structure) {
 
     if (structure.instance && structure.instance.attachRootElement) {
         structure.instance.attachRootElement(element);
+        if (structure.instance.firstRender && structure.instance.componentDidMount) {
+            structure.instance.componentDidMount();
+        }
     }
 
     return element;

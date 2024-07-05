@@ -1,3 +1,4 @@
+import Blink from "../composents/Blink.js";
 import generateStructure from "../composents/generateStructure.js";
 import { isClass } from "../utils/utils.js";
 
@@ -25,8 +26,8 @@ export default function HistoryRouter(routes, rootElement) {
         let generatedPage;
 
         if (isClass(page)) {
-            let pageClass = new page();
-            generatedPage = generateStructure(pageClass.render());
+            let pageClass = Blink.createElement(page);
+            generatedPage = generateStructure(pageClass);
         } else if (typeof page === "function") {
             generatedPage = page();
         } else {
