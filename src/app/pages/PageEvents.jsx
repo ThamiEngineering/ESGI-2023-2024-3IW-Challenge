@@ -11,6 +11,21 @@ export default class PageEvents extends Blink.Component {
         super(props);
     }
 
+    componentDidMount() {
+        setTimeout(() => {
+            let mapContainer = document.querySelector('#map');
+            if (mapContainer) {
+                let map = L.map(mapContainer).setView([48.8566, 2.3522], 13);
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                }).addTo(map);
+            } else {
+                console.error('Map container not found');
+            }
+        }, 0);     
+    }
+
     render() {
         return (
             <div>
@@ -18,7 +33,7 @@ export default class PageEvents extends Blink.Component {
                 <div class="my-12">
                     <Title title="Carte des événements" />
                     <div class="relative z-20 mx-[88px]">
-                        <img src="../assets/images/Background.svg" alt="background" class="h-full w-auto object-cover" />
+                        <div id="map" class="w-auto h-[508px]"></div>
                     </div>
                 </div>
                 <div class="my-12">

@@ -10,7 +10,7 @@ export default class CardEvents extends Blink.Component {
             <div class="card bg-base-100 shadow-md rounded-[10px]">
                 <figure>
                     <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                    src="../assets/images/Background.svg"
                     alt="Shoes" />
                 </figure>
                 <div class="card-body">
