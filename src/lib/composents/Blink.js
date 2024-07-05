@@ -8,6 +8,7 @@ export function createElement(tagOrElement, attributes, ...children) {
         let classElement = new tagOrElement(attributes);
         tagOrElement = classElement.render();
         tagOrElement.instance = classElement;
+        classElement.firstRender = true;
     } else if (typeof tagOrElement === 'function') {
         tagOrElement = tagOrElement(attributes);
     }
@@ -49,6 +50,7 @@ export class Component {
     }
 
     update() {
+        this.firstRender = false;
         const newRenderedElement = generateStructure(this.render());
         if (!(newRenderedElement instanceof Node)) {
             throw new Error("Rendered element is not a valid Node");
@@ -56,7 +58,9 @@ export class Component {
         const currentElement = this._rootElement;
         const parentElement = currentElement.parentElement;
         if (parentElement && currentElement) {
+            if (this.componentWillUpdate) this.componentWillUpdate();
             parentElement.replaceChild(newRenderedElement, currentElement);
+            if (this.componentDidUpdate) this.componentDidUpdate();
             this._rootElement = newRenderedElement;
         }
     }
