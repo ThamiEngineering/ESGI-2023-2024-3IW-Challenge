@@ -1,13 +1,11 @@
-import Button from "../components/Button.js";
 import Navbar from "../components/Navbar.js";
 import Subtitle from "../components/Subtitle.js";
 import SubtitleWithButton from "../components/SubtitleWithButton.js";
-import Text from "../components/Text.js";
+import TextHome from "../components/TextHome.jsx";
 import Title from "../components/Title.js";
-import { HistoryLink as Link } from "../../lib/router/HistoryRouter.js";
 import Blink from "../../lib/composents/Blink.js";
-import Counter from "../components/Counter.js";
-import CardEvents from "../components/CardEvents.jsx";
+import CardEvents from "../components/CardEvents.js";
+import Footer from "../components/Footer.js";
 
 export default class HomePage extends Blink.Component {
     constructor(props) {
@@ -30,9 +28,9 @@ export default class HomePage extends Blink.Component {
                 </div>
                 <div clas="my-12">
                     <Subtitle title="Informations" />
-                    <div class="grid grid-cols-2 mx-[88px] gap-12">
-                        <img src="../assets/images/Background.svg" alt="img" />
-                        <Text title="Retrouvez le meilleur des JO de Paris 2024" />
+                    <div class="grid grid-cols-2 space-x-10 mx-[88px]">
+                        <img src="../assets/images/Background.svg" alt="img" class="h-full w-auto object-cover" />
+                        <TextHome title="Retrouvez le meilleur des JO de Paris 2024" />
                     </div>
                 </div>
                 <div class="my-12">
@@ -43,7 +41,7 @@ export default class HomePage extends Blink.Component {
                         <CardEvents />
                     </div>
                 </div>
-                <div class="flex mt-10">
+                <div class="flex my-12">
                     <div>
                         <Subtitle title="Actualités" />
                     </div>
@@ -53,15 +51,7 @@ export default class HomePage extends Blink.Component {
                         <CardEvents />
                     </div>
                 </div>
-                <div style="display: flex; gap: 20px">
-                    <Link path="/login" title="Go to login !" />
-                    <Link path="/about">PageAbout</Link>
-                </div>
-                <h1>Je suis sur ma page Home</h1>
-                <button onClick={this.sayHi}>Click me !</button>
-                <Button>Simple button</Button>
-                <Button text="Autre exemple"></Button>
-                <Counter initialCount={10} />
+                <Footer />
             </div>
         );
     }

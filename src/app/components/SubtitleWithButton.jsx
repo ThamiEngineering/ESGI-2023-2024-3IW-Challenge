@@ -1,4 +1,5 @@
 import Blink from "../../lib/composents/Blink.js";
+import ButtonHome from "./ButtonHome.js";
 
 export default class SubtitleWithButton extends Blink.Component {
     constructor(props) {
@@ -13,9 +14,7 @@ export default class SubtitleWithButton extends Blink.Component {
                     <div class="bg-blue-800 w-0.5 h-36 mr-4 mt-12"></div>
                     <div class="flex flex-col mt-10">
                         <h1 class="font-headline text-[64px] text-black">{this.props.title}</h1>
-                        <div>
-                            <button class="bg-blue-500 text-white flex items-center rounded-full py-2 px-6">Voir plus d'événements<i class="fa-solid fa-arrow-right ml-2"></i></button>
-                        </div>
+                        <ButtonHome title="Voir plus d'événements" />
                     </div>
                 </div>
             </div>
