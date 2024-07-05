@@ -1,14 +1,14 @@
 import Blink from "../../lib/composents/Blink.js";
 
-export default class Subtitle extends Blink.Component {
+export default class TextHome extends Blink.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
         return (
-            <div class="relative mb-10 min-h-32 pr-12 pr-2">
-                <div class="relative z-10 flex items-center w-full h-full">
+            <div class="relative mt-4 min-h-32 mb-4">
+                <div class="relative z-10 flex items-center w-full h-full bottom-4">
                     <div class="bg-blue-800 w-0.5 h-[304px] mr-4"></div>
                     <div>
                         <h1 class="font-headline text-[64px] text-black">{this.props.title}</h1>
