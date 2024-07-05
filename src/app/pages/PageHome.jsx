@@ -5,6 +5,7 @@ import TextHome from "../components/TextHome.jsx";
 import Title from "../components/Title.js";
 import Blink from "../../lib/composents/Blink.js";
 import CardEvents from "../components/CardEvents.js";
+import Slider from "../components/Slider.js";
 import Footer from "../components/Footer.js";
 
 export default class HomePage extends Blink.Component {
@@ -45,11 +46,7 @@ export default class HomePage extends Blink.Component {
                     <div>
                         <Subtitle title="Actualités" />
                     </div>
-                    <div class="grid grid-cols-3 flex-row gap-10 mr-[88px] ml-[200px]">
-                        <CardEvents />
-                        <CardEvents />
-                        <CardEvents />
-                    </div>
+                    <Slider />
                 </div>
                 <Footer />
             </div>
