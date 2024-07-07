@@ -4,6 +4,10 @@ import { isClass } from "../utils/utils.js";
 import { validateProps } from "../utils/propValidation.js";
 
 export function createElement(tagOrElement, attributes, ...children) {
+    children.forEach((child, i) => {
+        if (Number.isInteger(child)) children[i] = `${child}`;
+    })
+
     if (isClass(tagOrElement)) {
         let classElement = new tagOrElement(attributes);
         tagOrElement = classElement.render();
