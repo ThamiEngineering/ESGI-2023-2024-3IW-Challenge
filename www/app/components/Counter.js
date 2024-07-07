@@ -25,7 +25,7 @@ export default class CounterComponent extends Blink.Component {
 
     render() {
         return (
-            Blink.createElement("div",{}, Blink.createElement("h2",{}, `Counter: ${this.state.count}`),Blink.createElement("button",{"onClick":this.increment}, `Increment`),Blink.createElement("button",{"onClick":this.decrement}, `Decrement`))
+            Blink.createElement("div", {}, Blink.createElement("h2", {}, `Counter: ${this.state.count}`),Blink.createElement("button", { "onClick":this.increment}, "Increment"),Blink.createElement("button", { "onClick":this.decrement}, "Decrement"))
         );
     }
 }
