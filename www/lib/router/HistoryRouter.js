@@ -19,10 +19,25 @@ export function HistoryLink(props) {
 
 export default function HistoryRouter(routes, rootElement) {
     function manageRoute() {
-        let path = window.location.pathname;
-        if (!routes[path]) path = "*";
+        let currentPath = window.location.pathname;
 
-        const page = routes[path];
+        let matchedPage = null;
+        let params = {};
+        Object.keys(routes).forEach(route => {
+            if (matchedPage) return; // Si déjà trouvé, on arrête la recherche
+            const routePattern = route.replace(/:[^\s/]+/g, '([\\w-]+)');
+            const regex = new RegExp(`^${routePattern}$`);
+            const match = currentPath.match(regex);
+            if (match) {
+                matchedPage = route;
+                const paramNames = route.match(/:([^\s/]+)/g) || [];
+                paramNames.forEach((param, index) => {
+                    params[param.replace(':', '')] = match[index + 1];
+                });
+            }
+        });
+
+        const page = routes[matchedPage || "*"];
         let generatedPage;
 
         if (isClass(page)) {

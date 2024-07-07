@@ -12,7 +12,7 @@ const root = document.getElementById("root");
 const routes = {
     "/": PageHome,
     "/events": PageEvents,
-    "/events/spots": PageEventDetails,
+    "/events/:id": PageEventDetails,
     "/about": PageAbout,
     "/login": PageLogin,
     "*": Page404,
