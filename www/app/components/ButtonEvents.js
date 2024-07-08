@@ -10,7 +10,7 @@ export default class ButtonEvents extends Blink.Component {
         const path = `/events/${this.props.id}`;
         console.log("Generated path:", path);
         return (
-            Blink.createElement(Link,{"path":path}, Blink.createElement("button",{"class":"bg-blue-500 text-white flex items-center rounded-full py-2 px-6"}, `${this.props.title}`,Blink.createElement("i",{"class":"fa-solid fa-arrow-right ml-2"})))
+            Blink.createElement(Link, { "path":path}, Blink.createElement("button", { "class":"bg-blue-500 text-white flex items-center rounded-full py-2 px-6" },                     this.props.title,Blink.createElement("i", { "class":"fa-solid fa-arrow-right ml-2" })))
         )
     }
 }
