@@ -7,11 +7,11 @@ export default class Subtitle extends Blink.Component {
 
     render() {
         return (
-            <div class="relative mb-10 min-h-32">
-                <h1 class="font-headline text-9xl absolute top-0 left-0 opacity-5 z-0 text-black ml-8">{this.props.title}</h1>
+            <div class="relative min-[426px]:mb-10 min-[769px]:min-h-32 max-[425px]:min-h-24">
+                <h1 class="font-headline text-9xl absolute top-0 left-0 opacity-5 z-0 text-black ml-8 max-[1024px]:text-7xl max-[768px]:text-6xl max-[426px]:text-[40px]">{this.props.title}</h1>
                 <div class="relative z-10 flex items-center ml-[90px] h-full">
-                    <div class="bg-blue-800 w-0.5 h-16 mr-4 mt-10"></div>
-                    <h1 class="font-headline text-[64px] text-black mt-10">{this.props.title}</h1>
+                    <div class="bg-blue-800 w-0.5 h-16 mr-4"></div>
+                    <h1 class="font-headline text-[64px] text-black min-[1025px]:mt-10 max-[1024px]:mt-7 max-[768px]:mt-4  max-[1024px]:text-[56px] max-[768px]:text-[42px] max-[426px]:text-[32px]">{this.props.title}</h1>
                 </div>
             </div>
         );

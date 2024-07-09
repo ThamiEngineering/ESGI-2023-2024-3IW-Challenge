@@ -131,14 +131,14 @@ export default class PageEvents extends Blink.Component {
                 </div>
                 <div class="my-12">
                     <Subtitle title="Prochain événement" />
-                    <div class="grid grid-cols-2 mx-[88px] gap-8">
+                    <div class=" min-[769px]:grid min-[769px]:grid-cols-2 space-x-10 mx-[88px]">
                         <img src="../assets/images/Background.svg" alt="img" class="h-full w-auto object-cover" />
                         <EventDetails event={nextEvent} />
                     </div>
                 </div>
                 <div class="my-12">
                     <Subtitle title="Événements à venir" />
-                    <div class="flex mx-[88px] gap-10">
+                    <div class="flex mx-[88px] gap-10 grid grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1">
                         <CardEvents />
                         <CardEvents />
                         <CardEvents />
