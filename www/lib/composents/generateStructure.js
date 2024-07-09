@@ -1,5 +1,7 @@
 // generateStructure.js
 export default function generateStructure(structure) {
+    if (!structure) return null;
+
     const element = document.createElement(structure.type);
     if (structure.attributes) {
         for (let attrName in structure.attributes) {
@@ -22,6 +24,9 @@ export default function generateStructure(structure) {
             } else {
                 subElement = generateStructure(child);
             }
+
+            if (!subElement) continue;
+
             element.appendChild(subElement);
         }
     }

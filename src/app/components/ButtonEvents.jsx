@@ -7,8 +7,10 @@ export default class ButtonEvents extends Blink.Component {
     }
 
     render() {
+        const path = `/events/${this.props.id}`;
+        console.log("Generated path:", path);
         return (
-            <Link path="/events/spots">
+            <Link path={path}>
                 <button class="bg-blue-500 text-white flex items-center rounded-full py-2 px-6">
                     {this.props.title}
                     <i class="fa-solid fa-arrow-right ml-2"></i>
