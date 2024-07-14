@@ -5,13 +5,19 @@ import Navbar from "../components/Navbar.js";
 import Title from "../components/Title.js";
 import Subtitle from "../components/Subtitle.js";
 import Footer from "../components/Footer.js";
+import storage from "../../lib/utils/storage.js";
 
 export default class PageEventDetails extends Blink.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            eventDetails: {}
+        };
     }
 
     componentDidMount() {
+        this.loadEventData();
+        
         setTimeout(() => {
             let mapContainer = document.querySelector('#map');
             if (mapContainer) {
@@ -23,10 +29,20 @@ export default class PageEventDetails extends Blink.Component {
             } else {
                 console.error('Map container not found');
             }
-        }, 0);     
+        }, 0);
+    }
+
+    loadEventData() {
+        const eventDetails = storage.getItem("eventDetails");
+        
+        setTimeout(() => {
+            this.setState({ eventDetails });
+        }, 0);
     }
 
     render() {
+        const { eventDetails } = this.state;
+        console.log(eventDetails);
         return (
             <div>
                 <Navbar />
@@ -40,7 +56,7 @@ export default class PageEventDetails extends Blink.Component {
                     <Subtitle title="Événement" />
                     <div class=" min-[769px]:grid min-[769px]:grid-cols-2 space-x-10 mx-[88px]">
                         <img src="../assets/images/Background.svg" alt="img" class="h-full w-auto object-cover" />
-                        <EventDetailsWithoutButton title="Para triathlon (ptri)" />
+                        <EventDetailsWithoutButton event={eventDetails} />
                     </div>
                 </div>
                 <div class="my-12">

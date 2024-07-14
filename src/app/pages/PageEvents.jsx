@@ -11,7 +11,9 @@ export default class PageEvents extends Blink.Component {
         super(props);
         this.state = {
             nextEvent: {},
-            upcomingEvents: []
+            upcomingEvents: [],
+            visibleEvents: [{}, {}, {}],
+            currentIndex: 0
         };
         this.map = null;
         this.mapInitialized = false;
@@ -28,6 +30,16 @@ export default class PageEvents extends Blink.Component {
         }
     }
 
+    componentWillUnmount() {
+        if (this.map) {
+            this.map.remove();
+            this.map = null;
+            this.mapInitialized = false;
+        } else {
+            console.error('Map not initialized');
+        }
+    }
+
     initializeMap() {
         let mapContainer = document.querySelector('#map');
         if (mapContainer) {
@@ -38,7 +50,7 @@ export default class PageEvents extends Blink.Component {
                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             }).addTo(this.map);
             console.log('Map initialized:', this.map);
-            this.mapInitialized = true; // Marquer la carte comme initialisée
+            this.mapInitialized = true;
         } else {
             console.error('Map container not found');
         }
@@ -83,10 +95,13 @@ export default class PageEvents extends Blink.Component {
                 return (closest === null || eventDate < new Date(closest.start_date)) ? event : closest;
             }, null);
 
+            const visibleEvents = upcomingEvents.slice(0, 3);
+
             console.log('Upcoming events:', upcomingEvents);
             console.log('Next event:', nextEvent);
+            console.log('Visible events:', visibleEvents)
 
-            this.setState({ nextEvent, upcomingEvents });
+            this.setState({ nextEvent, upcomingEvents, visibleEvents });
             this.addMarkers(records);
 
         }).catch(error => console.error('Erreur lors du chargement des données:', error));
@@ -100,7 +115,7 @@ export default class PageEvents extends Blink.Component {
 
         console.log('Adding markers...');
         records.forEach(record => {
-            const { latitude, longitude, nom_site, adress, id } = record;
+            const { latitude, longitude, code_site, nom_site, category_id, id, sports, start_date, end_date } = record;
             console.log(`Record ${id} fields:`, record);
 
             if (latitude && longitude) {
@@ -109,7 +124,7 @@ export default class PageEvents extends Blink.Component {
                 console.log(`Adding marker for ${nom_site} at [${lat}, ${lon}]`);
                 L.marker([lat, lon])
                     .addTo(this.map)
-                    .bindPopup(`<b>${nom_site}</b><br>${adress || ''}`);
+                    .bindPopup(`<b>Code Site</b><br>${code_site}<br><b>Site</b><br>${nom_site}<br><b>Categorie</b><br>${category_id}<br><b>Sports</b><br>${sports}<br><b>Date de début</b><br>${start_date}<br><b>Date de fin</b><br>${end_date}<br><b>Latitude</b><br>${latitude}<br><b>Longitude</b><br>${longitude}`);
             } else {
                 console.warn(`Missing coordinates for record ${id}:`, record);
             }
@@ -117,8 +132,38 @@ export default class PageEvents extends Blink.Component {
         console.log('Markers added.');
     }
 
+    handleNext = () => {
+        const { currentIndex, upcomingEvents } = this.state;
+        if (currentIndex + 3 < upcomingEvents.length) {
+            const newIndex = currentIndex + 3;
+            const visibleEvents = upcomingEvents.slice(newIndex, newIndex + 3);
+            this.map.remove();
+            console.log('Map removed');
+            this.setState({ currentIndex: newIndex, visibleEvents });
+            this.initializeMap();
+            console.log('Map reinitialized');
+            this.addMarkers(upcomingEvents);
+        }
+    }
+
+    handlePrev = () => {
+        const { currentIndex, upcomingEvents } = this.state;
+        if (currentIndex - 3 >= 0) {
+            const newIndex = currentIndex - 3;
+            const visibleEvents = upcomingEvents.slice(newIndex, newIndex + 3);
+            this.map.remove();
+            console.log('Map removed');
+            this.setState({ currentIndex: newIndex, visibleEvents });
+            this.initializeMap();
+            console.log('Map reinitialized');
+            this.addMarkers(upcomingEvents);
+        }
+    }
+
     render() {
-        const { nextEvent, upcomingEvents } = this.state;
+        const { nextEvent, visibleEvents } = this.state;
+
+        console.log(visibleEvents);
 
         return (
             <div>
@@ -131,17 +176,30 @@ export default class PageEvents extends Blink.Component {
                 </div>
                 <div class="my-12">
                     <Subtitle title="Prochain événement" />
-                    <div class=" min-[769px]:grid min-[769px]:grid-cols-2 space-x-10 mx-[88px]">
+                    <div class="min-[769px]:grid min-[769px]:grid-cols-2 space-x-10 mx-[88px]">
                         <img src="../assets/images/Background.svg" alt="img" class="h-full w-auto object-cover" />
                         <EventDetails event={nextEvent} />
                     </div>
                 </div>
                 <div class="my-12">
                     <Subtitle title="Événements à venir" />
-                    <div class="flex mx-[88px] gap-10 grid grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1">
-                        <CardEvents />
-                        <CardEvents />
-                        <CardEvents />
+                    <div class="flex mx-[88px] gap-10 grid grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1" >
+                    {
+                        ...Array.from(
+                            { length: 3 },
+                            (_, index) => (
+                                createElement(CardEvents, { title: visibleEvents[index].sports })
+                            )
+                        )
+                    }
+                    </div>
+                    <div class="flex gap-2 mx-[88px] mt-4">
+                        <button onClick={this.handlePrev} class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
+                            <i class="fa fa-chevron-left text-white"></i>
+                        </button>
+                        <button onClick={this.handleNext} class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
+                            <i class="fa fa-chevron-right text-white"></i>
+                        </button>
                     </div>
                 </div>
                 <Footer />
