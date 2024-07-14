@@ -14,7 +14,7 @@ export default class CardEvents extends Blink.Component {
                     alt="Shoes" />
                 </figure>
                 <div class="card-body">
-                    <h2 class="card-title">Shoes!</h2>
+                    <h2 class="card-title">{this.props.title ?? "Loading.."}</h2>
                 </div>
             </div>
         )

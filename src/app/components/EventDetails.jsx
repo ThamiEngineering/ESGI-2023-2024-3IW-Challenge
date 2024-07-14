@@ -26,7 +26,7 @@ export default class EventDetails extends Blink.Component {
                             <p class="text-xl bold">DATE DE FIN</p>
                             <p>{this.props.event.end_date}</p>
                         </div>
-                        <ButtonEvents title="Détails de l'événement" id={this.props.event.id} />
+                        <ButtonEvents title="Détails de l'événement" event={this.props.event} />
                     </div>
                 </div>
             </div>
