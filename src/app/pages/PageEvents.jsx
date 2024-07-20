@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar.js";
 import Title from "../components/Title.js";
 import Subtitle from "../components/Subtitle.js";
 import Footer from "../components/Footer.js";
+import storage from "../../lib/utils/storage.js";
 
 export default class PageEvents extends Blink.Component {
     constructor(props) {
@@ -13,10 +14,18 @@ export default class PageEvents extends Blink.Component {
             nextEvent: {},
             upcomingEvents: [],
             visibleEvents: [{}, {}, {}],
-            currentIndex: 0
+            currentIndex: 0,
+            sportsList: []
         };
         this.map = null;
         this.mapInitialized = false;
+        this.filterSport = "";
+        this.filterStartDate = "";
+        this.filterEndDate = "";
+        this.userLocation = null;
+        this.routingControl = null;
+        this.olympicLayer = L.layerGroup();
+        this.paralympicLayer = L.layerGroup();
     }
 
     componentDidMount() {
@@ -49,8 +58,15 @@ export default class PageEvents extends Blink.Component {
                 maxZoom: 19,
                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             }).addTo(this.map);
+
+            this.layerControl = L.control.layers(null, {
+                "Olympic Venues": this.olympicLayer,
+                "Paralympic Venues": this.paralympicLayer
+            }).addTo(this.map);
+
             console.log('Map initialized:', this.map);
             this.mapInitialized = true;
+            this.getUserLocation();
         } else {
             console.error('Map container not found');
         }
@@ -97,14 +113,45 @@ export default class PageEvents extends Blink.Component {
 
             const visibleEvents = upcomingEvents.slice(0, 3);
 
+            const sportsList = [...new Set(records.map(record => record.sports))];
+
             console.log('Upcoming events:', upcomingEvents);
             console.log('Next event:', nextEvent);
-            console.log('Visible events:', visibleEvents)
+            console.log('Visible events:', visibleEvents);
+            console.log('Sports list:', sportsList);
 
-            this.setState({ nextEvent, upcomingEvents, visibleEvents });
+            this.setState({ nextEvent, upcomingEvents, visibleEvents, sportsList });
             this.addMarkers(records);
 
         }).catch(error => console.error('Erreur lors du chargement des données:', error));
+    }
+
+    getUserLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const { latitude, longitude } = position.coords;
+                    this.map.setView([latitude, longitude], 13);
+                    this.userLocation = [latitude, longitude];
+                    this.addUserMarker([latitude, longitude]);
+                },
+                (error) => {
+                    console.error("Erreur de géolocalisation:", error);
+                }
+            );
+        } else {
+            console.error("La géolocalisation n'est pas supportée par ce navigateur.");
+        }
+    }
+
+    addUserMarker(location) {
+        if (this.map) {
+            L.marker(location)
+                .addTo(this.map)
+                .bindPopup("Votre position")
+                .openPopup();
+            this.map.setView(location, 13);
+        }
     }
 
     addMarkers(records) {
@@ -114,22 +161,204 @@ export default class PageEvents extends Blink.Component {
         }
 
         console.log('Adding markers...');
+        this.olympicLayer.clearLayers();
+        this.paralympicLayer.clearLayers();
+
         records.forEach(record => {
             const { latitude, longitude, code_site, nom_site, category_id, id, sports, start_date, end_date } = record;
             console.log(`Record ${id} fields:`, record);
 
-            if (latitude && longitude) {
-                const lat = parseFloat(latitude.replace(',', '.'));
-                const lon = parseFloat(longitude.replace(',', '.'));
+            const lat = parseFloat(latitude.replace(',', '.'));
+            const lon = parseFloat(longitude.replace(',', '.'));
+            if (this.isValidCoordinate(lat) && this.isValidCoordinate(lon)) {
                 console.log(`Adding marker for ${nom_site} at [${lat}, ${lon}]`);
-                L.marker([lat, lon])
-                    .addTo(this.map)
-                    .bindPopup(`<b>Code Site</b><br>${code_site}<br><b>Site</b><br>${nom_site}<br><b>Categorie</b><br>${category_id}<br><b>Sports</b><br>${sports}<br><b>Date de début</b><br>${start_date}<br><b>Date de fin</b><br>${end_date}<br><b>Latitude</b><br>${latitude}<br><b>Longitude</b><br>${longitude}`);
+
+                storage.setItem("eventDetails", record);
+                
+                const popupContent = `
+                    <b>Code Site</b><br>${code_site}<br>
+                    <b>Site</b><br>${nom_site}<br>
+                    <b>Categorie</b><br>${category_id}<br>
+                    <b>Sports</b><br>${sports}<br>
+                    <b>Date de début</b><br>${start_date}<br>
+                    <b>Date de fin</b><br>${end_date}<br>
+                    <b>Latitude</b><br>${latitude}<br>
+                    <b>Longitude</b><br>${longitude}<br><br>
+                    <button class="btn btn-primary event-detail-link" data-id="${id}">Détail de l'événement</button>
+                    <button class="btn btn-secondary route-button" data-id="${id}">Voir l'itinéraire</button>
+                `;
+
+                record.popupContent = popupContent;
+
+                const marker = L.marker([lat, lon], { record }).bindPopup(popupContent);
+
+                marker.on('popupopen', () => {
+                    const button = document.querySelector(`.event-detail-link[data-id="${id}"]`);
+                    if (button) {
+                        button.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            storage.setItem("eventDetails", record);
+                            const path = `/events/${id}`;
+                            window.history.pushState({}, undefined, path);
+                            window.dispatchEvent(new Event("pushstate"));
+                        });
+                    }
+
+                    const routeButton = document.querySelector(`.route-button[data-id="${id}"]`);
+                    if (routeButton) {
+                        routeButton.addEventListener('click', () => this.showRoute([lat, lon]));
+                    }
+                });
+
+                if (category_id === "venue-olympic") {
+                    marker.addTo(this.olympicLayer);
+                } else if (category_id === "venue-paralympic") {
+                    marker.addTo(this.paralympicLayer);
+                }
             } else {
-                console.warn(`Missing coordinates for record ${id}:`, record);
+                console.warn(`Invalid coordinates for record ${id}:`, record);
             }
         });
+
+        this.map.addLayer(this.olympicLayer);
+        this.map.addLayer(this.paralympicLayer);
         console.log('Markers added.');
+    }
+
+    isValidCoordinate(coord) {
+        return !isNaN(coord) && isFinite(coord);
+    }
+
+    async showRoute(destination) {
+        if (!this.userLocation) {
+            alert("Votre position n'est pas disponible.");
+            return;
+        }
+
+        const [userLat, userLon] = this.userLocation;
+        const [destLat, destLon] = destination;
+
+        try {
+            const response = await fetch(`https://api.openrouteservice.org/v2/directions/driving-car?api_key=5b3ce3597851110001cf6248ac96e253242c4b05966b778fc865dafa&start=${userLon},${userLat}&end=${destLon},${destLat}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            const data = await response.json();
+            
+            if (!data.features || data.features.length === 0) {
+                throw new Error('No route found');
+            }
+
+            const route = data.features[0].geometry.coordinates.map(coord => [coord[1], coord[0]]);
+
+            if (this.currentRouteLine) {
+                this.map.removeLayer(this.currentRouteLine);
+            }
+
+            this.currentRouteLine = L.polyline(route, { color: 'blue', weight: 4 }).addTo(this.map);
+            this.map.fitBounds(this.currentRouteLine.getBounds());
+        } catch (error) {
+            console.error('Error fetching route:', error);
+        }
+    }
+
+    filterRecords = (records) => {
+        const filterSport = this.filterSport?.toLowerCase();
+        const filterStartDate = this.filterStartDate ? new Date(this.filterStartDate) : null;
+        const filterEndDate = this.filterEndDate ? new Date(this.filterEndDate) : null;
+
+        let filteredRecords = records;
+
+        if (filterSport) {
+            filteredRecords = filteredRecords.filter(record => record.sports.toLowerCase().includes(filterSport));
+        }
+
+        if (filterStartDate) {
+            filteredRecords = filteredRecords.filter(record => new Date(record.start_date) >= filterStartDate);
+        }
+
+        if (filterEndDate) {
+            filteredRecords = filteredRecords.filter(record => new Date(record.end_date) <= filterEndDate);
+        }
+
+        if (filterSport && filterStartDate) {
+            filteredRecords = filteredRecords.filter(record => record.sports.toLowerCase().includes(filterSport) && new Date(record.start_date) >= filterStartDate);
+        }
+
+        if (filterSport && filterEndDate) {
+            filteredRecords = filteredRecords.filter(record => record.sports.toLowerCase().includes(filterSport) && new Date(record.end_date) <= filterEndDate);
+        }
+
+        if (filterStartDate && filterEndDate) {
+            filteredRecords = filteredRecords.filter(record => new Date(record.start_date) >= filterStartDate && new Date(record.end_date) <= filterEndDate);
+        }
+
+        if (filterSport && filterStartDate && filterEndDate) {
+            filteredRecords = filteredRecords.filter(record => record.sports.toLowerCase().includes(filterSport) && new Date(record.start_date) >= filterStartDate && new Date(record.end_date) <= filterEndDate);
+        }
+
+        return filteredRecords;
+    }
+
+    applyFilters = () => {
+        const olympicRecords = this.filterRecords(this.olympicLayer.getLayers().map(marker => marker.options.record));
+        this.olympicLayer.clearLayers();
+        olympicRecords.forEach(record => {
+            const lat = parseFloat(record.latitude.replace(',', '.'));
+            const lon = parseFloat(record.longitude.replace(',', '.'));
+            const marker = L.marker([lat, lon], { record }).bindPopup(record.popupContent);
+            this.olympicLayer.addLayer(marker);
+
+            marker.on('popupopen', () => {
+                const button = document.querySelector(`.event-detail-link[data-id="${record.id}"]`);
+                if (button) {
+                    button.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        storage.setItem("eventDetails", record);
+                        const path = `/events/${record.id}`;
+                        window.history.pushState({}, undefined, path);
+                        window.dispatchEvent(new Event("pushstate"));
+                    });
+                }
+
+                const routeButton = document.querySelector(`.route-button[data-id="${record.id}"]`);
+                if (routeButton) {
+                    routeButton.addEventListener('click', () => this.showRoute([lat, lon]));
+                }
+            });
+        });
+
+        const paralympicRecords = this.filterRecords(this.paralympicLayer.getLayers().map(marker => marker.options.record));
+        this.paralympicLayer.clearLayers();
+        paralympicRecords.forEach(record => {
+            const lat = parseFloat(record.latitude.replace(',', '.'));
+            const lon = parseFloat(record.longitude.replace(',', '.'));
+            const marker = L.marker([lat, lon], { record }).bindPopup(record.popupContent);
+            this.paralympicLayer.addLayer(marker);
+
+            marker.on('popupopen', () => {
+                const button = document.querySelector(`.event-detail-link[data-id="${record.id}"]`);
+                if (button) {
+                    button.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        storage.setItem("eventDetails", record);
+                        const path = `/events/${record.id}`;
+                        window.history.pushState({}, undefined, path);
+                        window.dispatchEvent(new Event("pushstate"));
+                    });
+                }
+
+                const routeButton = document.querySelector(`.route-button[data-id="${record.id}"]`);
+                if (routeButton) {
+                    routeButton.addEventListener('click', () => this.showRoute([lat, lon]));
+                }
+            });
+        });
+
+        console.log('Applying filters...');
     }
 
     handleNext = () => {
@@ -160,10 +389,28 @@ export default class PageEvents extends Blink.Component {
         }
     }
 
-    render() {
-        const { nextEvent, visibleEvents } = this.state;
+    handleSportFilterChange = (event) => {
+        const { value } = event.target;
+        this.filterSport = value;
+    }
 
-        console.log(visibleEvents);
+    handleStartDateFilterChange = (event) => {
+        const { value } = event.target;
+        this.filterStartDate = value;
+    }
+
+    handleEndDateFilterChange = (event) => {
+        const { value } = event.target;
+        this.filterEndDate = value;
+    }
+
+    render() {
+        const { nextEvent, visibleEvents, upcomingEvents, sportsList } = this.state;
+
+        const sportOptions = [];
+        for (let i = 0; i < sportsList.length; i++) {
+            sportOptions.push(createElement('option', { key: i, value: sportsList[i] }, sportsList[i]));
+        }
 
         return (
             <div>
@@ -172,6 +419,48 @@ export default class PageEvents extends Blink.Component {
                     <Title title="Carte des événements" />
                     <div class="relative z-20 mx-[88px]">
                         <div id="map" class="w-auto h-[508px]"></div>
+                    </div>
+                    <div class="relative flex mx-[88px] gap-4 top-2">
+                    <div class="w-1/3">
+                            <label for="filterSport" class="block text-gray-700">Filtrer par sport</label>
+                            <select
+                                id="filterSport"
+                                name="filterSport"
+                                onChange={this.handleSportFilterChange}
+                                class="w-full p-2 border border-gray-300 rounded"
+                            >
+                                <option value="">Choisir un sport</option>
+                                {...sportOptions}
+                            </select>
+                        </div>
+                        <div class="w-1/3">
+                            <label for="filterStartDate" class="block text-gray-700">Date de début</label>
+                            <input
+                                id="filterStartDate"
+                                type="date"
+                                name="filterDate"
+                                onChange={this.handleStartDateFilterChange}
+                                class="w-full p-2 border border-gray-300 rounded"
+                            />
+                        </div>
+                        <div class="w-1/3">
+                            <label for="filterEndDate" class="block text-gray-700">Date de fin</label>
+                            <input
+                                id="filterEndDate"
+                                type="date"
+                                name="filterDate"
+                                onChange={this.handleEndDateFilterChange}
+                                class="w-full p-2 border border-gray-300 rounded"
+                            />
+                        </div>
+                        <div class="w-1/3">
+                            <button
+                                onClick={this.applyFilters}
+                                class="w-full p-2 bg-blue-500 text-white rounded mt-6"
+                            >
+                                Appliquer les filtres
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="my-12">
