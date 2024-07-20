@@ -1,0 +1,720 @@
+{
+  "ALX": [
+    {
+      "nom": "Jardins des Champs-Élysées",
+      "adresse": "Avenue des Champs-Élysées, 75008 Paris, France",
+      "latitude": "48.866416",
+      "longitude": "2.313000",
+      "description": "Ces jardins historiques offrent un espace vert magnifique et spacieux pour profiter des Jeux Olympiques. Les écrans géants installés permettront aux visiteurs de suivre les épreuves tout en se relaxant sur les chaises longues mises à disposition."
+    },
+    {
+      "nom": "Pont Alexandre III",
+      "adresse": "Pont Alexandre III, 75008 Paris, France",
+      "latitude": "48.864583",
+      "longitude": "2.317222",
+      "description": "Ce pont emblématique de Paris offre une vue imprenable sur la Seine et le Grand Palais. Des écrans géants seront installés sur les trottoirs élargis du pont, permettant aux spectateurs de suivre les épreuves olympiques tout en admirant la vue."
+    }
+  ],
+  "AQC": [
+    {
+      "nom": "Parc de la Villette",
+      "adresse": "211 Avenue Jean Jaurès, 75019 Paris, France",
+      "latitude": "48.895",
+      "longitude": "2.386",
+      "description": "Le Parc de la Villette, avec ses vastes espaces verts et ses installations culturelles, sera un lieu idéal pour profiter des compétitions aquatiques des Jeux Olympiques. Des écrans géants seront installés pour permettre aux spectateurs de suivre les épreuves en direct."
+    },
+    {
+      "nom": "Bassin de la Villette",
+      "adresse": "Quai de la Loire, 75019 Paris, France",
+      "latitude": "48.890",
+      "longitude": "2.371",
+      "description": "Le Bassin de la Villette, avec ses eaux calmes et ses quais animés, offrira une ambiance conviviale pour regarder les épreuves de natation artistique, de plongeon et de water-polo. Des écrans géants seront installés le long des berges pour une expérience immersive."
+    }
+  ],
+  "BCY": [
+    {
+      "nom": "Parc de Bercy",
+      "adresse": "128 Quai de Bercy, 75012 Paris, France",
+      "latitude": "48.837",
+      "longitude": "2.376",
+      "description": "Le Parc de Bercy, avec ses espaces verts et ses installations culturelles, sera un lieu idéal pour profiter des compétitions de basketball et de gymnastique artistique. Des écrans géants seront installés pour permettre aux spectateurs de suivre les épreuves en direct."
+    },
+    {
+      "nom": "Bassin de la Villette",
+      "adresse": "Quai de la Loire, 75019 Paris, France",
+      "latitude": "48.890",
+      "longitude": "2.371",
+      "description": "Le Bassin de la Villette, avec ses eaux calmes et ses quais animés, offrira une ambiance conviviale pour regarder les compétitions de gymnastique trampoline. Des écrans géants seront installés le long des berges pour une expérience immersive."
+    }
+  ],
+  "BOR": [
+    {
+      "nom": "Place de la Bourse",
+      "adresse": "Place de la Bourse, 33000 Bordeaux, France",
+      "latitude": "44.8414",
+      "longitude": "-0.5745",
+      "description": "La Place de la Bourse, avec son architecture impressionnante et son ambiance animée, sera un lieu idéal pour profiter des compétitions de football au Stade de Bordeaux. Des écrans géants seront installés pour permettre aux spectateurs de suivre les matchs en direct et de vivre l'excitation du tournoi."
+    }
+  ],
+  "CDM": [
+    {
+      "nom": "Stade de France",
+      "adresse": "Stade de France, 93216 Saint-Denis, France",
+      "latitude": "48.9247",
+      "longitude": "2.3600",
+      "description": "Le Stade de France, célèbre dans le monde entier, est situé à proximité du Parc Georges Valbon. Après avoir assisté aux compétitions de Para Athlétisme, explorez ce stade emblématique qui a accueilli de nombreux événements sportifs majeurs, y compris la Coupe du Monde de la FIFA."
+    },
+    {
+      "nom": "Basilique de Saint-Denis",
+      "adresse": "1 Rue de la Légion d'Honneur, 93200 Saint-Denis, France",
+      "latitude": "48.9367",
+      "longitude": "2.3582",
+      "description": "La Basilique de Saint-Denis, chef-d'œuvre de l'art gothique, est un lieu historique majeur situé à proximité du Parc Georges Valbon. Après les compétitions de Para Athlétisme, visitez cette basilique qui abrite les tombeaux des rois de France et découvrez son architecture fascinante."
+    }
+  ],
+  "CPL": [
+    {
+      "nom": "Parc des Buttes-Chaumont",
+      "adresse": "1 Rue Botzaris, 75019 Paris, France",
+      "latitude": "48.8799",
+      "longitude": "2.3815",
+      "description": "Le Parc des Buttes-Chaumont, avec ses paysages pittoresques et ses vastes espaces verts, offre un cadre paisible pour profiter des compétitions à l'Arena Porte de la Chapelle. Après les épreuves, promenez-vous dans ce parc et profitez de sa beauté naturelle."
+    },
+    {
+      "nom": "Marché Saint-Quentin",
+      "adresse": "85bis Boulevard de Magenta, 75010 Paris, France",
+      "latitude": "48.8784",
+      "longitude": "2.3567",
+      "description": "Le Marché Saint-Quentin est un marché couvert animé où vous pourrez déguster des produits frais et locaux. Après avoir assisté aux compétitions, rendez-vous au marché pour une expérience culinaire authentique et savoureuse."
+    },
+    {
+      "nom": "Parc de la Villette",
+      "adresse": "211 Avenue Jean Jaurès, 75019 Paris, France",
+      "latitude": "48.8956",
+      "longitude": "2.3863",
+      "description": "Le Parc de la Villette, avec ses installations culturelles et ses espaces verts, est un lieu idéal pour se détendre après les compétitions. Explorez ce parc et découvrez ses nombreuses attractions, dont la Cité des Sciences et de l'Industrie et la Grande Halle."
+    }
+  ],
+  "CSB": [
+    {
+      "nom": "Stade de France",
+      "adresse": "Stade de France, 93216 Saint-Denis, France",
+      "latitude": "48.9247",
+      "longitude": "2.3600",
+      "description": "Le Stade de France, célèbre dans le monde entier, est situé à proximité du Parc Georges Valbon. Après avoir assisté aux compétitions de Para Athlétisme, explorez ce stade emblématique qui a accueilli de nombreux événements sportifs majeurs, y compris la Coupe du Monde de la FIFA."
+    },
+    {
+      "nom": "Basilique de Saint-Denis",
+      "adresse": "1 Rue de la Légion d'Honneur, 93200 Saint-Denis, France",
+      "latitude": "48.9367",
+      "longitude": "2.3582",
+      "description": "La Basilique de Saint-Denis, chef-d'œuvre de l'art gothique, est un lieu historique majeur situé à proximité du Parc Georges Valbon. Après les compétitions de Para Athlétisme, visitez cette basilique qui abrite les tombeaux des rois de France et découvrez son architecture fascinante."
+    }
+  ],
+  "CTX": [
+    {
+      "nom": "Hôtel de Ville de Châteauroux",
+      "adresse": "Place de la République, 36000 Châteauroux, France",
+      "latitude": "46.8133",
+      "longitude": "1.6916",
+      "description": "L'Hôtel de Ville de Châteauroux, situé à proximité du Centre national de tir, est un bâtiment emblématique de la ville. Après les compétitions de Tir, explorez cet édifice historique et découvrez son architecture remarquable."
+    },
+    {
+      "nom": "Parc Balsan",
+      "adresse": "Rue du Parc, 36000 Châteauroux, France",
+      "latitude": "46.8151",
+      "longitude": "1.7008",
+      "description": "Le Parc Balsan est un magnifique parc verdoyant où vous pourrez vous détendre après les épreuves de Tir. Profitez de la nature et des paysages paisibles de ce parc pour vous ressourcer et vous promener."
+    },
+    {
+      "nom": "Musée Bertrand",
+      "adresse": "2 Rue des Pavillons, 36000 Châteauroux, France",
+      "latitude": "46.8147",
+      "longitude": "1.6943",
+      "description": "Le Musée Bertrand est un musée d'art et d'histoire qui abrite des collections variées. Après les compétitions de Tir, visitez ce musée pour découvrir l'histoire et la culture de la région de Châteauroux."
+    }
+  ],
+  "DEF": [
+    {
+      "nom": "La Grande Arche de la Défense",
+      "adresse": "1 Parvis de la Défense, 92044 Paris La Défense, France",
+      "latitude": "48.8902",
+      "longitude": "2.2355",
+      "description": "La Grande Arche de la Défense, monument emblématique de Paris, offre une vue panoramique sur la ville. Après les compétitions de Natation et de Water-polo à Paris La Défense Arena, montez au sommet de cette structure architecturale impressionnante pour profiter d'une vue spectaculaire sur Paris."
+    },
+    {
+      "nom": "Esplanade de La Défense",
+      "adresse": "92044 Paris La Défense, France",
+      "latitude": "48.8897",
+      "longitude": "2.2353",
+      "description": "L'Esplanade de La Défense est un vaste espace public où vous pourrez vous détendre après les épreuves de Para Natation. Profitez de ce lieu pour vous promener et vous imprégner de l'ambiance unique de ce quartier d'affaires moderne."
+    },
+    {
+      "nom": "Centre Commercial Les Quatre Temps",
+      "adresse": "15 Parvis de la Défense, 92800 Puteaux, France",
+      "latitude": "48.8905",
+      "longitude": "2.2377",
+      "description": "Le Centre Commercial Les Quatre Temps offre une alternative pour regarder les compétitions des Jeux sur écrans géants tout en bénéficiant du confort et des services du centre commercial."
+    }
+  ],
+  "EIF": [
+    {
+      "nom": "Champ de Mars",
+      "adresse": "Champ de Mars, 75007 Paris, France",
+      "latitude": "48.8567",
+      "longitude": "2.2980",
+      "description": "Le Champ de Mars, situé en face de la Tour Eiffel, sera un lieu idéal pour regarder les compétitions de Volley-ball de plage en direct. Des écrans géants seront installés pour permettre aux spectateurs de suivre les matchs tout en profitant de l'ambiance unique de ce site emblématique de Paris."
+    },
+    {
+      "nom": "Quai Branly",
+      "adresse": "Quai Branly, 75007 Paris, France",
+      "latitude": "48.8612",
+      "longitude": "2.2958",
+      "description": "Le Quai Branly offre une vue panoramique sur la Tour Eiffel et sera un endroit pittoresque pour regarder les compétitions de Cécifoot. Profitez de cette vue emblématique de Paris tout en soutenant les athlètes paralympiques lors de cet événement unique."
+    }
+  ],
+  "ELA": [
+    {
+      "nom": "Espace VTT de la Colline d'Elancourt",
+      "adresse": "Colline d'Elancourt, 78990 Élancourt, France",
+      "latitude": "48.78982",
+      "longitude": "1.96427",
+      "description": "L'Espace VTT de la Colline d'Elancourt offre des points de vue spectaculaires sur les parcours de cyclisme de montagne. Rejoignez les fans de cyclisme et vivez l'excitation des courses en direct depuis cet endroit stratégique."
+    },
+    {
+      "nom": "Belvédère de la Colline d'Elancourt",
+      "adresse": "Colline d'Elancourt, 78990 Élancourt, France",
+      "latitude": "48.78981063",
+      "longitude": "1.9642379",
+      "description": "Le Belvédère de la Colline d'Elancourt offre une vue panoramique sur les pistes de VTT et sera un endroit idéal pour observer les compétitions de cyclisme de montagne. Profitez de cette vue imprenable tout en soutenant les coureurs lors de cet événement olympique unique."
+    }
+  ],
+  "GRP": [
+    {
+      "nom": "Salle d'Armes du Grand Palais",
+      "adresse": "Avenue Winston Churchill, 75008 Paris, France",
+      "latitude": "48.8664",
+      "longitude": "2.31257",
+      "description": "La Salle d'Armes du Grand Palais sera le lieu principal des compétitions d'escrime et de taekwondo. Venez vivre l'intensité de ces sports olympiques dans ce cadre emblématique où les meilleurs athlètes du monde s'affronteront pour la gloire."
+    },
+    {
+      "nom": "Zone VIP du Grand Palais",
+      "adresse": "Avenue Winston Churchill, 75008 Paris, France",
+      "latitude": "48.861",
+      "longitude": "2.311",
+      "description": "La Zone VIP du Grand Palais offre une expérience exclusive pour assister aux compétitions d'escrime fauteuil et de para taekwondo. Profitez du confort et des services premium tout en soutenant les athlètes paralympiques lors de ces événements uniques."
+    },
+    {
+      "nom": "Terrasse du Grand Palais",
+      "adresse": "Avenue Winston Churchill, 75008 Paris, France",
+      "latitude": "48.8665",
+      "longitude": "2.317",
+      "description": "La Terrasse du Grand Palais offre une vue panoramique sur les compétitions se déroulant à l'intérieur. Profitez de cette vue spectaculaire tout en regardant les épreuves d'escrime et de taekwondo depuis cet emplacement privilégié."
+    }
+  ],
+  "HDV": [
+    {
+      "nom": "Place de l'Hôtel de Ville",
+      "adresse": "Place de l'Hôtel de Ville, 75004 Paris, France",
+      "latitude": "48.8563881",
+      "longitude": "2.35222203",
+      "description": "La Place de l'Hôtel de Ville sera un point de rassemblement animé pour assister aux compétitions d'athlétisme marathon. Rejoignez les spectateurs enthousiastes et soutenez les coureurs alors qu'ils parcourent les rues de Paris lors de cette épreuve intense."
+    },
+    {
+      "nom": "Parc Rives de Seine",
+      "adresse": "Parc Rives de Seine, 75004 Paris, France",
+      "latitude": "48.85639",
+      "longitude": "2.35228",
+      "description": "Le Parc Rives de Seine offre un cadre verdoyant et tranquille pour regarder le marathon. Profitez de l'atmosphère détendue de ce parc le long de la Seine tout en encourageant les coureurs lors de leur passage dans cette magnifique partie de Paris."
+    }
+  ],
+  "INV": [
+    {
+      "nom": "Esplanade des Invalides",
+      "adresse": "Esplanade des Invalides, 75007 Paris, France",
+      "latitude": "48.857013",
+      "longitude": "2.312837",
+      "description": "L'Esplanade des Invalides sera le point central des compétitions d'athlétisme marathon, de cyclisme sur route contre-la-montre individuel et de tir à l'arc. Venez vous joindre à l'excitation des Jeux Olympiques et soutenez les athlètes alors qu'ils se surpassent dans ces épreuves captivantes."
+    },
+    {
+      "nom": "Musée de l'Armée - Cour d'Honneur",
+      "adresse": "Musée de l'Armée, 129 Rue de Grenelle, 75007 Paris, France",
+      "latitude": "48.85701",
+      "longitude": "2.312835932",
+      "description": "La Cour d'Honneur du Musée de l'Armée offre un cadre historique et majestueux pour regarder les compétitions de Para Tir à l'arc et de Para-athlétisme marathon paralympique. Venez admirer les performances des athlètes paralympiques alors qu'ils repoussent leurs limites pour la médaille d'or."
+    },
+    {
+      "nom": "Pont Alexandre III",
+      "adresse": "Pont Alexandre III, 75008 Paris, France",
+      "latitude": "48.857041",
+      "longitude": "2.312835932",
+      "description": "Le Pont Alexandre III offre une vue panoramique sur la Seine et sera un lieu pittoresque pour assister aux compétitions olympiques et paralympiques à Invalides. Profitez de l'ambiance unique de ce pont emblématique de Paris tout en encourageant les athlètes lors de ces événements exceptionnels."
+    }
+  ],
+  "LBO": [
+    {
+      "nom": "Tribune principale du Site d'escalade",
+      "adresse": "Site d'escalade du Bourget, 93350 Le Bourget, France",
+      "latitude": "48.93693402",
+      "longitude": "2.41997931",
+      "description": "La tribune principale du Site d'escalade offre une vue imprenable sur les grimpeurs en action. Rejoignez les spectateurs passionnés et vivez l'excitation de l'escalade lors de cet événement olympique."
+    },
+    {
+      "nom": "Zone de repos et de restauration",
+      "adresse": "Site d'escalade du Bourget, 93350 Le Bourget, France",
+      "latitude": "48.93693402",
+      "longitude": "2.41997931",
+      "description": "La zone de repos et de restauration est l'endroit idéal pour se détendre entre les épreuves. Profitez d'une ambiance conviviale et d'une variété de plats tout en suivant les compétitions d'escalade."
+    }
+  ],
+  "LC1": [
+    {
+      "nom": "Tribune principale de La Concorde 1",
+      "adresse": "La Concorde 1, 75008 Paris, France",
+      "latitude": "48.866293",
+      "longitude": "2.319581",
+      "description": "La tribune principale de La Concorde 1 offre une vue panoramique sur les terrains de basketball 3x3 et les compétitions de breaking. Rejoignez les fans enthousiastes et vivez l'excitation de ces sports urbains lors de cet événement olympique."
+    },
+    {
+      "nom": "Espace de restauration et de détente de La Concorde 1",
+      "adresse": "La Concorde 1, 75008 Paris, France",
+      "latitude": "48.866292",
+      "longitude": "2.319580",
+      "description": "L'espace de restauration et de détente de La Concorde 1 est l'endroit idéal pour se détendre entre les matchs. Profitez d'une variété de collations et de boissons tout en suivant les compétitions de basketball 3x3 et de breaking à La Concorde 1."
+    }
+  ],
+  "LC2": [
+    {
+      "nom": "Zone principale de spectateurs de La Concorde 2",
+      "adresse": "La Concorde 2, 75008 Paris, France",
+      "latitude": "48.865085",
+      "longitude": "2.321447",
+      "description": "La zone principale de spectateurs de La Concorde 2 offre une vue privilégiée sur les performances de BMX freestyle. Venez admirer les acrobaties et les figures impressionnantes des cyclistes lors de cet événement olympique."
+    },
+    {
+      "nom": "Espace de détente et de restauration de La Concorde 2",
+      "adresse": "La Concorde 2, 75008 Paris, France",
+      "latitude": "48.864751",
+      "longitude": "2.320903",
+      "description": "L'espace de détente et de restauration de La Concorde 2 est l'endroit idéal pour se détendre et se restaurer entre les sessions de BMX freestyle. Profitez d'une ambiance décontractée tout en regardant les performances des athlètes à La Concorde 2."
+    }
+  ],
+  "LC3": [
+    {
+      "nom": "Tribune principale de La Concorde 3",
+      "adresse": "La Concorde 3, 75008 Paris, France",
+      "latitude": "48.86486788",
+      "longitude": "2.32139191",
+      "description": "La tribune principale de La Concorde 3 offre une vue spectaculaire sur les compétitions de Skateboard - Street. Venez encourager les skateboarders alors qu'ils exécutent leurs figures et leurs tricks lors de cet événement olympique."
+    },
+    {
+      "nom": "Espace de détente et de restauration de La Concorde 3",
+      "adresse": "La Concorde 3, 75008 Paris, France",
+      "latitude": "48.8664256",
+      "longitude": "2.3203041",
+      "description": "L'espace de détente et de restauration de La Concorde 3 est l'endroit idéal pour se relaxer entre les sessions de Skateboard - Street. Profitez d'une ambiance décontractée et savourez une variété de collations tout en regardant les compétitions à La Concorde 3."
+    }
+  ],
+  "LC4": [
+    {
+      "nom": "Zone de spectateurs principale de La Concorde 4",
+      "adresse": "La Concorde 4, 75008 Paris, France",
+      "latitude": "48.86573765",
+      "longitude": "2.3220383",
+      "description": "La zone de spectateurs principale de La Concorde 4 offre une vue imprenable sur les compétitions de skateboard - park. Venez admirer les figures impressionnantes des skateurs et ressentez l'énergie de cet événement olympique."
+    },
+    {
+      "nom": "Espace de restauration et de détente de La Concorde 4",
+      "adresse": "La Concorde 4, 75008 Paris, France",
+      "latitude": "48.866112",
+      "longitude": "2.322227",
+      "description": "L'espace de restauration et de détente de La Concorde 4 est l'endroit idéal pour se détendre entre les sessions de skateboard - park. Profitez d'une variété de boissons et de collations tout en regardant les performances des skateurs à La Concorde 4."
+    }
+  ],
+
+  "LGN": [
+    {
+      "nom": "Zone de spectateurs principale du Golf National",
+      "adresse": "Golf National, 2 Avenue du Golf, 78280 Guyancourt, France",
+      "latitude": "48.7532",
+      "longitude": "2.0758",
+      "description": "La zone de spectateurs principale offre une vue imprenable sur les compétitions de golf. Venez admirer les performances des golfeurs dans ce cadre exceptionnel."
+    },
+    {
+      "nom": "Espace de restauration et de détente du Golf National",
+      "adresse": "Golf National, 2 Avenue du Golf, 78280 Guyancourt, France",
+      "latitude": "48.7550",
+      "longitude": "2.0785",
+      "description": "L'espace de restauration et de détente est l'endroit idéal pour se détendre entre les matchs. Profitez d'une variété de boissons et de collations tout en suivant les compétitions de golf."
+    }
+  ],
+  "LIL": [
+    {
+      "nom": "Tribune Nord du Stade Pierre Mauroy",
+      "adresse": "Stade Pierre Mauroy, 261 Boulevard de Tournai, 59650 Villeneuve-d'Ascq, France",
+      "latitude": "50.6118",
+      "longitude": "3.1302",
+      "description": "La Tribune Nord offre une vue panoramique sur les compétitions de basketball et de handball au Stade Pierre Mauroy. Venez soutenir votre équipe préférée depuis cette tribune animée."
+    },
+    {
+      "nom": "Tribune Sud du Stade Pierre Mauroy",
+      "adresse": "Stade Pierre Mauroy, 261 Boulevard de Tournai, 59650 Villeneuve-d'Ascq, France",
+      "latitude": "50.6119",
+      "longitude": "3.1306",
+      "description": "La Tribune Sud du Stade Pierre Mauroy est l'endroit idéal pour profiter des compétitions de basketball et de handball dans une ambiance dynamique. Venez vivre l'excitation des Jeux depuis cette tribune!"
+    }
+  ],
+
+  "LYO": [
+    {
+      "nom": "Tribune Est du Stade de Lyon",
+      "adresse": "Stade de Lyon, 10 Avenue Simone Veil, 69150 Décines-Charpieu, France",
+      "latitude": "45.7662",
+      "longitude": "4.9808",
+      "description": "La Tribune Est offre une vue imprenable sur le terrain de football au Stade de Lyon. Rejoignez les supporters passionnés et vivez l'ambiance électrique des matchs depuis cette tribune animée."
+    },
+    {
+      "nom": "Zone de restauration et de détente",
+      "adresse": "Stade de Lyon, 10 Avenue Simone Veil, 69150 Décines-Charpieu, France",
+      "latitude": "45.7643",
+      "longitude": "4.9809",
+      "description": "Profitez d'une pause bien méritée dans la zone de restauration et de détente du Stade de Lyon. Dégustez une variété de plats et de boissons tout en regardant les matchs de football."
+    },
+    {
+      "nom": "Zone d'animation pour enfants",
+      "adresse": "Stade de Lyon, 10 Avenue Simone Veil, 69150 Décines-Charpieu, France",
+      "latitude": "45.766836",
+      "longitude": "4.980392",
+      "description": "Emmenez vos enfants dans la zone d'animation dédiée pour une expérience ludique et divertissante pendant les matchs de football au Stade de Lyon. Des activités passionnantes les attendent!"
+    }
+  ],
+  "MAM": [
+    {
+      "nom": "Club de Voile de la Marina",
+      "adresse": "Marina de Marseille, Quai de la Fraternité, 13002 Marseille, France",
+      "latitude": "43.2663",
+      "longitude": "5.3677",
+      "description": "Rejoignez le Club de Voile de la Marina pour une vue privilégiée sur les compétitions de voile. Profitez de l'ambiance maritime et soutenez vos équipes favorites depuis ce spot idéal."
+    },
+    {
+      "nom": "Espace de restauration en bord de mer",
+      "adresse": "Marina de Marseille, Quai de la Fraternité, 13002 Marseille, France",
+      "latitude": "43.2660",
+      "longitude": "5.3675",
+      "description": "Détendez-vous et profitez de délicieux plats et boissons dans l'espace de restauration en bord de mer de la Marina de Marseille. Savourez des mets raffinés tout en admirant les compétitions de voile."
+    }
+  ],
+  "MRS": [
+    {
+      "nom": "Tribune Nord du Stade de Marseille",
+      "adresse": "Stade de Marseille, 3 Boulevard Michelet, 13008 Marseille, France",
+      "latitude": "43.2710",
+      "longitude": "5.3957",
+      "description": "Prenez place dans la Tribune Nord pour une vue imprenable sur le terrain de football. Rejoignez les supporters passionnés et vivez l'excitation des matchs au Stade de Marseille depuis cette tribune animée."
+    },
+    {
+      "nom": "Zone de restauration et de détente",
+      "adresse": "Stade de Marseille, 3 Boulevard Michelet, 13008 Marseille, France",
+      "latitude": "43.2695",
+      "longitude": "5.3949",
+      "description": "Profitez d'une pause bien méritée dans la zone de restauration et de détente du Stade de Marseille. Dégustez une variété de plats et de boissons tout en regardant les matchs de football."
+    }
+  ],
+  "NAN": [
+    {
+      "nom": "Tribune Principale du Stade de la Beaujoire",
+      "adresse": "Stade de la Beaujoire, Route de Saint-Joseph de Porterie, 44300 Nantes, France",
+      "latitude": "47.2563",
+      "longitude": "-1.5252",
+      "description": "Prenez place dans la Tribune Principale pour une vue privilégiée sur le terrain de football. Rejoignez les supporters passionnés et vivez l'excitation des matchs au Stade de la Beaujoire depuis cette tribune animée."
+    },
+    {
+      "nom": "Zone de restauration et de détente",
+      "adresse": "Stade de la Beaujoire, Route de Saint-Joseph de Porterie, 44300 Nantes, France",
+      "latitude": "47.2558",
+      "longitude": "-1.5238",
+      "description": "Profitez d'une pause bien méritée dans la zone de restauration et de détente du Stade de la Beaujoire. Dégustez une variété de plats et de boissons tout en regardant les matchs de football."
+    }
+  ],
+  "NIC": [
+    {
+      "nom": "Tribune Principale du Stade de Nice",
+      "adresse": "Stade de Nice, Boulevard des Jardiniers, 06200 Nice, France",
+      "latitude": "43.7055",
+      "longitude": "7.1919",
+      "description": "Prenez place dans la Tribune Principale pour une vue privilégiée sur le terrain de football. Rejoignez les supporters passionnés et vivez l'excitation des matchs au Stade de Nice depuis cette tribune animée."
+    },
+    {
+      "nom": "Zone de restauration et de détente",
+      "adresse": "Stade de Nice, Boulevard des Jardiniers, 06200 Nice, France",
+      "latitude": "43.7049",
+      "longitude": "7.1916",
+      "description": "Profitez d'une pause bien méritée dans la zone de restauration et de détente du Stade de Nice. Dégustez une variété de plats et de boissons tout en regardant les matchs de football."
+    }
+  ],
+  "NPA": [
+    {
+      "nom": "Tribune Principale de l'Arena Paris Nord",
+      "adresse": "Arena Paris Nord, 8 Rue Gaston Tessier, 75019 Paris, France",
+      "latitude": "48.9725",
+      "longitude": "2.5146",
+      "description": "Prenez place dans la Tribune Principale pour une vue imprenable sur les compétitions de volleyball assis, de boxe et de pentathlon moderne. Rejoignez les fans enthousiastes et vivez l'excitation de ces sports paralympiques et olympiques depuis cette tribune animée."
+    },
+    {
+      "nom": "Zone de restauration et de détente",
+      "adresse": "Arena Paris Nord, 8 Rue Gaston Tessier, 75019 Paris, France",
+      "latitude": "48.9722",
+      "longitude": "2.5143",
+      "description": "Faites une pause dans la zone de restauration et de détente de l'Arena Paris Nord. Profitez d'une variété de collations et de boissons tout en suivant les compétitions de volleyball assis, de boxe et de pentathlon moderne."
+    },
+    {
+      "nom": "Espace de rencontre et d'échange",
+      "adresse": "Arena Paris Nord, 8 Rue Gaston Tessier, 75019 Paris, France",
+      "latitude": "48.9728",
+      "longitude": "2.5152",
+      "description": "Rencontrez d'autres passionnés de sport dans l'espace de rencontre et d'échange de l'Arena Paris Nord. Discutez des performances des athlètes et partagez votre enthousiasme pour les jeux paralympiques et olympiques."
+    }
+  ],
+  "PDP": [
+    {
+      "nom": "Tribune Principale du Parc des Princes",
+      "adresse": "Parc des Princes, 24 Rue du Commandant Guilbaud, 75016 Paris, France",
+      "latitude": "48.8413",
+      "longitude": "2.2533",
+      "description": "Prenez place dans la Tribune Principale pour une vue privilégiée sur le terrain de football. Rejoignez les supporters passionnés et vivez l'excitation des matchs au Parc des Princes depuis cette tribune animée."
+    },
+    {
+      "nom": "Zone de restauration et de détente",
+      "adresse": "Parc des Princes, 24 Rue du Commandant Guilbaud, 75016 Paris, France",
+      "latitude": "48.8418",
+      "longitude": "2.2537",
+      "description": "Profitez d'une pause bien méritée dans la zone de restauration et de détente du Parc des Princes. Dégustez une variété de plats et de boissons tout en regardant les matchs de football."
+    }
+  ],
+
+  "RGA": [
+    {
+      "nom": "Tribune Principale de Roland Garros",
+      "adresse": "Stade Roland Garros, 2 Avenue Gordon Bennett, 75016 Paris, France",
+      "latitude": "48.8461",
+      "longitude": "2.2535",
+      "description": "Prenez place dans la Tribune Principale pour une vue imprenable sur les matchs de tennis et de boxe au Stade Roland Garros. Vivez l'intensité des compétitions depuis cet emplacement privilégié."
+    },
+    {
+      "nom": "Zone de restauration et de détente",
+      "adresse": "Stade Roland Garros, 2 Avenue Gordon Bennett, 75016 Paris, France",
+      "latitude": "48.8455",
+      "longitude": "2.2530",
+      "description": "Faites une pause et détendez-vous dans la zone de restauration et de détente du Stade Roland Garros. Profitez d'une variété de collations et de boissons tout en suivant les matchs."
+    }
+  ],
+  "SP1": [
+    {
+      "nom": "Tribune principale de l'Arena Paris Sud 1 pour le volleyball",
+      "adresse": "Arena Paris Sud 1, 75000 Paris, France",
+      "latitude": "48.832968",
+      "longitude": "2.2840069",
+      "description": "La tribune principale de l'Arena Paris Sud 1 offre une vue panoramique sur les matchs de volleyball. Venez soutenir votre équipe préférée et ressentez l'ambiance électrique de cet événement olympique."
+    },
+    {
+      "nom": "Espace de restauration et de détente de l'Arena Paris Sud 1 pour le volleyball",
+      "adresse": "Arena Paris Sud 1, 75000 Paris, France",
+      "latitude": "48.83298",
+      "longitude": "2.284009",
+      "description": "Profitez d'une pause détente dans l'espace de restauration et de détente de l'Arena Paris Sud 1. Dégustez une variété de collations et de boissons tout en suivant les matchs de volleyball."
+    }
+  ],
+
+  "SP4": [
+    {
+      "nom": "Zone spectateurs principale de l'Arena Paris Sud 4 pour le tennis de table",
+      "adresse": "Arena Paris Sud 4, 75000 Paris, France",
+      "latitude": "48.830184",
+      "longitude": "2.289033",
+      "description": "La zone spectateurs principale de l'Arena Paris Sud 4 offre une vue optimale sur les matchs de tennis de table. Venez soutenir vos joueurs préférés et vivez l'atmosphère passionnante de cet événement olympique."
+    },
+    {
+      "nom": "Espace de restauration et de détente de l'Arena Paris Sud 4 pour le tennis de table",
+      "adresse": "Arena Paris Sud 4, 75000 Paris, France",
+      "latitude": "48.8302",
+      "longitude": "2.2889",
+      "description": "Profitez d'une pause gourmande dans l'espace de restauration et de détente de l'Arena Paris Sud 4. Dégustez des collations délicieuses tout en suivant les matchs de tennis de table."
+    }
+  ],
+  "SP6": [
+    {
+      "nom": "Zone spectateurs principale de l'Arena Paris Sud 6 pour le handball",
+      "adresse": "Arena Paris Sud 6, 75000 Paris, France",
+      "latitude": "48.829381",
+      "longitude": "2.290865",
+      "description": "La zone spectateurs principale de l'Arena Paris Sud 6 offre une vue optimale sur les matchs de handball. Venez soutenir vos équipes favorites et ressentez l'ambiance électrique de cet événement olympique."
+    },
+    {
+      "nom": "Espace de restauration et de détente de l'Arena Paris Sud 6 pour le handball",
+      "adresse": "Arena Paris Sud 6, 75000 Paris, France",
+      "latitude": "48.8294",
+      "longitude": "2.2909",
+      "description": "Profitez d'une pause gourmande dans l'espace de restauration et de détente de l'Arena Paris Sud 6. Dégustez des collations délicieuses tout en suivant les matchs de handball."
+    }
+  ],
+  "STA": [
+    {
+      "nom": "Tribune principale du Stade de France pour l'athlétisme",
+      "adresse": "Stade de France, 93216 Saint-Denis, France",
+      "latitude": "48.924475",
+      "longitude": "2.360127",
+      "description": "La tribune principale du Stade de France offre une vue panoramique sur les compétitions d'athlétisme. Venez soutenir vos athlètes préférés et ressentez l'ambiance électrique de cet événement olympique."
+    },
+    {
+      "nom": "Espace de restauration et de détente du Stade de France pour l'athlétisme",
+      "adresse": "Stade de France, 93216 Saint-Denis, France",
+      "latitude": "48.9247",
+      "longitude": "2.3602",
+      "description": "Profitez d'une pause gourmande dans l'espace de restauration et de détente du Stade de France. Dégustez des collations délicieuses tout en suivant les compétitions d'athlétisme."
+    }
+  ],
+  "STE": [
+    {
+      "nom": "Zone des supporters principale",
+      "adresse": "Stade Geoffroy-Guichard, 42000 Saint-Étienne, France",
+      "latitude": "45.4607",
+      "longitude": "4.3902",
+      "description": "Rejoignez la zone des supporters principale pour vivre l'excitation du football au Stade Geoffroy-Guichard. Encouragez votre équipe favorite parmi une foule passionnée et partagez des moments inoubliables avec d'autres fans."
+    },
+    {
+      "nom": "Espace de restauration et de détente",
+      "adresse": "Stade Geoffroy-Guichard, 42000 Saint-Étienne, France",
+      "latitude": "45.4608",
+      "longitude": "4.3903",
+      "description": "Détendez-vous et profitez d'une pause gourmande dans l'espace de restauration du Stade Geoffroy-Guichard. Dégustez une variété de plats et de boissons tout en discutant des matchs avec d'autres supporters."
+    }
+  ],
+  "TAH": [
+    {
+      "nom": "Zone de visionnage principale",
+      "adresse": "Tahiti Teahupo'o, Tahiti, French Polynesia",
+      "latitude": "-17.86693",
+      "longitude": "-149.25208",
+      "description": "Rejoignez la zone de visionnage principale à Tahiti Teahupo'o pour assister aux compétitions de surf. Profitez d'une vue imprenable sur les vagues et admirez les performances des surfeurs professionnels lors de cet événement olympique."
+    },
+    {
+      "nom": "Espace de détente sur la plage",
+      "adresse": "Tahiti Teahupo'o, Tahiti, French Polynesia",
+      "latitude": "-17.86692",
+      "longitude": "-149.25209",
+      "description": "Détendez-vous sur la plage et profitez de l'ambiance détendue de Tahiti Teahupo'o entre les sessions de surf. Rafraîchissez-vous dans l'eau cristalline et savourez des moments de calme et de beauté naturelle."
+    }
+  ],
+  "TRO": [
+    {
+      "nom": "Zone de visionnage principale - Athlétisme marche",
+      "adresse": "Trocadéro, 75016 Paris, France",
+      "latitude": "48.85972558",
+      "longitude": "2.29221884",
+      "description": "Soyez au cœur de l'action en rejoignant la zone de visionnage principale pour l'athlétisme marche. Profitez d'une vue panoramique sur le parcours et encouragez les athlètes alors qu'ils se lancent dans cette épreuve exigeante."
+    },
+    {
+      "nom": "Zone de supporters - Cyclisme sur route",
+      "adresse": "Trocadéro, 75016 Paris, France",
+      "latitude": "48.859730",
+      "longitude": "2.292220",
+      "description": "Joignez-vous à la foule énergique dans la zone de supporters pour le cyclisme sur route. Vivez l'excitation de la course alors que les coureurs passent devant vous et ressentez la passion de cet événement olympique."
+    },
+    {
+      "nom": "Espace de détente et de restauration",
+      "adresse": "Trocadéro, 75016 Paris, France",
+      "latitude": "48.859735",
+      "longitude": "2.292225",
+      "description": "Prenez une pause bien méritée dans l'espace de détente et de restauration du Trocadéro. Dégustez des collations délicieuses tout en profitant de l'atmosphère animée de cet événement sportif unique."
+    }
+  ],
+  "VE1": [
+    {
+      "nom": "Tribune principale - Para Cyclisme sur piste",
+      "adresse": "Vélodrome National de Saint-Quentin-en-Yvelines, 78180 Montigny-le-Bretonneux, France",
+      "latitude": "48.78800979",
+      "longitude": "2.03498269",
+      "description": "Assistez aux épreuves passionnantes de Para Cyclisme sur piste depuis la tribune principale. Encouragez les athlètes alors qu'ils donnent le meilleur d'eux-mêmes dans cette compétition paralympique captivante."
+    },
+    {
+      "nom": "Zone de supporters - Para Cyclisme sur piste",
+      "adresse": "Vélodrome National de Saint-Quentin-en-Yvelines, 78180 Montigny-le-Bretonneux, France",
+      "latitude": "48.788011",
+      "longitude": "2.034980",
+      "description": "Rejoignez la zone de supporters et vivez l'excitation du Para Cyclisme sur piste de plus près. Encouragez les cyclistes paralympiques tout en profitant de l'ambiance électrique de cet événement sportif."
+    }
+  ],
+  "VE2": [
+    {
+      "nom": "Zone de départ - BMX Racing",
+      "adresse": "Stade BMX de Saint-Quentin-en-Yvelines, 78180 Montigny-le-Bretonneux, France",
+      "latitude": "48.78800979",
+      "longitude": "2.03498269",
+      "description": "Assistez au départ des courses palpitantes de BMX Racing depuis la zone de départ. Vivez l'adrénaline des départs rapides et des compétitions passionnantes de cet événement olympique."
+    }
+  ],
+  "VER": [
+    {
+      "nom": "Stade équestre du Château de Versailles",
+      "adresse": "Château de Versailles, 78000 Versailles, France",
+      "latitude": "48.81432266",
+      "longitude": "2.08452588",
+      "description": "Assistez aux compétitions équestres de dressage, de concours complet et de saut d'obstacles dans le magnifique stade équestre du Château de Versailles. Vivez l'élégance et la puissance des chevaux lors de cet événement olympique."
+    },
+    {
+      "nom": "Zone de départ - Pentathlon Moderne",
+      "adresse": "Château de Versailles, 78000 Versailles, France",
+      "latitude": "48.81432275",
+      "longitude": "2.08452595",
+      "description": "Rejoignez la zone de départ du Pentathlon Moderne au Château de Versailles et assistez au départ des athlètes pour une compétition passionnante mêlant cinq disciplines. Vivez l'excitation de cet événement olympique."
+    }
+  ],
+  "VN1": [
+    {
+      "nom": "Piste d'aviron - Para Aviron",
+      "adresse": "Stade nautique de Vaires-sur-Marne, 77360 Vaires-sur-Marne, France",
+      "latitude": "48.8632",
+      "longitude": "2.6325",
+      "description": "Venez encourager les athlètes de Para Aviron sur la piste d'aviron au Stade nautique de Vaires-sur-Marne. Ressentez l'émotion de cette compétition paralympique alors que les rameurs s'affrontent pour la victoire."
+    },
+    {
+      "nom": "Circuit de canoë - Para Canoë",
+      "adresse": "Stade nautique de Vaires-sur-Marne, 77360 Vaires-sur-Marne, France",
+      "latitude": "48.8628",
+      "longitude": "2.6332",
+      "description": "Ne manquez pas l'action du Para Canoë sur le circuit de canoë au Stade nautique de Vaires-sur-Marne. Observez les athlètes naviguer avec habileté à travers les obstacles dans cette compétition paralympique captivante."
+    }
+  ],
+  "VN2": [
+    {
+      "nom": "Parcours de canoë-kayak - Canoë-kayak slalom",
+      "adresse": "Stade nautique de Vaires-sur-Marne - stade d'eau vive, 77360 Vaires-sur-Marne, France",
+      "latitude": "48.8632",
+      "longitude": "2.6325",
+      "description": "Vivez l'excitation du Canoë-kayak slalom sur le parcours de canoë-kayak au Stade nautique de Vaires-sur-Marne. Regardez les kayakistes naviguer habilement à travers les portes dans cette compétition olympique passionnante."
+    },
+    {
+      "nom": "Zone de spectateurs - Canoë-kayak slalom",
+      "adresse": "Stade nautique de Vaires-sur-Marne - stade d'eau vive, 77360 Vaires-sur-Marne, France",
+      "latitude": "48.8628",
+      "longitude": "2.6332",
+      "description": "Obtenez une vue imprenable sur l'action du Canoë-kayak slalom depuis la zone de spectateurs au Stade nautique de Vaires-sur-Marne. Encouragez les athlètes alors qu'ils affrontent les rapides dans cette discipline passionnante des sports nautiques olympiques."
+    }
+  ],
+  "YDM": [
+    {
+      "nom": "Terrain principal - Hockey",
+      "adresse": "Stade Yves-du-Manoir, 75000 Paris, France",
+      "latitude": "48.9295",
+      "longitude": "2.2476",
+      "description": "Assistez aux matchs passionnants de hockey sur le terrain principal du Stade Yves-du-Manoir. Vivez l'intensité de chaque action et soutenez votre équipe favorite dans cette discipline dynamique des Jeux Olympiques."
+    },
+    {
+      "nom": "Zone de spectateurs - Hockey",
+      "adresse": "Stade Yves-du-Manoir, 75000 Paris, France",
+      "latitude": "48.9291",
+      "longitude": "2.2480",
+      "description": "Profitez d'une vue imprenable sur les matchs de hockey depuis la zone de spectateurs au Stade Yves-du-Manoir. Encouragez les athlètes alors qu'ils rivalisent pour la médaille d'or dans cette compétition olympique palpitante."
+    }
+  ]
+}
