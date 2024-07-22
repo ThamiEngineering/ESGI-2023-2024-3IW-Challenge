@@ -6,6 +6,7 @@ import PageEventDetails from "./app/pages/PageEventDetails.js";
 import PageAbout from "./app/pages/PageAbout.js";
 import PageLogin from "./app/pages/PageLogin.js";
 import Page404 from "./app/pages/Page404.js";
+import PageSpotDetails from "./app/pages/PageSpotDetails.js";
 
 const root = document.getElementById("root");
 
@@ -13,6 +14,7 @@ const routes = {
     "/": PageHome,
     "/events": PageEvents,
     "/events/:id": PageEventDetails,
+    "/spots/:id" : PageSpotDetails,
     "/about": PageAbout,
     "/login": PageLogin,
     "*": Page404,

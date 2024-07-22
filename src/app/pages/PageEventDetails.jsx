@@ -6,13 +6,15 @@ import Title from "../components/Title.js";
 import Subtitle from "../components/Subtitle.js";
 import Footer from "../components/Footer.js";
 import storage from "../../lib/utils/storage.js";
+import ButtonSpots from "../components/ButtonSpots.jsx";
+import spotDetails from "../components/SpotDetails.jsx";
 
 export default class PageEventDetails extends Blink.Component {
   constructor(props) {
     super(props);
     this.state = {
       eventDetails: {},
-      spotsEvent: [],
+      spotsEvent: [{}, {}, {}],
     };
     this.map = null;
     this.mapInitialized = false;
@@ -66,8 +68,21 @@ export default class PageEventDetails extends Blink.Component {
 
     try {
       const response = await fetch("../../spots.json");
-      const spotsDetails = await response.json();
-      const spotsEvent = spotsDetails[eventDetails.code_site] || [];
+      const data = await response.json();
+
+      let idCounter = 1;
+        for (const category in data) {
+            if (data.hasOwnProperty(category)) {
+                data[category] = data[category].map(spot => ({
+                    ...spot,
+                    id: idCounter++,
+                }));
+            }
+        }
+        
+        console.log("spots", data);
+   
+      const spotsEvent = data[eventDetails.code_site] || [];
       this.setState({ eventDetails, spotsEvent });
     } catch (error) {
       console.error('Erreur lors du chargement des données:', error);
@@ -148,6 +163,7 @@ export default class PageEventDetails extends Blink.Component {
     console.log('spotsEvent', spotsEvent);
     return (
       <div>
+        <ButtonSpots title="test" spot={spotsEvent[0]} />
         <Navbar />
         <div class="my-12">
           <Title title="Carte des spots de l'événement" />
@@ -170,7 +186,7 @@ export default class PageEventDetails extends Blink.Component {
           <Subtitle title="Spots de l'événement" />
           <div class="flex mx-[88px] gap-10 grid grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1">
             {...Array.from({ length: spotsEvent.length }, (_, index) =>
-              createElement(CardEvents, { title: spotsEvent[index].nom })
+              createElement(CardEvents, { title: spotsEvent[index].nom }),
             )}
           </div>
         </div>

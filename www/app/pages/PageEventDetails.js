@@ -6,13 +6,15 @@ import Title from "../components/Title.js";
 import Subtitle from "../components/Subtitle.js";
 import Footer from "../components/Footer.js";
 import storage from "../../lib/utils/storage.js";
+import ButtonSpots from "../components/ButtonSpots.js";
+import spotDetails from "../components/SpotDetails.js";
 
 export default class PageEventDetails extends Blink.Component {
   constructor(props) {
     super(props);
     this.state = {
       eventDetails: {},
-      spotsEvent: [],
+      spotsEvent: [{}, {}, {}],
     };
     this.map = null;
     this.mapInitialized = false;
@@ -66,8 +68,21 @@ export default class PageEventDetails extends Blink.Component {
 
     try {
       const response = await fetch("../../spots.json");
-      const spotsDetails = await response.json();
-      const spotsEvent = spotsDetails[eventDetails.code_site] || [];
+      const data = await response.json();
+
+      let idCounter = 1;
+        for (const category in data) {
+            if (data.hasOwnProperty(category)) {
+                data[category] = data[category].map(spot => ({
+                    ...spot,
+                    id: idCounter++,
+                }));
+            }
+        }
+        
+        console.log("spots", data);
+   
+      const spotsEvent = data[eventDetails.code_site] || [];
       this.setState({ eventDetails, spotsEvent });
     } catch (error) {
       console.error('Erreur lors du chargement des données:', error);
@@ -147,7 +162,7 @@ export default class PageEventDetails extends Blink.Component {
     const { eventDetails, spotsEvent } = this.state;
     console.log('spotsEvent', spotsEvent);
     return (
-      Blink.createElement("div", {}, Blink.createElement(Navbar, {}),Blink.createElement("div", { "class":"my-12" }, Blink.createElement(Title, { "title":"Carte des spots de l'événement" }),Blink.createElement("div", { "class":"relative z-20 mx-[88px]" }, Blink.createElement("div", { "id":"map" , "class":"w-auto h-[508px]" }))),Blink.createElement("div", { "class":"my-12" }, Blink.createElement(Subtitle, { "title":"Événement" }),Blink.createElement("div", { "class":"min-[769px]:grid min-[769px]:grid-cols-2 space-x-10 mx-[88px]" }, Blink.createElement("img", { "src":"../assets/images/Background.svg" , "alt":"img" , "class":"h-full w-auto object-cover" }),Blink.createElement(EventDetailsWithoutButton, { "event":eventDetails}))),Blink.createElement("div", { "class":"my-12" }, Blink.createElement(Subtitle, { "title":"Spots de l'événement" }),Blink.createElement("div", { "class":"flex mx-[88px] gap-10 grid grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1" },             ...Array.from({ length: spotsEvent.length }, (_, index) =>              Blink.createElement(CardEvents, { title: spotsEvent[index].nom })            ))),Blink.createElement(Footer, {}))
+      Blink.createElement("div", {}, Blink.createElement(ButtonSpots, { "title":"test" , "spot":spotsEvent[0]}),Blink.createElement(Navbar, {}),Blink.createElement("div", { "class":"my-12" }, Blink.createElement(Title, { "title":"Carte des spots de l'événement" }),Blink.createElement("div", { "class":"relative z-20 mx-[88px]" }, Blink.createElement("div", { "id":"map" , "class":"w-auto h-[508px]" }))),Blink.createElement("div", { "class":"my-12" }, Blink.createElement(Subtitle, { "title":"Événement" }),Blink.createElement("div", { "class":"min-[769px]:grid min-[769px]:grid-cols-2 space-x-10 mx-[88px]" }, Blink.createElement("img", { "src":"../assets/images/Background.svg" , "alt":"img" , "class":"h-full w-auto object-cover" }),Blink.createElement(EventDetailsWithoutButton, { "event":eventDetails}))),Blink.createElement("div", { "class":"my-12" }, Blink.createElement(Subtitle, { "title":"Spots de l'événement" }),Blink.createElement("div", { "class":"flex mx-[88px] gap-10 grid grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1" },             ...Array.from({ length: spotsEvent.length }, (_, index) =>              Blink.createElement(CardEvents, { title: spotsEvent[index].nom }),            ))),Blink.createElement(Footer, {}))
     );
   }
 }
