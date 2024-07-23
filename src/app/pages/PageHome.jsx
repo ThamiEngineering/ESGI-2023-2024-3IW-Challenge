@@ -120,24 +120,24 @@ export default class HomePage extends Blink.Component {
     render() {
         const { visibleEvents } = this.state;
         return (
-            <div class="bg-white">
+            <div class="bg-white w-full">
                 <Navbar />
-                <div class="my-12">
+                <div class="mt-2">
                     <Title title="Jeux olympiques 2024" />
-                    <div class="relative z-20 mx-[88px]">
+                    <div class="relative z-20 md:mx-[88px] mx-5 mt-12">
                         <img src="../assets/images/Background.svg" alt="background" class="w-full h-auto" />
                     </div>
                 </div>
-                <div clas="my-12">
+                <div clas="">
                     <Subtitle title="Informations" />
-                    <div class=" min-[769px]:grid min-[769px]:grid-cols-2 space-x-10 mx-[88px]">
-                        <img src="../assets/images/Background.svg" alt="img" class="h-full w-auto object-cover mb-8 " />
+                    <div class="grid md:grid-cols-2 grid-cols-1 md:space-x-10 md:mx-[88px] mx-5">
+                        <img src="../assets/images/Background.svg" alt="img" class="h-full w-auto object-cover mb-8 -mt-5" />
                         <TextHome title="Retrouvez le meilleur des JO de Paris 2024" />
                     </div>
                 </div>
-                <div class="my-12">
+                <div class="mt-40">
                     <SubtitleWithButton title="Événements à venir" />
-                    <div class="flex mx-[88px] gap-10 grid grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1">
+                    <div class="flex md:mx-[88px] mx-5 gap-10 grid grid-cols-1 md:grid-cols-3">
                         {
                             ...Array.from(
                                 { length: 3 },
@@ -147,7 +147,7 @@ export default class HomePage extends Blink.Component {
                             )
                         }
                     </div>
-                    <div class="flex gap-2 mx-[88px] mt-4">
+                    <div class="flex gap-2 md:mx-[88px] mx-5 mt-4">
                         <button onClick={this.handlePrevEvents} class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
                             <i class="fa fa-chevron-left text-white"></i>
                         </button>
@@ -156,12 +156,12 @@ export default class HomePage extends Blink.Component {
                         </button>
                     </div>
                 </div>
-                <div class="min-[769px]:flex my-12">
+                <div class="grid grid-cols-1 2xl:grid-cols-2 flex justify-between mt-10">
                     <div>
                         <Subtitle title="Actualités" />
                     </div>
                     <div class="flex flex-col">
-                        <div class="grid grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1 flex-row gap-10 mr-[88px] ml-[200px] max-[768px]:mx-[88px]">
+                        <div class="grid grid-cols-1 md:grid-cols-3 flex-row gap-10 mx-5 md:mx-[88px]">
                             {
                                 ...Array.from(
                                     { length: 3 },

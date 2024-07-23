@@ -13,7 +13,7 @@ export default class EventDetailsWithoutButton extends Blink.Component {
                 <div class="relative z-10 flex w-full h-full">
                     <div class="bg-blue-800 w-0.5 h-[296px] mr-4"></div>
                     <div>
-                    <h1 class="font-headline text-[64px] leading-[70px] text-black max-[1024px]:text-[42px] max-[1024px]:leading-10 max-[768px]:text-[36px] max-[768px]:pt-7 max-[768px]:leading-9 max-[426px]:text-[22px] mb-4">{this.props.event.sports ?? "Loading.."}</h1>
+                    <h1 class="font-headline md:text-[64px] text-[40px] text-black">{this.props.event.sports ?? "Loading.."}</h1>
                         <div class="mb-4">
                             <p class="text-xl bold">SITE</p>
                             <p>{`${this.props.event.nom_site} (${this.props.event.code_site})` ?? "Loading.."}</p>

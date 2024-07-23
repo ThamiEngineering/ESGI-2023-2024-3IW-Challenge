@@ -150,14 +150,16 @@ export default class PageEventDetails extends Blink.Component {
       <div>
         <Navbar />
         <div class="my-12">
-          <Title title="Carte des spots de l'événement" />
-          <div class="relative z-20 mx-[88px]">
-            <div id="map" class="w-auto h-[508px]"></div>
+          <div class="-mt-16">
+            <Title title="Carte des spots de l'événement" />
+            <div class="relative z-20 md:mx-[88px] mx-5">
+              <div id="map" class="w-auto h-[508px]"></div>
+            </div>
           </div>
         </div>
         <div class="my-12">
           <Subtitle title="Événement" />
-          <div class="min-[769px]:grid min-[769px]:grid-cols-2 space-x-10 mx-[88px]">
+          <div class="grid md:grid-cols-2 grid-cols-1 md:mx-[88px] mx-5 gap-8">
             <img
               src="../assets/images/Background.svg"
               alt="img"
@@ -168,7 +170,7 @@ export default class PageEventDetails extends Blink.Component {
         </div>
         <div class="my-12">
           <Subtitle title="Spots de l'événement" />
-          <div class="flex mx-[88px] gap-10 grid grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1">
+          <div class="flex md:mx-[88px] mt-12 mx-5 gap-10 grid grid-cols-1 md:grid-cols-3">
             {...Array.from({ length: spotsEvent.length }, (_, index) =>
               createElement(CardEvents, { title: spotsEvent[index].nom })
             )}
