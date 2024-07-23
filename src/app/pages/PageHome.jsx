@@ -6,18 +6,29 @@ import Title from "../components/Title.js";
 import Blink from "../../lib/composents/Blink.js";
 import CardEvents from "../components/CardEvents.js";
 import Footer from "../components/Footer.js";
+import articlesScraper from '../scraper/news_scraper.js';
 
 export default class HomePage extends Blink.Component {
     constructor(props) {
         super(props);
         this.state = {
             visibleEvents: [{}, {}, {}],
-            currentIndex: 0
+            currentIndex: 0,
+            upcomingArticles: [],
+            visibleArticles: [{}, {}, {}],
+            currentIndexArticles: 0,
         }
     }
 
     componentDidMount() {
         this.loadEventData();
+        articlesScraper()
+            .then(articles => {
+                this.setState({ upcomingArticles: articles });
+            })
+            .catch(error => {
+                console.error('Error fetching articles:', error);
+            });
     }
 
     loadEventData() {
@@ -70,7 +81,7 @@ export default class HomePage extends Blink.Component {
         }).catch(error => console.error('Erreur lors du chargement des données:', error));
     }
 
-    handleNext = () => {
+    handleNextEvents = () => {
         const { currentIndex, upcomingEvents } = this.state;
         if (currentIndex + 3 < upcomingEvents.length) {
             const newIndex = currentIndex + 3;
@@ -79,12 +90,30 @@ export default class HomePage extends Blink.Component {
         }
     }
 
-    handlePrev = () => {
+    handlePrevEvents = () => {
         const { currentIndex, upcomingEvents } = this.state;
         if (currentIndex - 3 >= 0) {
             const newIndex = currentIndex - 3;
             const visibleEvents = upcomingEvents.slice(newIndex, newIndex + 3);
             this.setState({ currentIndex: newIndex, visibleEvents });
+        }
+    }
+
+    handleNextArticle = () => {
+        const { currentIndexArticles, upcomingArticles } = this.state;
+        if (currentIndexArticles + 3 < upcomingArticles.length) {
+            const newIndex = currentIndexArticles + 3;
+            const visibleArticles = upcomingArticles.slice(newIndex, newIndex + 3);
+            this.setState({ currentIndexArticles: newIndex, visibleArticles });
+        }
+    }
+
+    handlePrevArticle = () => {
+        const { currentIndexArticles, upcomingArticles } = this.state;
+        if (currentIndexArticles - 3 >= 0) {
+            const newIndex = currentIndexArticles - 3;
+            const visibleArticles = upcomingArticles.slice(newIndex, newIndex + 3);
+            this.setState({ currentIndexArticles: newIndex, visibleArticles });
         }
     }
 
@@ -119,10 +148,10 @@ export default class HomePage extends Blink.Component {
                         }
                     </div>
                     <div class="flex gap-2 mx-[88px] mt-4">
-                    <button onClick={this.handlePrev} class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
+                        <button onClick={this.handlePrevEvents} class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
                             <i class="fa fa-chevron-left text-white"></i>
                         </button>
-                        <button onClick={this.handleNext} class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
+                        <button onClick={this.handleNextEvents} class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
                             <i class="fa fa-chevron-right text-white"></i>
                         </button>
                     </div>
@@ -131,10 +160,25 @@ export default class HomePage extends Blink.Component {
                     <div>
                         <Subtitle title="Actualités" />
                     </div>
-                    <div class="grid grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1 flex-row gap-10 mr-[88px] ml-[200px] max-[768px]:mx-[88px]">
-                        <CardEvents />
-                        <CardEvents />
-                        <CardEvents />
+                    <div class="flex flex-col">
+                        <div class="grid grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1 flex-row gap-10 mr-[88px] ml-[200px] max-[768px]:mx-[88px]">
+                            {
+                                ...Array.from(
+                                    { length: 3 },
+                                    (_, index) => (
+                                        createElement(CardEvents, { title: this.state.visibleArticles[index].title })
+                                    )
+                                )
+                            }
+                        </div>
+                        <div class="flex gap-2 mx-[88px] mt-4 ml-[200px]">
+                            <button onClick={this.handlePrevArticle} class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
+                                <i class="fa fa-chevron-left text-white"></i>
+                            </button>
+                            <button onClick={this.handleNextArticle} class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
+                                <i class="fa fa-chevron-right text-white"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <Footer />
