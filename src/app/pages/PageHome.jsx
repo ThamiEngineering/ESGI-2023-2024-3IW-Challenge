@@ -95,13 +95,13 @@ export default class HomePage extends Blink.Component {
                 <Navbar />
                 <div class="my-12">
                     <Title title="Jeux olympiques 2024" />
-                    <div class="relative z-20 mx-[88px]">
+                    <div class="relative z-20 mx-[15px] md:mx-[88px]">
                         <img src="../assets/images/Background.svg" alt="background" class="w-full h-auto" />
                     </div>
                 </div>
                 <div clas="my-12">
                     <Subtitle title="Informations" />
-                    <div class=" min-[769px]:grid min-[769px]:grid-cols-2 space-x-10 mx-[88px]">
+                    <div class=" min-[769px]:grid min-[769px]:grid-cols-2 md:space-x-10 mx-[15px] md:mx-[88px]">
                         <img src="../assets/images/Background.svg" alt="img" class="h-full w-auto object-cover mb-8 " />
                         <TextHome title="Retrouvez le meilleur des JO de Paris 2024" />
                     </div>

@@ -151,13 +151,13 @@ export default class PageEventDetails extends Blink.Component {
         <Navbar />
         <div class="my-12">
           <Title title="Carte des spots de l'événement" />
-          <div class="relative z-20 mx-[88px]">
+          <div class="relative z-20 mx-[15px] md:mx-[88px]">
             <div id="map" class="w-auto h-[508px]"></div>
           </div>
         </div>
         <div class="my-12">
           <Subtitle title="Événement" />
-          <div class="min-[769px]:grid min-[769px]:grid-cols-2 space-x-10 mx-[88px]">
+          <div class="min-[769px]:grid min-[769px]:grid-cols-2 md:space-x-10 mx-[15px] md:mx-[88px]">
             <img
               src="../assets/images/Background.svg"
               alt="img"

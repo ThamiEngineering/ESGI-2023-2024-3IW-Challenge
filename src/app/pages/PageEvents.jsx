@@ -417,11 +417,11 @@ export default class PageEvents extends Blink.Component {
                 <Navbar />
                 <div class="my-12">
                     <Title title="Carte des événements" />
-                    <div class="relative z-20 mx-[88px]">
+                    <div class="relative z-20 mx-[15px] md:mx-[88px]">
                         <div id="map" class="w-auto h-[508px]"></div>
                     </div>
-                    <div class="relative flex mx-[88px] gap-4 top-2">
-                    <div class="w-1/3">
+                    <div class="relative md:flex mx-[15px] md:mx-[88px] gap-4 top-2">
+                    <div class="w-full md:w-1/3">
                             <label for="filterSport" class="block text-gray-700">Filtrer par sport</label>
                             <select
                                 id="filterSport"
@@ -433,8 +433,8 @@ export default class PageEvents extends Blink.Component {
                                 {...sportOptions}
                             </select>
                         </div>
-                        <div class="w-1/3">
-                            <label for="filterStartDate" class="block text-gray-700">Date de début</label>
+                        <div class="w-full md:w-1/3">
+                            <label for="filterStartDate" class="block text-gray-700 text-[17px] sm:text-base">Date de début</label>
                             <input
                                 id="filterStartDate"
                                 type="date"
@@ -443,8 +443,8 @@ export default class PageEvents extends Blink.Component {
                                 class="w-full p-2 border border-gray-300 rounded"
                             />
                         </div>
-                        <div class="w-1/3">
-                            <label for="filterEndDate" class="block text-gray-700">Date de fin</label>
+                        <div class="w-full md:w-1/3">
+                            <label for="filterEndDate" class="block text-gray-700 ">Date de fin</label>
                             <input
                                 id="filterEndDate"
                                 type="date"
@@ -453,7 +453,7 @@ export default class PageEvents extends Blink.Component {
                                 class="w-full p-2 border border-gray-300 rounded"
                             />
                         </div>
-                        <div class="w-1/3">
+                        <div class="w-full md:w-1/3">
                             <button
                                 onClick={this.applyFilters}
                                 class="w-full p-2 bg-blue-500 text-white rounded mt-6"
@@ -465,7 +465,7 @@ export default class PageEvents extends Blink.Component {
                 </div>
                 <div class="my-12">
                     <Subtitle title="Prochain événement" />
-                    <div class="min-[769px]:grid min-[769px]:grid-cols-2 space-x-10 mx-[88px]">
+                    <div class="min-[769px]:grid min-[769px]:grid-cols-2 md:space-x-10 mx-[15px] md:mx-[88px]">
                         <img src="../assets/images/Background.svg" alt="img" class="h-full w-auto object-cover" />
                         <EventDetails event={nextEvent} />
                     </div>
