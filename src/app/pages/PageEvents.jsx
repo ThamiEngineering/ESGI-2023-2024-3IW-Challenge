@@ -416,12 +416,14 @@ export default class PageEvents extends Blink.Component {
             <div>
                 <Navbar />
                 <div class="my-12">
+                    <div class="-mt-16">
                     <Title title="Carte des événements" />
-                    <div class="relative z-20 mx-[15px] md:mx-[88px]">
-                        <div id="map" class="w-auto h-[508px]"></div>
+                        <div class="relative z-20 md:mx-[88px] mx-5">
+                            <div id="map" class="w-auto h-[508px]"></div>
+                        </div>
                     </div>
-                    <div class="relative md:flex mx-[15px] md:mx-[88px] gap-4 top-2">
-                    <div class="w-full md:w-1/3">
+                    <div class="relative md:mx-[88px] mx-5 gap-4 top-2">
+                    <div class="w-full">
                             <label for="filterSport" class="block text-gray-700">Filtrer par sport</label>
                             <select
                                 id="filterSport"
@@ -433,7 +435,7 @@ export default class PageEvents extends Blink.Component {
                                 {...sportOptions}
                             </select>
                         </div>
-                        <div class="w-full md:w-1/3">
+                        <div class="w-full">
                             <label for="filterStartDate" class="block text-gray-700 text-[17px] sm:text-base">Date de début</label>
                             <input
                                 id="filterStartDate"
@@ -443,7 +445,7 @@ export default class PageEvents extends Blink.Component {
                                 class="w-full p-2 border border-gray-300 rounded"
                             />
                         </div>
-                        <div class="w-full md:w-1/3">
+                        <div class="w-full">
                             <label for="filterEndDate" class="block text-gray-700 ">Date de fin</label>
                             <input
                                 id="filterEndDate"
@@ -453,7 +455,7 @@ export default class PageEvents extends Blink.Component {
                                 class="w-full p-2 border border-gray-300 rounded"
                             />
                         </div>
-                        <div class="w-full md:w-1/3">
+                        <div class="w-full">
                             <button
                                 onClick={this.applyFilters}
                                 class="w-full p-2 bg-blue-500 text-white rounded mt-6"
@@ -465,14 +467,14 @@ export default class PageEvents extends Blink.Component {
                 </div>
                 <div class="my-12">
                     <Subtitle title="Prochain événement" />
-                    <div class="min-[769px]:grid min-[769px]:grid-cols-2 md:space-x-10 mx-[15px] md:mx-[88px]">
+                    <div class="grid grid-cols-1 md:grid-cols-2 md:mx-[88px] mx-5 gap-8">
                         <img src="../assets/images/Background.svg" alt="img" class="h-full w-auto object-cover" />
                         <EventDetails event={nextEvent} />
                     </div>
                 </div>
                 <div class="my-12">
                     <Subtitle title="Événements à venir" />
-                    <div class="flex mx-[88px] gap-10 grid grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1" >
+                    <div class="flex md:mx-[88px] mx-5 gap-10 grid grid-cols-1 md:grid-cols-3" >
                     {
                         ...Array.from(
                             { length: 3 },
@@ -482,7 +484,7 @@ export default class PageEvents extends Blink.Component {
                         )
                     }
                     </div>
-                    <div class="flex gap-2 mx-[88px] mt-4">
+                    <div class="flex gap-2 md:mx-[88px] mx-5 mt-4">
                         <button onClick={this.handlePrev} class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
                             <i class="fa fa-chevron-left text-white"></i>
                         </button>

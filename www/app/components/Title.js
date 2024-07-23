@@ -7,7 +7,7 @@ export default class Title extends Blink.Component {
 
     render() {
         return (
-            Blink.createElement("div", { "class":"relative mb-10" }, Blink.createElement("h1", { "class":"max-[641px]:hidden font-headline text-9xl absolute top-0 left-0 opacity-5 z-0 text-black ml-8 max-[1024px]:text-7xl max-[768px]:text-6xl " }, this.props.title),Blink.createElement("h1", { "class":"font-headline text-[84px] relative z-10 ml-[15px] md:ml-[88px] min-[1025px]:top-10 text-black max-[1024px]:text-[56px] max-[1024px]:top-6 max-[768px]:text-[50px] max-[768px]:top-4  max-[426px]:top-2" }, this.props.title))
+            Blink.createElement("div", { "class":"relative mb-10" }, Blink.createElement("h1", { "class":"font-headline lg:text-9xl md:text-7xl text-4xl absolute lg:flex hidden xl:top-0 lg:top-5 top-8 left-0 opacity-5 z-0 text-black md:ml-8 ml-5" }, this.props.title),Blink.createElement("h1", { "class":"font-headline lg:text-[84px] text-[42px] relative z-10 md:ml-[88px] lg:ml-8 ml-5 top-10 text-black" }, this.props.title))
         )
     }
 }

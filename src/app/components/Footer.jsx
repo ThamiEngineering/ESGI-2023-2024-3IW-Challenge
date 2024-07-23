@@ -8,15 +8,13 @@ export default class Footer extends Blink.Component {
 
     render() {
         return (
-            <div class="navbar bg-black h-24">
-                <div class="flex-1">
-                    <img class="h-9 px-20" src="../assets/images/JOLogoWhite.svg" alt="Logo" />
+            <div class="navbar bg-black h-24 mt-10 relative flex justify-between">
+                <div class="">
+                    <img class="h-9 z-40" src="../assets/images/JOLogoWhite.svg" alt="Logo" />
                 </div>
-                <div class="flex-none">
-                    <ul class="menu menu-horizontal min-[500px]:px-20 text-white">
-                        <li><Link class="font-sansBold" path="/" title="Accueil" /></li>
-                        <li><Link class="font-sansBold" path="/events" title="Evénements" /></li>
-                    </ul>
+                <div class="gap-5">
+                    <Link class="font-sansBold text-white" path="/" title="Accueil" />
+                    <Link class="font-sansBold text-white" path="/events" title="Evénements" />
                 </div>
             </div>
         );
