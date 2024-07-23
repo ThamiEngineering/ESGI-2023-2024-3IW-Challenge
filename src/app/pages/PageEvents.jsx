@@ -28,10 +28,12 @@ export default class PageEvents extends Blink.Component {
         this.paralympicLayer = L.layerGroup();
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         this.initializeMap();
-        this.loadEventData();
+        const images = await this.fetchImages();
+        this.loadEventData(images);
     }
+
 
     componentDidUpdate(prevProps, prevState) {
         if (!this.mapInitialized) {
@@ -72,7 +74,51 @@ export default class PageEvents extends Blink.Component {
         }
     }
 
-    loadEventData() {
+    async fetchImages() {
+        try {
+            const response = await fetch('https://olympics.com/fr/paris-2024/sites');
+            const text = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const imageElements = doc.querySelectorAll('.CardItem-styles__ImageWrapper-sc-216dce93-1 img');
+            const images = {};
+
+            imageElements.forEach(element => {
+                const venueName = element.closest('.CardItem-styles__Wrapper-sc-216dce93-20').querySelector('.sc-bdnyFh.card-title').innerText.trim();
+                const imageUrl = element.src;
+                images[venueName] = imageUrl;
+            });
+
+            return images;
+        } catch (error) {
+            console.error('Erreur lors de la récupération des images:', error);
+            return {};
+        }
+    }
+
+    simplifyName(name) {
+        return name.toLowerCase().replace(/[^\w\s]/gi, '').replace(/\s+/g, '');
+    }
+
+    getImageForVenue(images, venueName) {
+        const simplifiedVenueName = this.simplifyName(venueName);
+        const keys = Object.keys(images);
+        for (let key of keys) {
+            if (simplifiedVenueName.includes(this.simplifyName(key)) || this.simplifyName(key).includes(simplifiedVenueName)) {
+                return images[key];
+            }
+
+            if (simplifiedVenueName.includes('escalade') && simplifiedVenueName.includes('bourget')) {
+                return images[keys.find(key => this.simplifyName(key).includes('escalade') && this.simplifyName(key).includes('bourget'))];
+            }
+            if (simplifiedVenueName.includes('tahiti') || simplifiedVenueName.includes('teahupo')) {
+                return images[keys.find(key => this.simplifyName(key).includes('tahiti') || this.simplifyName(key).includes('teahupo'))];
+            }
+        }
+        return '';
+    }
+
+    loadEventData(images) {
         const fetchAllPages = async () => {
             let allRecords = [];
             let page = 1;
@@ -87,6 +133,7 @@ export default class PageEvents extends Blink.Component {
 
                 data.results.forEach(record => {
                     record.id = idCounter++;
+                    record.image = this.getImageForVenue(images, record.nom_site) || '../assets/images/Background.svg';
                 });
 
                 allRecords = allRecords.concat(data.results);
@@ -165,7 +212,7 @@ export default class PageEvents extends Blink.Component {
         this.paralympicLayer.clearLayers();
 
         records.forEach(record => {
-            const { latitude, longitude, code_site, nom_site, category_id, id, sports, start_date, end_date } = record;
+            const { latitude, longitude, code_site, nom_site, category_id, id, sports, start_date, end_date, image } = record;
             console.log(`Record ${id} fields:`, record);
 
             const lat = parseFloat(latitude.replace(',', '.'));
@@ -176,16 +223,19 @@ export default class PageEvents extends Blink.Component {
                 storage.setItem("eventDetails", record);
                 
                 const popupContent = `
-                    <b>Code Site</b><br>${code_site}<br>
-                    <b>Site</b><br>${nom_site}<br>
-                    <b>Categorie</b><br>${category_id}<br>
-                    <b>Sports</b><br>${sports}<br>
-                    <b>Date de début</b><br>${start_date}<br>
-                    <b>Date de fin</b><br>${end_date}<br>
-                    <b>Latitude</b><br>${latitude}<br>
-                    <b>Longitude</b><br>${longitude}<br><br>
-                    <button class="btn btn-primary event-detail-link" data-id="${id}">Détail de l'événement</button>
-                    <button class="btn btn-secondary route-button" data-id="${id}">Voir l'itinéraire</button>
+                    <div class="flex flex-col justify-center">
+                        <img src="${image}" alt="${nom_site}" class="w-full h-auto object-cover mb-2">
+                        <b>Code Site</b><br>${code_site}<br>
+                        <b>Site</b><br>${nom_site}<br>
+                        <b>Categorie</b><br>${category_id}<br>
+                        <b>Sports</b><br>${sports}<br>
+                        <b>Date de début</b><br>${start_date}<br>
+                        <b>Date de fin</b><br>${end_date}<br>
+                        <b>Latitude</b><br>${latitude}<br>
+                        <b>Longitude</b><br>${longitude}<br><br>
+                        <button class="p-2 bg-[#0078D0] text-white rounded mt-2 event-detail-link" data-id="${id}">Détail de l'événement</button>
+                        <button class="p-2 bg-[#00A651] text-white rounded mt-2 route-button" data-id="${id}">Voir l'itinéraire</button>
+                    </div>
                 `;
 
                 record.popupContent = popupContent;
@@ -304,7 +354,7 @@ export default class PageEvents extends Blink.Component {
     }
 
     applyFilters = () => {
-        const olympicRecords = this.filterRecords(this.olympicLayer.getLayers().map(marker => marker.options.record));
+        const olympicRecords = this.filterRecords(this.state.upcomingEvents.filter(record => record.category_id === 'venue-olympic'));
         this.olympicLayer.clearLayers();
         olympicRecords.forEach(record => {
             const lat = parseFloat(record.latitude.replace(',', '.'));
@@ -331,7 +381,7 @@ export default class PageEvents extends Blink.Component {
             });
         });
 
-        const paralympicRecords = this.filterRecords(this.paralympicLayer.getLayers().map(marker => marker.options.record));
+        const paralympicRecords = this.filterRecords(this.state.upcomingEvents.filter(record => record.category_id === 'venue-paralympic'));
         this.paralympicLayer.clearLayers();
         paralympicRecords.forEach(record => {
             const lat = parseFloat(record.latitude.replace(',', '.'));
@@ -404,6 +454,21 @@ export default class PageEvents extends Blink.Component {
         this.filterEndDate = value;
     }
 
+    resetFilters = () => {
+        this.filterSport = "";
+        this.filterStartDate = "";
+        this.filterEndDate = "";
+        document.getElementById("filterSport").value = "";
+        document.getElementById("filterStartDate").value = "";
+        document.getElementById("filterEndDate").value = "";
+        
+        this.olympicLayer.clearLayers();
+        this.paralympicLayer.clearLayers();
+        this.addMarkers(this.state.upcomingEvents);
+
+        console.log('Resetting filters...');
+    }
+
     render() {
         const { nextEvent, visibleEvents, upcomingEvents, sportsList } = this.state;
 
@@ -463,6 +528,14 @@ export default class PageEvents extends Blink.Component {
                                 Appliquer les filtres
                             </button>
                         </div>
+                        <div class="w-full">
+                            <button
+                                onClick={this.resetFilters}
+                                class="w-full p-2 bg-[#F0282D] text-white rounded mt-6"
+                            >
+                                Réinitialiser les filtres
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="my-12">
@@ -479,7 +552,7 @@ export default class PageEvents extends Blink.Component {
                         ...Array.from(
                             { length: 3 },
                             (_, index) => (
-                                createElement(CardEvents, { title: visibleEvents[index].sports })
+                                createElement(CardEvents, { title: visibleEvents[index].sports, image: visibleEvents[index].image })
                             )
                         )
                     }

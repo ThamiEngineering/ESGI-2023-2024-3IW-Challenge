@@ -20,8 +20,9 @@ export default class HomePage extends Blink.Component {
         }
     }
 
-    componentDidMount() {
-        this.loadEventData();
+    async componentDidMount() {
+        const images = await this.fetchImages();
+        this.loadEventData(images);
         articlesScraper()
             .then(articles => {
                 this.setState({ upcomingArticles: articles });
@@ -31,7 +32,51 @@ export default class HomePage extends Blink.Component {
             });
     }
 
-    loadEventData() {
+    async fetchImages() {
+        try {
+            const response = await fetch('https://olympics.com/fr/paris-2024/sites');
+            const text = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const imageElements = doc.querySelectorAll('.CardItem-styles__ImageWrapper-sc-216dce93-1 img');
+            const images = {};
+
+            imageElements.forEach(element => {
+                const venueName = element.closest('.CardItem-styles__Wrapper-sc-216dce93-20').querySelector('.sc-bdnyFh.card-title').innerText.trim();
+                const imageUrl = element.src;
+                images[venueName] = imageUrl;
+            });
+
+            return images;
+        } catch (error) {
+            console.error('Erreur lors de la récupération des images:', error);
+            return {};
+        }
+    }
+
+    simplifyName(name) {
+        return name.toLowerCase().replace(/[^\w\s]/gi, '').replace(/\s+/g, '');
+    }
+
+    getImageForVenue(images, venueName) {
+        const simplifiedVenueName = this.simplifyName(venueName);
+        const keys = Object.keys(images);
+        for (let key of keys) {
+            if (simplifiedVenueName.includes(this.simplifyName(key)) || this.simplifyName(key).includes(simplifiedVenueName)) {
+                return images[key];
+            }
+
+            if (simplifiedVenueName.includes('escalade') && simplifiedVenueName.includes('bourget')) {
+                return images[keys.find(key => this.simplifyName(key).includes('escalade') && this.simplifyName(key).includes('bourget'))];
+            }
+            if (simplifiedVenueName.includes('tahiti') || simplifiedVenueName.includes('teahupo')) {
+                return images[keys.find(key => this.simplifyName(key).includes('tahiti') || this.simplifyName(key).includes('teahupo'))];
+            }
+        }
+        return '';
+    }
+
+    loadEventData(images) {
         const fetchAllPages = async () => {
             let allRecords = [];
             let page = 1;
@@ -46,6 +91,7 @@ export default class HomePage extends Blink.Component {
 
                 data.results.forEach(record => {
                     record.id = idCounter++;
+                    record.image = this.getImageForVenue(images, record.nom_site) || '../assets/images/Background.svg';
                 });
 
                 allRecords = allRecords.concat(data.results);
@@ -120,7 +166,7 @@ export default class HomePage extends Blink.Component {
     render() {
         const { visibleEvents } = this.state;
         return (
-            Blink.createElement("div", { "class":"bg-white" }, Blink.createElement(Navbar, {}),Blink.createElement("div", { "class":"my-12" }, Blink.createElement(Title, { "title":"Jeux olympiques 2024" }),Blink.createElement("div", { "class":"relative z-20 mx-[88px]" }, Blink.createElement("img", { "src":"../assets/images/Background.svg" , "alt":"background" , "class":"w-full h-auto" }))),Blink.createElement("div", { "clas":"my-12" }, Blink.createElement(Subtitle, { "title":"Informations" }),Blink.createElement("div", { "class":" min-[769px]:grid min-[769px]:grid-cols-2 space-x-10 mx-[88px]" }, Blink.createElement("img", { "src":"../assets/images/Background.svg" , "alt":"img" , "class":"h-full w-auto object-cover mb-8 " }),Blink.createElement(TextHome, { "title":"Retrouvez le meilleur des JO de Paris 2024" }))),Blink.createElement("div", { "class":"my-12" }, Blink.createElement(SubtitleWithButton, { "title":"Événements à venir" }),Blink.createElement("div", { "class":"flex mx-[88px] gap-10 grid grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1" },                                                     ...Array.from(                                { length: 3 },                                (_, index) => (                                    Blink.createElement(CardEvents, { title: visibleEvents[index].sports })                                )                            )                        ),Blink.createElement("div", { "class":"flex gap-2 mx-[88px] mt-4" }, Blink.createElement("button", { "onClick":this.handlePrevEvents, "class":"w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center" }, Blink.createElement("i", { "class":"fa fa-chevron-left text-white" })),Blink.createElement("button", { "onClick":this.handleNextEvents, "class":"w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center" }, Blink.createElement("i", { "class":"fa fa-chevron-right text-white" })))),Blink.createElement("div", { "class":"min-[769px]:flex my-12" }, Blink.createElement("div", {}, Blink.createElement(Subtitle, { "title":"Actualités" })),Blink.createElement("div", { "class":"flex flex-col" }, Blink.createElement("div", { "class":"grid grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1 flex-row gap-10 mr-[88px] ml-[200px] max-[768px]:mx-[88px]" },                                                             ...Array.from(                                    { length: 3 },                                    (_, index) => (                                        Blink.createElement(CardEvents, { title: this.state.visibleArticles[index].title })                                    )                                )                            ),Blink.createElement("div", { "class":"flex gap-2 mx-[88px] mt-4 ml-[200px]" }, Blink.createElement("button", { "onClick":this.handlePrevArticle, "class":"w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center" }, Blink.createElement("i", { "class":"fa fa-chevron-left text-white" })),Blink.createElement("button", { "onClick":this.handleNextArticle, "class":"w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center" }, Blink.createElement("i", { "class":"fa fa-chevron-right text-white" }))))),Blink.createElement(Footer, {}))
+            Blink.createElement("div", { "class":"bg-white w-full" }, Blink.createElement(Navbar, {}),Blink.createElement("div", { "class":"mt-2" }, Blink.createElement(Title, { "title":"Jeux olympiques 2024" }),Blink.createElement("div", { "class":"relative z-20 md:mx-[88px] mx-5 mt-12" }, Blink.createElement("img", { "src":"../assets/images/Background.svg" , "alt":"background" , "class":"w-full h-auto" }))),Blink.createElement("div", { "clas":"" }, Blink.createElement(Subtitle, { "title":"Informations" }),Blink.createElement("div", { "class":"grid md:grid-cols-2 grid-cols-1 md:space-x-10 md:mx-[88px] mx-5" }, Blink.createElement("img", { "src":"../assets/images/Background.svg" , "alt":"img" , "class":"h-full w-auto object-cover mb-8 -mt-5" }),Blink.createElement(TextHome, { "title":"Retrouvez le meilleur des JO de Paris 2024" }))),Blink.createElement("div", { "class":"mt-40" }, Blink.createElement(SubtitleWithButton, { "title":"Événements à venir" }),Blink.createElement("div", { "class":"flex md:mx-[88px] mx-5 gap-10 grid grid-cols-1 md:grid-cols-3" },                                                     ...Array.from(                                { length: 3 },                                (_, index) => (                                    Blink.createElement(CardEvents, { title: visibleEvents[index].sports, image: visibleEvents[index].image })                                )                            )                        ),Blink.createElement("div", { "class":"flex gap-2 md:mx-[88px] mx-5 mt-4" }, Blink.createElement("button", { "onClick":this.handlePrevEvents, "class":"w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center" }, Blink.createElement("i", { "class":"fa fa-chevron-left text-white" })),Blink.createElement("button", { "onClick":this.handleNextEvents, "class":"w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center" }, Blink.createElement("i", { "class":"fa fa-chevron-right text-white" })))),Blink.createElement("div", { "class":"grid grid-cols-1 2xl:grid-cols-2 flex justify-between mt-10" }, Blink.createElement("div", {}, Blink.createElement(Subtitle, { "title":"Actualités" })),Blink.createElement("div", { "class":"flex flex-col" }, Blink.createElement("div", { "class":"grid grid-cols-1 md:grid-cols-3 flex-row gap-10 mx-5 md:mx-[88px]" },                                                             ...Array.from(                                    { length: 3 },                                    (_, index) => (                                        Blink.createElement(CardEvents, { title: this.state.visibleArticles[index].title, image: this.state.visibleArticles[index].image })                                    )                                )                            ),Blink.createElement("div", { "class":"flex gap-2 mx-[88px] mt-4 ml-[200px]" }, Blink.createElement("button", { "onClick":this.handlePrevArticle, "class":"w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center" }, Blink.createElement("i", { "class":"fa fa-chevron-left text-white" })),Blink.createElement("button", { "onClick":this.handleNextArticle, "class":"w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center" }, Blink.createElement("i", { "class":"fa fa-chevron-right text-white" }))))),Blink.createElement(Footer, {}))
         );
     }
 }
