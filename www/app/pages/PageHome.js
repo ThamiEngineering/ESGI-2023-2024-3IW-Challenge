@@ -6,18 +6,29 @@ import Title from "../components/Title.js";
 import Blink from "../../lib/composents/Blink.js";
 import CardEvents from "../components/CardEvents.js";
 import Footer from "../components/Footer.js";
+import articlesScraper from '../scraper/news_scraper.js';
 
 export default class HomePage extends Blink.Component {
     constructor(props) {
         super(props);
         this.state = {
             visibleEvents: [{}, {}, {}],
-            currentIndex: 0
+            currentIndex: 0,
+            upcomingArticles: [],
+            visibleArticles: [{}, {}, {}],
+            currentIndexArticles: 0,
         }
     }
 
     componentDidMount() {
         this.loadEventData();
+        articlesScraper()
+            .then(articles => {
+                this.setState({ upcomingArticles: articles });
+            })
+            .catch(error => {
+                console.error('Error fetching articles:', error);
+            });
     }
 
     loadEventData() {
@@ -70,7 +81,7 @@ export default class HomePage extends Blink.Component {
         }).catch(error => console.error('Erreur lors du chargement des données:', error));
     }
 
-    handleNext = () => {
+    handleNextEvents = () => {
         const { currentIndex, upcomingEvents } = this.state;
         if (currentIndex + 3 < upcomingEvents.length) {
             const newIndex = currentIndex + 3;
@@ -79,7 +90,7 @@ export default class HomePage extends Blink.Component {
         }
     }
 
-    handlePrev = () => {
+    handlePrevEvents = () => {
         const { currentIndex, upcomingEvents } = this.state;
         if (currentIndex - 3 >= 0) {
             const newIndex = currentIndex - 3;
@@ -88,10 +99,28 @@ export default class HomePage extends Blink.Component {
         }
     }
 
+    handleNextArticle = () => {
+        const { currentIndexArticles, upcomingArticles } = this.state;
+        if (currentIndexArticles + 3 < upcomingArticles.length) {
+            const newIndex = currentIndexArticles + 3;
+            const visibleArticles = upcomingArticles.slice(newIndex, newIndex + 3);
+            this.setState({ currentIndexArticles: newIndex, visibleArticles });
+        }
+    }
+
+    handlePrevArticle = () => {
+        const { currentIndexArticles, upcomingArticles } = this.state;
+        if (currentIndexArticles - 3 >= 0) {
+            const newIndex = currentIndexArticles - 3;
+            const visibleArticles = upcomingArticles.slice(newIndex, newIndex + 3);
+            this.setState({ currentIndexArticles: newIndex, visibleArticles });
+        }
+    }
+
     render() {
         const { visibleEvents } = this.state;
         return (
-            Blink.createElement("div", { "class":"bg-white w-full" }, Blink.createElement(Navbar, {}),Blink.createElement("div", { "class":"mt-2" }, Blink.createElement(Title, { "title":"Jeux olympiques 2024" }),Blink.createElement("div", { "class":"relative z-20 md:mx-[88px] mx-5 mt-12" }, Blink.createElement("img", { "src":"../assets/images/Background.svg" , "alt":"background" , "class":"w-full h-auto" }))),Blink.createElement("div", { "clas":"" }, Blink.createElement(Subtitle, { "title":"Informations" }),Blink.createElement("div", { "class":"grid md:grid-cols-2 grid-cols-1 md:space-x-10 md:mx-[88px] mx-5" }, Blink.createElement("img", { "src":"../assets/images/Background.svg" , "alt":"img" , "class":"h-full w-auto object-cover mb-8 -mt-5" }),Blink.createElement(TextHome, { "title":"Retrouvez le meilleur des JO de Paris 2024" }))),Blink.createElement("div", { "class":"mt-40" }, Blink.createElement(SubtitleWithButton, { "title":"Événements à venir" }),Blink.createElement("div", { "class":"flex md:mx-[88px] mx-5 gap-10 grid grid-cols-1 md:grid-cols-3" },                                                     ...Array.from(                                { length: 3 },                                (_, index) => (                                    Blink.createElement(CardEvents, { title: visibleEvents[index].sports })                                )                            )                        ),Blink.createElement("div", { "class":"flex gap-2 md:mx-[88px] mx-5 mt-4" }, Blink.createElement("button", { "onClick":this.handlePrev, "class":"w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center" }, Blink.createElement("i", { "class":"fa fa-chevron-left text-white" })),Blink.createElement("button", { "onClick":this.handleNext, "class":"w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center" }, Blink.createElement("i", { "class":"fa fa-chevron-right text-white" })))),Blink.createElement("div", { "class":"grid grid-cols-1 2xl:grid-cols-2 flex justify-between mt-10" }, Blink.createElement("div", {}, Blink.createElement(Subtitle, { "title":"Actualités" })),Blink.createElement("div", { "class":"grid grid-cols-1 md:grid-cols-3 flex-row gap-10 mx-5 md:mx-[88px]" }, Blink.createElement(CardEvents, {}),Blink.createElement(CardEvents, {}),Blink.createElement(CardEvents, {}))),Blink.createElement(Footer, {}))
+            Blink.createElement("div", { "class":"bg-white" }, Blink.createElement(Navbar, {}),Blink.createElement("div", { "class":"my-12" }, Blink.createElement(Title, { "title":"Jeux olympiques 2024" }),Blink.createElement("div", { "class":"relative z-20 mx-[88px]" }, Blink.createElement("img", { "src":"../assets/images/Background.svg" , "alt":"background" , "class":"w-full h-auto" }))),Blink.createElement("div", { "clas":"my-12" }, Blink.createElement(Subtitle, { "title":"Informations" }),Blink.createElement("div", { "class":" min-[769px]:grid min-[769px]:grid-cols-2 space-x-10 mx-[88px]" }, Blink.createElement("img", { "src":"../assets/images/Background.svg" , "alt":"img" , "class":"h-full w-auto object-cover mb-8 " }),Blink.createElement(TextHome, { "title":"Retrouvez le meilleur des JO de Paris 2024" }))),Blink.createElement("div", { "class":"my-12" }, Blink.createElement(SubtitleWithButton, { "title":"Événements à venir" }),Blink.createElement("div", { "class":"flex mx-[88px] gap-10 grid grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1" },                                                     ...Array.from(                                { length: 3 },                                (_, index) => (                                    Blink.createElement(CardEvents, { title: visibleEvents[index].sports })                                )                            )                        ),Blink.createElement("div", { "class":"flex gap-2 mx-[88px] mt-4" }, Blink.createElement("button", { "onClick":this.handlePrevEvents, "class":"w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center" }, Blink.createElement("i", { "class":"fa fa-chevron-left text-white" })),Blink.createElement("button", { "onClick":this.handleNextEvents, "class":"w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center" }, Blink.createElement("i", { "class":"fa fa-chevron-right text-white" })))),Blink.createElement("div", { "class":"min-[769px]:flex my-12" }, Blink.createElement("div", {}, Blink.createElement(Subtitle, { "title":"Actualités" })),Blink.createElement("div", { "class":"flex flex-col" }, Blink.createElement("div", { "class":"grid grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1 flex-row gap-10 mr-[88px] ml-[200px] max-[768px]:mx-[88px]" },                                                             ...Array.from(                                    { length: 3 },                                    (_, index) => (                                        Blink.createElement(CardEvents, { title: this.state.visibleArticles[index].title })                                    )                                )                            ),Blink.createElement("div", { "class":"flex gap-2 mx-[88px] mt-4 ml-[200px]" }, Blink.createElement("button", { "onClick":this.handlePrevArticle, "class":"w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center" }, Blink.createElement("i", { "class":"fa fa-chevron-left text-white" })),Blink.createElement("button", { "onClick":this.handleNextArticle, "class":"w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center" }, Blink.createElement("i", { "class":"fa fa-chevron-right text-white" }))))),Blink.createElement(Footer, {}))
         );
     }
 }
