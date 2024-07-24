@@ -28,10 +28,12 @@ export default class PageEvents extends Blink.Component {
         this.paralympicLayer = L.layerGroup();
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         this.initializeMap();
-        this.loadEventData();
+        const images = await this.fetchImages();
+        this.loadEventData(images);
     }
+
 
     componentDidUpdate(prevProps, prevState) {
         if (!this.mapInitialized) {
@@ -72,7 +74,51 @@ export default class PageEvents extends Blink.Component {
         }
     }
 
-    loadEventData() {
+    async fetchImages() {
+        try {
+            const response = await fetch('https://olympics.com/fr/paris-2024/sites');
+            const text = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const imageElements = doc.querySelectorAll('.CardItem-styles__ImageWrapper-sc-216dce93-1 img');
+            const images = {};
+
+            imageElements.forEach(element => {
+                const venueName = element.closest('.CardItem-styles__Wrapper-sc-216dce93-20').querySelector('.sc-bdnyFh.card-title').innerText.trim();
+                const imageUrl = element.src;
+                images[venueName] = imageUrl;
+            });
+
+            return images;
+        } catch (error) {
+            console.error('Erreur lors de la récupération des images:', error);
+            return {};
+        }
+    }
+
+    simplifyName(name) {
+        return name.toLowerCase().replace(/[^\w\s]/gi, '').replace(/\s+/g, '');
+    }
+
+    getImageForVenue(images, venueName) {
+        const simplifiedVenueName = this.simplifyName(venueName);
+        const keys = Object.keys(images);
+        for (let key of keys) {
+            if (simplifiedVenueName.includes(this.simplifyName(key)) || this.simplifyName(key).includes(simplifiedVenueName)) {
+                return images[key];
+            }
+
+            if (simplifiedVenueName.includes('escalade') && simplifiedVenueName.includes('bourget')) {
+                return images[keys.find(key => this.simplifyName(key).includes('escalade') && this.simplifyName(key).includes('bourget'))];
+            }
+            if (simplifiedVenueName.includes('tahiti') || simplifiedVenueName.includes('teahupo')) {
+                return images[keys.find(key => this.simplifyName(key).includes('tahiti') || this.simplifyName(key).includes('teahupo'))];
+            }
+        }
+        return '';
+    }
+
+    loadEventData(images) {
         const fetchAllPages = async () => {
             let allRecords = [];
             let page = 1;
@@ -87,6 +133,7 @@ export default class PageEvents extends Blink.Component {
 
                 data.results.forEach(record => {
                     record.id = idCounter++;
+                    record.image = this.getImageForVenue(images, record.nom_site) || '../assets/images/Background.svg';
                 });
 
                 allRecords = allRecords.concat(data.results);
@@ -165,7 +212,7 @@ export default class PageEvents extends Blink.Component {
         this.paralympicLayer.clearLayers();
 
         records.forEach(record => {
-            const { latitude, longitude, code_site, nom_site, category_id, id, sports, start_date, end_date } = record;
+            const { latitude, longitude, code_site, nom_site, category_id, id, sports, start_date, end_date, image } = record;
             console.log(`Record ${id} fields:`, record);
 
             const lat = parseFloat(latitude.replace(',', '.'));
@@ -176,16 +223,19 @@ export default class PageEvents extends Blink.Component {
                 storage.setItem("eventDetails", record);
                 
                 const popupContent = `
-                    <b>Code Site</b><br>${code_site}<br>
-                    <b>Site</b><br>${nom_site}<br>
-                    <b>Categorie</b><br>${category_id}<br>
-                    <b>Sports</b><br>${sports}<br>
-                    <b>Date de début</b><br>${start_date}<br>
-                    <b>Date de fin</b><br>${end_date}<br>
-                    <b>Latitude</b><br>${latitude}<br>
-                    <b>Longitude</b><br>${longitude}<br><br>
-                    <button class="btn btn-primary event-detail-link" data-id="${id}">Détail de l'événement</button>
-                    <button class="btn btn-secondary route-button" data-id="${id}">Voir l'itinéraire</button>
+                    <div class="flex flex-col justify-center">
+                        <img src="${image}" alt="${nom_site}" class="w-full h-auto object-cover mb-2">
+                        <b>Code Site</b><br>${code_site}<br>
+                        <b>Site</b><br>${nom_site}<br>
+                        <b>Categorie</b><br>${category_id}<br>
+                        <b>Sports</b><br>${sports}<br>
+                        <b>Date de début</b><br>${start_date}<br>
+                        <b>Date de fin</b><br>${end_date}<br>
+                        <b>Latitude</b><br>${latitude}<br>
+                        <b>Longitude</b><br>${longitude}<br><br>
+                        <button class="p-2 bg-[#0078D0] text-white rounded mt-2 event-detail-link" data-id="${id}">Détail de l'événement</button>
+                        <button class="p-2 bg-[#00A651] text-white rounded mt-2 route-button" data-id="${id}">Voir l'itinéraire</button>
+                    </div>
                 `;
 
                 record.popupContent = popupContent;
@@ -304,7 +354,7 @@ export default class PageEvents extends Blink.Component {
     }
 
     applyFilters = () => {
-        const olympicRecords = this.filterRecords(this.olympicLayer.getLayers().map(marker => marker.options.record));
+        const olympicRecords = this.filterRecords(this.state.upcomingEvents.filter(record => record.category_id === 'venue-olympic'));
         this.olympicLayer.clearLayers();
         olympicRecords.forEach(record => {
             const lat = parseFloat(record.latitude.replace(',', '.'));
@@ -331,7 +381,7 @@ export default class PageEvents extends Blink.Component {
             });
         });
 
-        const paralympicRecords = this.filterRecords(this.paralympicLayer.getLayers().map(marker => marker.options.record));
+        const paralympicRecords = this.filterRecords(this.state.upcomingEvents.filter(record => record.category_id === 'venue-paralympic'));
         this.paralympicLayer.clearLayers();
         paralympicRecords.forEach(record => {
             const lat = parseFloat(record.latitude.replace(',', '.'));
@@ -404,6 +454,21 @@ export default class PageEvents extends Blink.Component {
         this.filterEndDate = value;
     }
 
+    resetFilters = () => {
+        this.filterSport = "";
+        this.filterStartDate = "";
+        this.filterEndDate = "";
+        document.getElementById("filterSport").value = "";
+        document.getElementById("filterStartDate").value = "";
+        document.getElementById("filterEndDate").value = "";
+        
+        this.olympicLayer.clearLayers();
+        this.paralympicLayer.clearLayers();
+        this.addMarkers(this.state.upcomingEvents);
+
+        console.log('Resetting filters...');
+    }
+
     render() {
         const { nextEvent, visibleEvents, upcomingEvents, sportsList } = this.state;
 
@@ -413,7 +478,7 @@ export default class PageEvents extends Blink.Component {
         }
 
         return (
-            Blink.createElement("div", {}, Blink.createElement(Navbar, {}),Blink.createElement("div", { "class":"my-12" }, Blink.createElement("div", { "class":"-mt-16" }, Blink.createElement(Title, { "title":"Carte des événements" }),Blink.createElement("div", { "class":"relative z-20 md:mx-[88px] mx-5" }, Blink.createElement("div", { "id":"map" , "class":"w-auto h-[508px]" }))),Blink.createElement("div", { "class":"relative md:mx-[88px] mx-5 gap-4 top-2" }, Blink.createElement("div", { "class":"w-full" }, Blink.createElement("label", { "for":"filterSport" , "class":"block text-gray-700" }, "Filtrer par sport"),Blink.createElement("select", { "id":"filterSport" , "name":"filterSport" , "onChange":this.handleSportFilterChange, "class":"w-full p-2 border border-gray-300 rounded" }, Blink.createElement("option", { "value":"" }, "Choisir un sport"),                                ...sportOptions)),Blink.createElement("div", { "class":"w-full" }, Blink.createElement("label", { "for":"filterStartDate" , "class":"block text-gray-700 text-[17px] sm:text-base" }, "Date de début"),Blink.createElement("input", { "id":"filterStartDate" , "type":"date" , "name":"filterDate" , "onChange":this.handleStartDateFilterChange, "class":"w-full p-2 border border-gray-300 rounded" })),Blink.createElement("div", { "class":"w-full" }, Blink.createElement("label", { "for":"filterEndDate" , "class":"block text-gray-700 " }, "Date de fin"),Blink.createElement("input", { "id":"filterEndDate" , "type":"date" , "name":"filterDate" , "onChange":this.handleEndDateFilterChange, "class":"w-full p-2 border border-gray-300 rounded" })),Blink.createElement("div", { "class":"w-full" }, Blink.createElement("button", { "onClick":this.applyFilters, "class":"w-full p-2 bg-blue-500 text-white rounded mt-6" }, "                                Appliquer les filtres                            ")))),Blink.createElement("div", { "class":"my-12" }, Blink.createElement(Subtitle, { "title":"Prochain événement" }),Blink.createElement("div", { "class":"grid grid-cols-1 md:grid-cols-2 md:mx-[88px] mx-5 gap-8" }, Blink.createElement("img", { "src":"../assets/images/Background.svg" , "alt":"img" , "class":"h-full w-auto object-cover" }),Blink.createElement(EventDetails, { "event":nextEvent}))),Blink.createElement("div", { "class":"my-12" }, Blink.createElement(Subtitle, { "title":"Événements à venir" }),Blink.createElement("div", { "class":"flex md:mx-[88px] mx-5 gap-10 grid grid-cols-1 md:grid-cols-3" },                                             ...Array.from(                            { length: 3 },                            (_, index) => (                                Blink.createElement(CardEvents, { title: visibleEvents[index].sports })                            )                        )                    ),Blink.createElement("div", { "class":"flex gap-2 md:mx-[88px] mx-5 mt-4" }, Blink.createElement("button", { "onClick":this.handlePrev, "class":"w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center" }, Blink.createElement("i", { "class":"fa fa-chevron-left text-white" })),Blink.createElement("button", { "onClick":this.handleNext, "class":"w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center" }, Blink.createElement("i", { "class":"fa fa-chevron-right text-white" })))),Blink.createElement(Footer, {}))
+            Blink.createElement("div", {}, Blink.createElement(Navbar, {}),Blink.createElement("div", { "class":"my-12" }, Blink.createElement("div", { "class":"-mt-16" }, Blink.createElement(Title, { "title":"Carte des événements" }),Blink.createElement("div", { "class":"relative z-20 md:mx-[88px] mx-5" }, Blink.createElement("div", { "id":"map" , "class":"w-auto h-[508px]" }))),Blink.createElement("div", { "class":"relative md:mx-[88px] mx-5 gap-4 top-2" }, Blink.createElement("div", { "class":"w-full" }, Blink.createElement("label", { "for":"filterSport" , "class":"block text-gray-700" }, "Filtrer par sport"),Blink.createElement("select", { "id":"filterSport" , "name":"filterSport" , "onChange":this.handleSportFilterChange, "class":"w-full p-2 border border-gray-300 rounded" }, Blink.createElement("option", { "value":"" }, "Choisir un sport"),                                ...sportOptions)),Blink.createElement("div", { "class":"w-full" }, Blink.createElement("label", { "for":"filterStartDate" , "class":"block text-gray-700 text-[17px] sm:text-base" }, "Date de début"),Blink.createElement("input", { "id":"filterStartDate" , "type":"date" , "name":"filterDate" , "onChange":this.handleStartDateFilterChange, "class":"w-full p-2 border border-gray-300 rounded" })),Blink.createElement("div", { "class":"w-full" }, Blink.createElement("label", { "for":"filterEndDate" , "class":"block text-gray-700 " }, "Date de fin"),Blink.createElement("input", { "id":"filterEndDate" , "type":"date" , "name":"filterDate" , "onChange":this.handleEndDateFilterChange, "class":"w-full p-2 border border-gray-300 rounded" })),Blink.createElement("div", { "class":"w-full" }, Blink.createElement("button", { "onClick":this.applyFilters, "class":"w-full p-2 bg-blue-500 text-white rounded mt-6" }, "                                Appliquer les filtres                            ")),Blink.createElement("div", { "class":"w-full" }, Blink.createElement("button", { "onClick":this.resetFilters, "class":"w-full p-2 bg-[#F0282D] text-white rounded mt-6" }, "                                Réinitialiser les filtres                            ")))),Blink.createElement("div", { "class":"my-12" }, Blink.createElement(Subtitle, { "title":"Prochain événement" }),Blink.createElement("div", { "class":"grid grid-cols-1 md:grid-cols-2 md:mx-[88px] mx-5 gap-8" }, Blink.createElement("img", { "src":"../assets/images/Background.svg" , "alt":"img" , "class":"h-full w-auto object-cover" }),Blink.createElement(EventDetails, { "event":nextEvent}))),Blink.createElement("div", { "class":"my-12" }, Blink.createElement(Subtitle, { "title":"Événements à venir" }),Blink.createElement("div", { "class":"flex md:mx-[88px] mx-5 gap-10 grid grid-cols-1 md:grid-cols-3" },                                             ...Array.from(                            { length: 3 },                            (_, index) => (                                Blink.createElement(CardEvents, { title: visibleEvents[index].sports, image: visibleEvents[index].image })                            )                        )                    ),Blink.createElement("div", { "class":"flex gap-2 md:mx-[88px] mx-5 mt-4" }, Blink.createElement("button", { "onClick":this.handlePrev, "class":"w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center" }, Blink.createElement("i", { "class":"fa fa-chevron-left text-white" })),Blink.createElement("button", { "onClick":this.handleNext, "class":"w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center" }, Blink.createElement("i", { "class":"fa fa-chevron-right text-white" })))),Blink.createElement(Footer, {}))
         );
     }
 }

@@ -20,8 +20,9 @@ export default class HomePage extends Blink.Component {
         }
     }
 
-    componentDidMount() {
-        this.loadEventData();
+    async componentDidMount() {
+        const images = await this.fetchImages();
+        this.loadEventData(images);
         articlesScraper()
             .then(articles => {
                 this.setState({ upcomingArticles: articles });
@@ -31,7 +32,51 @@ export default class HomePage extends Blink.Component {
             });
     }
 
-    loadEventData() {
+    async fetchImages() {
+        try {
+            const response = await fetch('https://olympics.com/fr/paris-2024/sites');
+            const text = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const imageElements = doc.querySelectorAll('.CardItem-styles__ImageWrapper-sc-216dce93-1 img');
+            const images = {};
+
+            imageElements.forEach(element => {
+                const venueName = element.closest('.CardItem-styles__Wrapper-sc-216dce93-20').querySelector('.sc-bdnyFh.card-title').innerText.trim();
+                const imageUrl = element.src;
+                images[venueName] = imageUrl;
+            });
+
+            return images;
+        } catch (error) {
+            console.error('Erreur lors de la récupération des images:', error);
+            return {};
+        }
+    }
+
+    simplifyName(name) {
+        return name.toLowerCase().replace(/[^\w\s]/gi, '').replace(/\s+/g, '');
+    }
+
+    getImageForVenue(images, venueName) {
+        const simplifiedVenueName = this.simplifyName(venueName);
+        const keys = Object.keys(images);
+        for (let key of keys) {
+            if (simplifiedVenueName.includes(this.simplifyName(key)) || this.simplifyName(key).includes(simplifiedVenueName)) {
+                return images[key];
+            }
+
+            if (simplifiedVenueName.includes('escalade') && simplifiedVenueName.includes('bourget')) {
+                return images[keys.find(key => this.simplifyName(key).includes('escalade') && this.simplifyName(key).includes('bourget'))];
+            }
+            if (simplifiedVenueName.includes('tahiti') || simplifiedVenueName.includes('teahupo')) {
+                return images[keys.find(key => this.simplifyName(key).includes('tahiti') || this.simplifyName(key).includes('teahupo'))];
+            }
+        }
+        return '';
+    }
+
+    loadEventData(images) {
         const fetchAllPages = async () => {
             let allRecords = [];
             let page = 1;
@@ -46,6 +91,7 @@ export default class HomePage extends Blink.Component {
 
                 data.results.forEach(record => {
                     record.id = idCounter++;
+                    record.image = this.getImageForVenue(images, record.nom_site) || '../assets/images/Background.svg';
                 });
 
                 allRecords = allRecords.concat(data.results);
@@ -142,7 +188,7 @@ export default class HomePage extends Blink.Component {
                             ...Array.from(
                                 { length: 3 },
                                 (_, index) => (
-                                    createElement(CardEvents, { title: visibleEvents[index].sports })
+                                    createElement(CardEvents, { title: visibleEvents[index].sports, image: visibleEvents[index].image })
                                 )
                             )
                         }
@@ -166,7 +212,7 @@ export default class HomePage extends Blink.Component {
                                 ...Array.from(
                                     { length: 3 },
                                     (_, index) => (
-                                        createElement(CardEvents, { title: this.state.visibleArticles[index].title })
+                                        createElement(CardEvents, { title: this.state.visibleArticles[index].title, image: this.state.visibleArticles[index].image })
                                     )
                                 )
                             }
