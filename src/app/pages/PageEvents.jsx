@@ -6,6 +6,7 @@ import Title from "../components/Title.js";
 import Subtitle from "../components/Subtitle.js";
 import Footer from "../components/Footer.js";
 import storage from "../../lib/utils/storage.js";
+import { HistoryLink as Link } from "../../lib/router/HistoryRouter.js";
 
 export default class PageEvents extends Blink.Component {
     constructor(props) {
@@ -469,6 +470,11 @@ export default class PageEvents extends Blink.Component {
         console.log('Resetting filters...');
     }
 
+    handleClick = (event) => {
+        storage.setItem("eventDetails", event);
+        console.log("Event details stored:", event);
+    }
+
     render() {
         const { nextEvent, visibleEvents, upcomingEvents, sportsList } = this.state;
 
@@ -548,11 +554,15 @@ export default class PageEvents extends Blink.Component {
                 <div class="my-12">
                     <Subtitle title="Événements à venir" />
                     <div class="flex md:mx-[88px] mx-5 gap-10 grid grid-cols-1 md:grid-cols-3" >
-                    {
+                    { 
                         ...Array.from(
                             { length: 3 },
                             (_, index) => (
-                                createElement(CardEvents, { title: visibleEvents[index].sports, image: visibleEvents[index].image })
+                                <Link path={`/events/${visibleEvents[index].id}`} key={index} >
+                                    {
+                                        createElement(CardEvents, { title: visibleEvents[index].sports, image: visibleEvents[index].image, onClick: () => this.handleClick(visibleEvents[index]) })
+                                    }
+                                </Link>
                             )
                         )
                     }

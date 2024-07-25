@@ -7,6 +7,8 @@ import Blink from "../../lib/composents/Blink.js";
 import CardEvents from "../components/CardEvents.js";
 import Footer from "../components/Footer.js";
 import articlesScraper from '../scraper/news_scraper.js';
+import { HistoryLink as Link } from "../../lib/router/HistoryRouter.js";
+import storage from "../../lib/utils/storage.js";
 
 export default class HomePage extends Blink.Component {
     constructor(props) {
@@ -167,8 +169,14 @@ export default class HomePage extends Blink.Component {
         }
     }
 
+    handleClick = (event) => {
+        storage.setItem("eventDetails", event);
+        console.log("Event details stored:", event);
+    }
+
     render() {
         const { visibleEvents } = this.state;
+        console.log(this.state.visibleArticles);
         return (
             <div class="bg-white w-full">
                 <Navbar />
@@ -194,7 +202,11 @@ export default class HomePage extends Blink.Component {
                             ...Array.from(
                                 { length: 3 },
                                 (_, index) => (
-                                    createElement(CardEvents, { title: visibleEvents[index].sports, image: visibleEvents[index].image })
+                                    <Link path={`/events/${visibleEvents[index].id}`} key={index}>
+                                        {
+                                            createElement(CardEvents, { title: visibleEvents[index].sports, image: visibleEvents[index].image, onClick: () => this.handleClick(visibleEvents[index]) })
+                                        }
+                                    </Link>
                                 )
                             )
                         }
@@ -216,13 +228,13 @@ export default class HomePage extends Blink.Component {
                         <div class="flex flex-col">
                             <div class="grid grid-cols-1 md:grid-cols-3 flex-row gap-10 mx-5 md:mx-[88px]">
                                 {
-                                    ...Array.from(
-                                        { length: 3 },
-                                        (_, index) => (
-                                            createElement(CardEvents, { title: this.state.visibleArticles[index].title, image: this.state.visibleArticles[index].image })
-                                        )
-                                    )
-                                }
+                                  ...Array.from(
+                                      { length: 3 },
+                                      (_, index) => (
+                                          createElement(CardEvents, { title: this.state.visibleArticles[index].title, image: this.state.visibleArticles[index].image, onClick: () => window.open(this.state.visibleArticles[index].link, '_blank') })
+                                      )
+                                  )
+                              }
                             </div>
                             <div class="flex gap-2 md:mx-[88px] mx-5 mt-4">
                                 <button onClick={this.handlePrevArticle} class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
