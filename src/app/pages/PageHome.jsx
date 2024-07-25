@@ -7,6 +7,8 @@ import Blink from "../../lib/composents/Blink.js";
 import CardEvents from "../components/CardEvents.js";
 import Footer from "../components/Footer.js";
 import articlesScraper from '../scraper/news_scraper.js';
+import { HistoryLink as Link } from "../../lib/router/HistoryRouter.js";
+import storage from "../../lib/utils/storage.js";
 
 export default class HomePage extends Blink.Component {
     constructor(props) {
@@ -163,6 +165,11 @@ export default class HomePage extends Blink.Component {
         }
     }
 
+    handleClick = (event) => {
+        storage.setItem("eventDetails", event);
+        console.log("Event details stored:", event);
+    }
+
     render() {
         const { visibleEvents } = this.state;
         return (
@@ -188,7 +195,11 @@ export default class HomePage extends Blink.Component {
                             ...Array.from(
                                 { length: 3 },
                                 (_, index) => (
-                                    createElement(CardEvents, { title: visibleEvents[index].sports, image: visibleEvents[index].image })
+                                    <Link path={`/events/${visibleEvents[index].id}`} key={index}>
+                                        {
+                                            createElement(CardEvents, { title: visibleEvents[index].sports, image: visibleEvents[index].image, onClick: () => this.handleClick(visibleEvents[index]) })
+                                        }
+                                    </Link>
                                 )
                             )
                         }
