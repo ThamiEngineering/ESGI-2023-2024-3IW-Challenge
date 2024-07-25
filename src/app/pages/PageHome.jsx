@@ -172,6 +172,7 @@ export default class HomePage extends Blink.Component {
 
     render() {
         const { visibleEvents } = this.state;
+        console.log(this.state.visibleArticles);
         return (
             <div class="bg-white w-full">
                 <Navbar />
@@ -223,7 +224,7 @@ export default class HomePage extends Blink.Component {
                                 ...Array.from(
                                     { length: 3 },
                                     (_, index) => (
-                                        createElement(CardEvents, { title: this.state.visibleArticles[index].title, image: this.state.visibleArticles[index].image })
+                                        createElement(CardEvents, { title: this.state.visibleArticles[index].title, image: this.state.visibleArticles[index].image, onClick: () => window.open(this.state.visibleArticles[index].link, '_blank') })
                                     )
                                 )
                             }
