@@ -9,7 +9,7 @@ export default class SubtitleWithButton extends Blink.Component {
     render() {
         return (
             <div class="relative md:mb-10 md:mt-10 min-h-32">
-                <h1 class="font-headline lg:text-9xl md:text-7xl text-4xl absolute xl:-top-5 md:-top-8 -top-4 left-0 opacity-5 z-0 text-black lg:ml-8 ml-8">{this.props.title}</h1>
+                <h1 class="font-headline lg:text-9xl md:text-7xl text-4xl lg:flex hidden absolute xl:top-0 lg:top-5 top-8 left-0 opacity-5 z-0 text-black md:ml-8 ml-5">{this.props.title}</h1>
                 <div class="relative z-10 flex items-center md:ml-[90px] ml-5 h-full">
                     <div class="border-l-4 border-[#0078D0]">
                         <div class="flex flex-col">
