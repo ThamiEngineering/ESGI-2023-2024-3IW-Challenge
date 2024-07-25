@@ -20,6 +20,10 @@ export default class HomePage extends Blink.Component {
             visibleArticles: [{}, {}, {}],
             currentIndexArticles: 0,
         }
+        setTimeout(() => {
+            this.handleNextArticle();
+            this.handlePrevArticle();
+        }, 1000);
     }
 
     async componentDidMount() {
