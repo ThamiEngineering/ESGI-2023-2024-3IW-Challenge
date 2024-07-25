@@ -1,23 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
     font-family: 'Olympic Headline';
-    src: url('../fonts/OlympicHeadline-Regular.woff2') format('woff2'),
-        url('../fonts/OlympicHeadline-Regular.woff') format('woff');
-    font-weight: normal;
+    src: local('Olympic Headline'), local('OlympicHeadline-Regular'),
+        url('../fonts/OlympicHeadline-Regular.woff2') format('woff2'),
+        url('../fonts/OlympicHeadline-Regular.woff') format('woff'),
+        url('../fonts/OlympicHeadline-Regular.ttf') format('truetype');
+    font-weight: bold;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Olympic Sans';
-    src: url('../fonts/OlympicSans.woff2') format('woff2'),
-        url('../fonts/OlympicSans.woff') format('woff');
+    src: local('Olympic Sans'), local('OlympicSans'),
+        url('../fonts/OlympicSans.woff2') format('woff2'),
+        url('../fonts/OlympicSans.woff') format('woff'),
+        url('../fonts/OlympicSans.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Olympic Sans Bold';
-    src: url('../fonts/OlympicSans-Bold.woff2') format('woff2'),
-        url('../fonts/OlympicSans-Bold.woff') format('woff');
+    src: local('Olympic Sans Bold'), local('OlympicSans-Bold'),
+        url('../fonts/OlympicSans-Bold.woff2') format('woff2'),
+        url('../fonts/OlympicSans-Bold.woff') format('woff'),
+        url('../fonts/OlympicSans-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
 }
