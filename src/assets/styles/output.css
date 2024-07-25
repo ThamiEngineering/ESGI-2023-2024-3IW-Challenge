@@ -1699,6 +1699,10 @@ html {
   font-family: "Olympic Headline", sans-serif;
 }
 
+.font-poppins {
+  font-family: Poppins, sans-serif;
+}
+
 .font-sansBold {
   font-family: "Olympic Sans Bold", sans-serif;
 }
@@ -1736,6 +1740,14 @@ html {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-normal {
+  font-weight: 400;
 }
 
 .text-black {
@@ -1822,6 +1834,10 @@ html {
 }
 
 @media (min-width: 640px) {
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+
   .sm\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -1868,6 +1884,10 @@ html {
 
   .md\:mt-4 {
     margin-top: 1rem;
+  }
+
+  .md\:w-1\/3 {
+    width: 33.333333%;
   }
 
   .md\:grid-cols-2 {

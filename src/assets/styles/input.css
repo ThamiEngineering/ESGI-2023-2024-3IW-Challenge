@@ -1,42 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @font-face {
     font-family: 'Olympic Headline';
-    src: url('OlympicHeadline-Regular.eot');
-    src: local('Olympic Headline'), local('OlympicHeadline-Regular'),
-        url('OlympicHeadline-Regular.eot?#iefix') format('embedded-opentype'),
-        url('OlympicHeadline-Regular.woff2') format('woff2'),
-        url('OlympicHeadline-Regular.woff') format('woff'),
-        url('OlympicHeadline-Regular.ttf') format('truetype');
-    font-weight: bold;
+    src: url('../fonts/OlympicHeadline-Regular.woff2') format('woff2'),
+        url('../fonts/OlympicHeadline-Regular.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
     font-family: 'Olympic Sans';
-    src: url('OlympicSans.eot');
-    src: local('Olympic Sans'), local('OlympicSans'),
-        url('OlympicSans.eot?#iefix') format('embedded-opentype'),
-        url('OlympicSans.woff2') format('woff2'),
-        url('OlympicSans.woff') format('woff'),
-        url('OlympicSans.ttf') format('truetype');
+    src: url('../fonts/OlympicSans.woff2') format('woff2'),
+        url('../fonts/OlympicSans.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
     font-family: 'Olympic Sans Bold';
-    src: url('OlympicSans-Bold.eot');
-    src: local('Olympic Sans Bold'), local('OlympicSans-Bold'),
-        url('OlympicSans-Bold.eot?#iefix') format('embedded-opentype'),
-        url('OlympicSans-Bold.woff2') format('woff2'),
-        url('OlympicSans-Bold.woff') format('woff'),
-        url('OlympicSans-Bold.ttf') format('truetype');
+    src: url('../fonts/OlympicSans-Bold.woff2') format('woff2'),
+        url('../fonts/OlympicSans-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
-    font-display: swap;
 }

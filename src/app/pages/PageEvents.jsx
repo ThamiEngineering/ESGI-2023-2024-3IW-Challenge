@@ -487,8 +487,8 @@ export default class PageEvents extends Blink.Component {
                             <div id="map" class="w-auto h-[508px]"></div>
                         </div>
                     </div>
-                    <div class="relative md:mx-[88px] mx-5 gap-4 top-2">
-                    <div class="w-full">
+                    <div class="relative flex flex-col sm:flex-row md:mx-[88px] mx-5 gap-4 top-2">
+                    <div class="w-full md:w-1/3">
                             <label for="filterSport" class="block text-gray-700">Filtrer par sport</label>
                             <select
                                 id="filterSport"
@@ -500,7 +500,7 @@ export default class PageEvents extends Blink.Component {
                                 {...sportOptions}
                             </select>
                         </div>
-                        <div class="w-full">
+                        <div class="w-full md:w-1/3">
                             <label for="filterStartDate" class="block text-gray-700 text-[17px] sm:text-base">Date de début</label>
                             <input
                                 id="filterStartDate"
@@ -510,7 +510,7 @@ export default class PageEvents extends Blink.Component {
                                 class="w-full p-2 border border-gray-300 rounded"
                             />
                         </div>
-                        <div class="w-full">
+                        <div class="w-full md:w-1/3">
                             <label for="filterEndDate" class="block text-gray-700 ">Date de fin</label>
                             <input
                                 id="filterEndDate"
@@ -520,7 +520,7 @@ export default class PageEvents extends Blink.Component {
                                 class="w-full p-2 border border-gray-300 rounded"
                             />
                         </div>
-                        <div class="w-full">
+                        <div class="w-full md:w-1/3">
                             <button
                                 onClick={this.applyFilters}
                                 class="w-full p-2 bg-blue-500 text-white rounded mt-6"
@@ -528,7 +528,7 @@ export default class PageEvents extends Blink.Component {
                                 Appliquer les filtres
                             </button>
                         </div>
-                        <div class="w-full">
+                        <div class="w-full md:w-1/3">
                             <button
                                 onClick={this.resetFilters}
                                 class="w-full p-2 bg-[#F0282D] text-white rounded mt-6"

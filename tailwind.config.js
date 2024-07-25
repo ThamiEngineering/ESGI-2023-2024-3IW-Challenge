@@ -7,6 +7,7 @@ export default {
         headline: ['"Olympic Headline"', 'sans-serif'],
         sans: ['"Olympic Sans"', 'sans-serif'],
         sansBold: ['"Olympic Sans Bold"', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
     },
   },
