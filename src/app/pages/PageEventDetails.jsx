@@ -122,19 +122,20 @@ export default class PageEventDetails extends Blink.Component {
     console.log('Adding markers...');
     spotsEvent.forEach((spot, index) => {
       console.log("spot: " + spot);
-      const { latitude, longitude, nom, adresse, description } = spot;
+      const { latitude, longitude, nom, image, adresse, description } = spot;
       if (latitude && longitude) {
         const lat = parseFloat(latitude.replace(',', '.'));
         const lon = parseFloat(longitude.replace(',', '.'));
         console.log(`Adding marker for ${nom} at [${lat}, ${lon}]`);
         L.marker([lat, lon])
           .addTo(this.map)
-          .bindPopup(
-            `<b>Nom</b><br>${nom}<br>
-             <b>Adresse</b><br>${adresse}<br>
-             <b>Description</b><br>${description}<br>
-             <b>Latitude</b><br>${latitude}<br>
-             <b>Longitude</b><br>${longitude}`
+          .bindPopup(`
+            <img src="${image}" alt="${nom}" class="w-full h-auto object-cover mb-2">
+            <b>Nom</b><br>${nom}<br>
+            <b>Adresse</b><br>${adresse}<br>
+            <b>Description</b><br>${description}<br>
+            <b>Latitude</b><br>${latitude}<br>
+            <b>Longitude</b><br>${longitude}`
           );
       } else {
         console.warn(`Missing coordinates for spot ${index}:`, spot);
@@ -170,7 +171,7 @@ export default class PageEventDetails extends Blink.Component {
           <Subtitle title="Spots de l'événement" />
           <div class="flex md:mx-[88px] mt-12 mx-5 gap-10 grid grid-cols-1 md:grid-cols-3">
             {...Array.from({ length: spotsEvent.length }, (_, index) =>
-              createElement(CardEvents, { title: spotsEvent[index].nom })
+              createElement(CardEvents, { title: spotsEvent[index].nom, image: spotsEvent[index].image })
             )}
           </div>
         </div>

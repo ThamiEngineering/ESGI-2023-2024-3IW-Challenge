@@ -10,11 +10,11 @@ export default class CardEvents extends Blink.Component {
             <div class="card bg-base-100 shadow-md rounded-[10px]">
                 <figure>
                     <img
-                    src={this.props.image}
-                    alt="Shoes" />
+                        src={this.props.image}
+                        alt={this.props.title} />
                 </figure>
                 <div class="card-body">
-                    <h2 class="card-title">{this.props.title ?? "Loading.."}</h2>
+                    <h2 class="card-title">{this.props.title ?? "Chargement..."}</h2>
                 </div>
             </div>
         )
