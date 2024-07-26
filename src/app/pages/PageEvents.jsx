@@ -545,7 +545,7 @@ export default class PageEvents extends Blink.Component {
                 <div class="mt-10 lg:mt-24">
                     <Subtitle title="Prochain événement" />
                     <div class="grid grid-cols-1 md:grid-cols-2 md:mx-[88px] mx-5 gap-8">
-                        <img src="../assets/images/Background.svg" alt="img" class="h-full w-auto object-cover" />
+                        <img src={nextEvent.image} alt="img" class="h-full w-auto object-cover" />
                         <EventDetails event={nextEvent} />
                     </div>
                 </div>

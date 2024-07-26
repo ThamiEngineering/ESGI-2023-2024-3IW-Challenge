@@ -191,7 +191,7 @@ export default class HomePage extends Blink.Component {
                         <Subtitle title="Informations" />
                     </div>
                     <div class="grid md:grid-cols-2 grid-cols-1 md:space-x-10 md:mx-[88px] mx-5">
-                        <img src="../assets/images/Background.svg" alt="img" class="h-full w-auto object-cover mb-8" />
+                        <img src="../assets/images/info.webp" alt="img" class="h-full w-auto object-cover mb-8" />
                         <TextHome title="Retrouvez le meilleur des JO de Paris 2024" />
                     </div>
                 </div>
