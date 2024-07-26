@@ -1,70 +1,44 @@
 # Informations sur l'équipe de projet
 
-## Membres de l'équipe et comptes GitHub
+Projet Semestriel 2 - 3IW1 Framework JS & Figma 
 
-### 1. Thami Marzak
-- **GitHub**: @ThamiEngineering
+## Charges de travail:
 
-### 2. Jeremy Ly
-- **GitHub**: @Jeyrem75
+### Defay Florian (@Florddev)
+- Mise en place du routeur
+- Gestion des composents 
+- Gestion des createElement
+- Génération des structures au DOM
+- Développement du parser JSX
+- Gestion des states
+- Mise en production du site
+- Responsive
+- Responsive Figma
+- Composents Figma
+- Prototypes Figma
 
-### 3. Florian Defay
-- **GitHub**: @Florddev
+### Ly Jeremy (@Jeyrem75)
+- Intégration de la maquette 
+- Fetch des événements via API
+- Mise en place de la map et mise en place des événements sur la map
+- Filtres de recherche sur la map
+- Géolocalisation
+- Itinéraires sur la map
+- Carousel et détails des événements
+- Routing dynamique des events (Incomplet)
+- Responsive
+- Page Home Figma
 
-### 4. Victor Jacquin
-- **GitHub**: @VictorJqn
+### Marzak Thami (@ThamiEngineering)
+- Props validators 
+- Scraping des actualités
+- Configuration des fonts dans le projet
+- Images des spots
+- Intégration de la maquette
+- Page Events Figma
 
-## Contributions des membres
-
-### Thami Marzak
-- Conception et développement de l'interface utilisateur.
-- Implémentation de la fonctionnalité de recherche.
-
-### Jeremy Ly
-- Développement des APIs backend.
-- Mise en place de la base de données.
-
-### Dlorian Defay
-- Création des tests unitaires et de l'intégration continue.
-- Rédaction de la documentation technique.
-
-### Victor Jacquin
-- Optimisation des performances.
-- Sécurité et déploiement de l'application.
-
-## Arborescence :
-projet-challenge-react/
-│
-├── src/
-│   ├── lib/
-│   │   ├── components/
-│   │   │   ├── Component.js // Classe de base pour tous les composants
-│   │   │   └── ... // Autres composants spécifiques à votre framework
-│   │   │
-│   │   ├── router/
-│   │   │   └── Router.js // Gestion du routage
-│   │   │
-│   │   └── utils/
-│   │       └── propValidation.js // Fonctions pour la validation des propriétés
-│   │
-│   ├── components/ // Composants spécifiques à votre application
-│   ├── pages/ // Pages de votre application
-│   └── index.js // Point d'entrée du projet, attache l'application au DOM
-│
-├── public/
-│   └── index.html // Fichier HTML principal
-│
-├── assets/
-│   ├── fonts/ // Dossier fonts du site
-│   ├── images/ // Dossier images du site
-│   └── styles/ // Dossier styles du site
-│
-├── tests/
-│   ├── lib/ // Tests unitaires pour votre framework
-│   └── app/ // Tests unitaires pour votre application
-│
-├── .gitignore // Liste des fichiers/dossiers à ignorer par Git
-├── package.json // Fichier de gestion des dépendances et scripts NPM
-├── CODE_OF_CONDUCT.md // Fichier qui explique le code de conduite
-├── CONTRIBUTING.md // Fichier qui liste les règles de contribution
-└── README.md // Documentation du projet
+### Victor (@VictorJqn)
+- Json des spots
+- Mise en place des spots dans la map
+- Début du Responsive
+- Page details de spot (Non fonctionnel) 
