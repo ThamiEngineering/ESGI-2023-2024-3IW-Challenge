@@ -122,19 +122,20 @@ export default class PageEventDetails extends Blink.Component {
     console.log('Adding markers...');
     spotsEvent.forEach((spot, index) => {
       console.log("spot: " + spot);
-      const { latitude, longitude, nom, adresse, description } = spot;
+      const { latitude, longitude, nom, image, adresse, description } = spot;
       if (latitude && longitude) {
         const lat = parseFloat(latitude.replace(',', '.'));
         const lon = parseFloat(longitude.replace(',', '.'));
         console.log(`Adding marker for ${nom} at [${lat}, ${lon}]`);
         L.marker([lat, lon])
           .addTo(this.map)
-          .bindPopup(
-            `<b>Nom</b><br>${nom}<br>
-             <b>Adresse</b><br>${adresse}<br>
-             <b>Description</b><br>${description}<br>
-             <b>Latitude</b><br>${latitude}<br>
-             <b>Longitude</b><br>${longitude}`
+          .bindPopup(`
+            <img src="${image}" alt="${nom}" class="w-full h-auto object-cover mb-2">
+            <b>Nom</b><br>${nom}<br>
+            <b>Adresse</b><br>${adresse}<br>
+            <b>Description</b><br>${description}<br>
+            <b>Latitude</b><br>${latitude}<br>
+            <b>Longitude</b><br>${longitude}`
           );
       } else {
         console.warn(`Missing coordinates for spot ${index}:`, spot);
@@ -147,7 +148,7 @@ export default class PageEventDetails extends Blink.Component {
     const { eventDetails, spotsEvent } = this.state;
     console.log('spotsEvent', spotsEvent);
     return (
-      Blink.createElement("div", {}, Blink.createElement(Navbar, {}),Blink.createElement("div", { "class":"mt-2" }, Blink.createElement(Title, { "title":"Carte des spots de l'événement" }),Blink.createElement("div", { "class":"relative z-20 md:mx-[88px] mx-5" }, Blink.createElement("div", { "id":"map" , "class":"w-auto h-[508px]" }))),Blink.createElement("div", { "class":"mt-10 lg:mt-24" }, Blink.createElement(Subtitle, { "title":"Événement" }),Blink.createElement("div", { "class":"grid md:grid-cols-2 grid-cols-1 md:mx-[88px] mx-5 gap-8" }, Blink.createElement("img", { "src":eventDetails.image, "alt":"img" , "class":"h-full w-auto object-cover" }),Blink.createElement(EventDetailsWithoutButton, { "event":eventDetails}))),Blink.createElement("div", { "class":"mt-10 lg:mt-24" }, Blink.createElement(Subtitle, { "title":"Spots de l'événement" }),Blink.createElement("div", { "class":"flex md:mx-[88px] mt-12 mx-5 gap-10 grid grid-cols-1 md:grid-cols-3" },             ...Array.from({ length: spotsEvent.length }, (_, index) =>              Blink.createElement(CardEvents, { title: spotsEvent[index].nom })            ))),Blink.createElement(Footer, {}))
+      Blink.createElement("div", {}, Blink.createElement(Navbar, {}),Blink.createElement("div", { "class":"mt-2" }, Blink.createElement(Title, { "title":"Carte des spots de l'événement" }),Blink.createElement("div", { "class":"relative z-20 md:mx-[88px] mx-5" }, Blink.createElement("div", { "id":"map" , "class":"w-auto h-[508px]" }))),Blink.createElement("div", { "class":"mt-10 lg:mt-24" }, Blink.createElement(Subtitle, { "title":"Événement" }),Blink.createElement("div", { "class":"grid md:grid-cols-2 grid-cols-1 md:mx-[88px] mx-5 gap-8" }, Blink.createElement("img", { "src":eventDetails.image, "alt":"img" , "class":"h-full w-auto object-cover" }),Blink.createElement(EventDetailsWithoutButton, { "event":eventDetails}))),Blink.createElement("div", { "class":"mt-10 lg:mt-24" }, Blink.createElement(Subtitle, { "title":"Spots de l'événement" }),Blink.createElement("div", { "class":"flex md:mx-[88px] mt-12 mx-5 gap-10 grid grid-cols-1 md:grid-cols-3" },             ...Array.from({ length: spotsEvent.length }, (_, index) =>              Blink.createElement(CardEvents, { title: spotsEvent[index].nom, image: spotsEvent[index].image })            ))),Blink.createElement(Footer, {}))
     );
   }
 }
