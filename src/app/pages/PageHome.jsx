@@ -186,7 +186,7 @@ export default class HomePage extends Blink.Component {
                         <img src="../assets/images/Background.svg" alt="background" class="w-full h-auto" />
                     </div>
                 </div>
-                <div class="mt-10 lg:mt-40">
+                <div class="mt-10 lg:mt-24">
                     <div>
                         <Subtitle title="Informations" />
                     </div>
@@ -195,7 +195,7 @@ export default class HomePage extends Blink.Component {
                         <TextHome title="Retrouvez le meilleur des JO de Paris 2024" />
                     </div>
                 </div>
-                <div class="mt-10 lg:mt-40">
+                <div class="mt-10 lg:mt-32">
                     <SubtitleWithButton title="Événements à venir" />
                     <div class="flex md:mx-[88px] mx-5 gap-10 grid grid-cols-1 md:grid-cols-3">
                         {
@@ -220,21 +220,21 @@ export default class HomePage extends Blink.Component {
                         </button>
                     </div>
                 </div>
-                <div class="mt-10 lg:mt-40">
-                    <div class="grid grid-cols-1 2xl:grid-cols-2 flex justify-between">
+                <div class="mt-10 lg:mt-24">
+                    <div class="grid grid-cols-1 /*2xl:grid-cols-2*/ flex justify-between">
                         <div>
                             <Subtitle title="Actualités" />
                         </div>
                         <div class="flex flex-col">
                             <div class="grid grid-cols-1 md:grid-cols-3 flex-row gap-10 mx-5 md:mx-[88px]">
                                 {
-                                  ...Array.from(
-                                      { length: 3 },
-                                      (_, index) => (
-                                          createElement(CardEvents, { title: this.state.visibleArticles[index].title, image: this.state.visibleArticles[index].image, onClick: () => window.open(this.state.visibleArticles[index].link, '_blank') })
-                                      )
-                                  )
-                              }
+                                    ...Array.from(
+                                        { length: 3 },
+                                        (_, index) => (
+                                            createElement(CardEvents, { title: this.state.visibleArticles[index].title, image: this.state.visibleArticles[index].image, onClick: () => window.open(this.state.visibleArticles[index].link, '_blank') })
+                                        )
+                                    )
+                                }
                             </div>
                             <div class="flex gap-2 md:mx-[88px] mx-5 mt-4">
                                 <button onClick={this.handlePrevArticle} class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">

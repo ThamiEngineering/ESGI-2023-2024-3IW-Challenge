@@ -222,7 +222,7 @@ export default class PageEvents extends Blink.Component {
                 console.log(`Adding marker for ${nom_site} at [${lat}, ${lon}]`);
 
                 storage.setItem("eventDetails", record);
-                
+
                 const popupContent = `
                     <div class="flex flex-col justify-center">
                         <img src="${image}" alt="${nom_site}" class="w-full h-auto object-cover mb-2">
@@ -298,7 +298,7 @@ export default class PageEvents extends Blink.Component {
             });
 
             const data = await response.json();
-            
+
             if (!data.features || data.features.length === 0) {
                 throw new Error('No route found');
             }
@@ -462,7 +462,7 @@ export default class PageEvents extends Blink.Component {
         document.getElementById("filterSport").value = "";
         document.getElementById("filterStartDate").value = "";
         document.getElementById("filterEndDate").value = "";
-        
+
         this.olympicLayer.clearLayers();
         this.paralympicLayer.clearLayers();
         this.addMarkers(this.state.upcomingEvents);
@@ -486,86 +486,84 @@ export default class PageEvents extends Blink.Component {
         return (
             <div>
                 <Navbar />
-                <div class="my-12">
-                    <div class="-mt-16">
+                <div class="mt-2">
                     <Title title="Carte des événements" />
-                        <div class="relative z-20 md:mx-[88px] mx-5">
-                            <div id="map" class="w-auto h-[508px]"></div>
-                        </div>
-                    </div>
-                    <div class="relative flex flex-col sm:flex-row md:mx-[88px] mx-5 gap-4 top-2">
-                    <div class="w-full md:w-1/3">
-                            <label for="filterSport" class="block text-gray-700">Filtrer par sport</label>
-                            <select
-                                id="filterSport"
-                                name="filterSport"
-                                onChange={this.handleSportFilterChange}
-                                class="w-full p-2 border border-gray-300 rounded"
-                            >
-                                <option value="">Choisir un sport</option>
-                                {...sportOptions}
-                            </select>
-                        </div>
-                        <div class="w-full md:w-1/3">
-                            <label for="filterStartDate" class="block text-gray-700 text-[17px] sm:text-base">Date de début</label>
-                            <input
-                                id="filterStartDate"
-                                type="date"
-                                name="filterDate"
-                                onChange={this.handleStartDateFilterChange}
-                                class="w-full p-2 border border-gray-300 rounded"
-                            />
-                        </div>
-                        <div class="w-full md:w-1/3">
-                            <label for="filterEndDate" class="block text-gray-700 ">Date de fin</label>
-                            <input
-                                id="filterEndDate"
-                                type="date"
-                                name="filterDate"
-                                onChange={this.handleEndDateFilterChange}
-                                class="w-full p-2 border border-gray-300 rounded"
-                            />
-                        </div>
-                        <div class="w-full md:w-1/3">
-                            <button
-                                onClick={this.applyFilters}
-                                class="w-full p-2 bg-blue-500 text-white rounded mt-6"
-                            >
-                                Appliquer les filtres
-                            </button>
-                        </div>
-                        <div class="w-full md:w-1/3">
-                            <button
-                                onClick={this.resetFilters}
-                                class="w-full p-2 bg-[#F0282D] text-white rounded mt-6"
-                            >
-                                Réinitialiser les filtres
-                            </button>
-                        </div>
+                    <div class="relative z-20 md:mx-[88px] mx-5">
+                        <div id="map" class="w-auto h-[508px]"></div>
                     </div>
                 </div>
-                <div class="my-12">
+                <div class="relative flex flex-col sm:flex-row md:mx-[88px] mx-5 gap-4 top-2">
+                    <div class="w-full md:w-1/3">
+                        <label for="filterSport" class="block text-gray-700">Filtrer par sport</label>
+                        <select
+                            id="filterSport"
+                            name="filterSport"
+                            onChange={this.handleSportFilterChange}
+                            class="w-full p-2 border border-gray-300 rounded"
+                        >
+                            <option value="">Choisir un sport</option>
+                            {...sportOptions}
+                        </select>
+                    </div>
+                    <div class="w-full md:w-1/3">
+                        <label for="filterStartDate" class="block text-gray-700 text-[17px] sm:text-base">Date de début</label>
+                        <input
+                            id="filterStartDate"
+                            type="date"
+                            name="filterDate"
+                            onChange={this.handleStartDateFilterChange}
+                            class="w-full p-2 border border-gray-300 rounded"
+                        />
+                    </div>
+                    <div class="w-full md:w-1/3">
+                        <label for="filterEndDate" class="block text-gray-700 ">Date de fin</label>
+                        <input
+                            id="filterEndDate"
+                            type="date"
+                            name="filterDate"
+                            onChange={this.handleEndDateFilterChange}
+                            class="w-full p-2 border border-gray-300 rounded"
+                        />
+                    </div>
+                    <div class="w-full md:w-1/3">
+                        <button
+                            onClick={this.applyFilters}
+                            class="w-full p-2 bg-blue-500 text-white rounded mt-6"
+                        >
+                            Appliquer les filtres
+                        </button>
+                    </div>
+                    <div class="w-full md:w-1/3">
+                        <button
+                            onClick={this.resetFilters}
+                            class="w-full p-2 bg-[#F0282D] text-white rounded mt-6"
+                        >
+                            Réinitialiser les filtres
+                        </button>
+                    </div>
+                </div>
+                <div class="mt-10 lg:mt-24">
                     <Subtitle title="Prochain événement" />
                     <div class="grid grid-cols-1 md:grid-cols-2 md:mx-[88px] mx-5 gap-8">
                         <img src="../assets/images/Background.svg" alt="img" class="h-full w-auto object-cover" />
                         <EventDetails event={nextEvent} />
                     </div>
                 </div>
-                <div class="my-12">
+                <div class="mt-10 lg:mt-24">
                     <Subtitle title="Événements à venir" />
                     <div class="flex md:mx-[88px] mx-5 gap-10 grid grid-cols-1 md:grid-cols-3" >
-                    { 
-                        ...Array.from(
-                            { length: 3 },
-                            (_, index) => (
-                                <Link path={`/events/${visibleEvents[index].id}`} key={index} >
-                                    {
-                                        createElement(CardEvents, { title: visibleEvents[index].sports, image: visibleEvents[index].image, onClick: () => this.handleClick(visibleEvents[index]) })
-                                    }
-                                </Link>
+                        {
+                            ...Array.from(
+                                { length: 3 },
+                                (_, index) => (
+                                    <Link path={`/events/${visibleEvents[index].id}`} key={index} >
+                                        {
+                                            createElement(CardEvents, { title: visibleEvents[index].sports, image: visibleEvents[index].image, onClick: () => this.handleClick(visibleEvents[index]) })
+                                        }
+                                    </Link>
+                                )
                             )
-                        )
-                    }
+                        }
                     </div>
                     <div class="flex gap-2 md:mx-[88px] mx-5 mt-4">
                         <button onClick={this.handlePrev} class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">

@@ -149,15 +149,13 @@ export default class PageEventDetails extends Blink.Component {
     return (
       <div>
         <Navbar />
-        <div class="my-12">
-          <div class="-mt-16">
-            <Title title="Carte des spots de l'événement" />
-            <div class="relative z-20 md:mx-[88px] mx-5">
-              <div id="map" class="w-auto h-[508px]"></div>
-            </div>
+        <div class="mt-2">
+          <Title title="Carte des spots de l'événement" />
+          <div class="relative z-20 md:mx-[88px] mx-5">
+            <div id="map" class="w-auto h-[508px]"></div>
           </div>
         </div>
-        <div class="my-12">
+        <div class="mt-10 lg:mt-24">
           <Subtitle title="Événement" />
           <div class="grid md:grid-cols-2 grid-cols-1 md:mx-[88px] mx-5 gap-8">
             <img
@@ -168,7 +166,7 @@ export default class PageEventDetails extends Blink.Component {
             <EventDetailsWithoutButton event={eventDetails} />
           </div>
         </div>
-        <div class="my-12">
+        <div class="mt-10 lg:mt-24">
           <Subtitle title="Spots de l'événement" />
           <div class="flex md:mx-[88px] mt-12 mx-5 gap-10 grid grid-cols-1 md:grid-cols-3">
             {...Array.from({ length: spotsEvent.length }, (_, index) =>
