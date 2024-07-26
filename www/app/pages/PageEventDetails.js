@@ -53,7 +53,6 @@ export default class PageEventDetails extends Blink.Component {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(this.map);
-      console.log('Map initialized:', this.map);
       this.mapInitialized = true;
     } else {
       console.error('Map container or event coordinates not found');
@@ -62,7 +61,6 @@ export default class PageEventDetails extends Blink.Component {
 
   async loadEventData() {
     const eventDetails = storage.getItem("eventDetails");
-    console.log("eventDetails: " + eventDetails);
 
     try {
       const response = await fetch("../../spots.json");
@@ -146,7 +144,6 @@ export default class PageEventDetails extends Blink.Component {
 
   render() {
     const { eventDetails, spotsEvent } = this.state;
-    console.log('spotsEvent', spotsEvent);
     return (
       Blink.createElement("div", {}, Blink.createElement(Navbar, {}),Blink.createElement("div", { "class":"mt-2" }, Blink.createElement(Title, { "title":"Carte des spots de l'événement" }),Blink.createElement("div", { "class":"relative z-20 md:mx-[88px] mx-5" }, Blink.createElement("div", { "id":"map" , "class":"w-auto h-[508px]" }))),Blink.createElement("div", { "class":"mt-10 lg:mt-24" }, Blink.createElement(Subtitle, { "title":"Événement" }),Blink.createElement("div", { "class":"grid md:grid-cols-2 grid-cols-1 md:mx-[88px] mx-5 gap-8" }, Blink.createElement("img", { "src":eventDetails.image, "alt":"img" , "class":"h-full w-auto object-cover" }),Blink.createElement(EventDetailsWithoutButton, { "event":eventDetails}))),Blink.createElement("div", { "class":"mt-10 lg:mt-24" }, Blink.createElement(Subtitle, { "title":"Spots de l'événement" }),Blink.createElement("div", { "class":"flex md:mx-[88px] mt-12 mx-5 gap-10 grid grid-cols-1 md:grid-cols-3" },             ...Array.from({ length: spotsEvent.length }, (_, index) =>              Blink.createElement(CardEvents, { title: spotsEvent[index].nom, image: spotsEvent[index].image })            ))),Blink.createElement(Footer, {}))
     );
