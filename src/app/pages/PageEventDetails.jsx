@@ -159,7 +159,7 @@ export default class PageEventDetails extends Blink.Component {
           <Subtitle title="Événement" />
           <div class="grid md:grid-cols-2 grid-cols-1 md:mx-[88px] mx-5 gap-8">
             <img
-              src="../assets/images/Background.svg"
+              src={eventDetails.image}
               alt="img"
               class="h-full w-auto object-cover"
             />
