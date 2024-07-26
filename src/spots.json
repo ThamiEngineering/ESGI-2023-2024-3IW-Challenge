@@ -5,6 +5,7 @@
       "adresse": "Avenue des Champs-Élysées, 75008 Paris, France",
       "latitude": "48.866416",
       "longitude": "2.313000",
+      "image": "https://lh3.googleusercontent.com/proxy/kG0s0lyr7jHeIi5mVKyx8eQtMCdz211Uu0LHFFS5xSsjeDVE2jbWtRFwBYsRQHGdMujuRFpEkN58WDgKnTYiBc1DqlVuJYT1um9vsaRgZH76Lr0PxQOUhkW2jNsUXP8",
       "description": "Ces jardins historiques offrent un espace vert magnifique et spacieux pour profiter des Jeux Olympiques. Les écrans géants installés permettront aux visiteurs de suivre les épreuves tout en se relaxant sur les chaises longues mises à disposition."
     },
     {
@@ -12,6 +13,7 @@
       "adresse": "Pont Alexandre III, 75008 Paris, France",
       "latitude": "48.864583",
       "longitude": "2.317222",
+      "image": "https://img.olympics.com/images/image/private/t_s_16_9_g_auto/t_s_w960/f_auto/primary/yhjrtevgfd8fac6blbau",
       "description": "Ce pont emblématique de Paris offre une vue imprenable sur la Seine et le Grand Palais. Des écrans géants seront installés sur les trottoirs élargis du pont, permettant aux spectateurs de suivre les épreuves olympiques tout en admirant la vue."
     }
   ],
@@ -21,6 +23,7 @@
       "adresse": "211 Avenue Jean Jaurès, 75019 Paris, France",
       "latitude": "48.895",
       "longitude": "2.386",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/85/Parc_de_la_Villette%2C_Paris_2010.jpg",
       "description": "Le Parc de la Villette, avec ses vastes espaces verts et ses installations culturelles, sera un lieu idéal pour profiter des compétitions aquatiques des Jeux Olympiques. Des écrans géants seront installés pour permettre aux spectateurs de suivre les épreuves en direct."
     },
     {
@@ -28,6 +31,7 @@
       "adresse": "Quai de la Loire, 75019 Paris, France",
       "latitude": "48.890",
       "longitude": "2.371",
+      "image": "https://www.tourisme93.com/Local/ete-du-canal/files/22070/ParisPlages2022_AireDeBaignadeVillette_Credit_GuillaumeBontemps_VilledeParis.jpg",
       "description": "Le Bassin de la Villette, avec ses eaux calmes et ses quais animés, offrira une ambiance conviviale pour regarder les épreuves de natation artistique, de plongeon et de water-polo. Des écrans géants seront installés le long des berges pour une expérience immersive."
     }
   ],
@@ -37,6 +41,7 @@
       "adresse": "128 Quai de Bercy, 75012 Paris, France",
       "latitude": "48.837",
       "longitude": "2.376",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Cascade_du_parc_de_Bercy%2C_Paris_2017_001.jpg",
       "description": "Le Parc de Bercy, avec ses espaces verts et ses installations culturelles, sera un lieu idéal pour profiter des compétitions de basketball et de gymnastique artistique. Des écrans géants seront installés pour permettre aux spectateurs de suivre les épreuves en direct."
     },
     {
@@ -44,6 +49,7 @@
       "adresse": "Quai de la Loire, 75019 Paris, France",
       "latitude": "48.890",
       "longitude": "2.371",
+      "image": "https://www.tourisme93.com/Local/ete-du-canal/files/22070/ParisPlages2022_AireDeBaignadeVillette_Credit_GuillaumeBontemps_VilledeParis.jpg",
       "description": "Le Bassin de la Villette, avec ses eaux calmes et ses quais animés, offrira une ambiance conviviale pour regarder les compétitions de gymnastique trampoline. Des écrans géants seront installés le long des berges pour une expérience immersive."
     }
   ],
@@ -53,6 +59,7 @@
       "adresse": "Place de la Bourse, 33000 Bordeaux, France",
       "latitude": "44.8414",
       "longitude": "-0.5745",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Bordeaux_Place_de_la_Bourse_de_nuit.jpg/1200px-Bordeaux_Place_de_la_Bourse_de_nuit.jpg",
       "description": "La Place de la Bourse, avec son architecture impressionnante et son ambiance animée, sera un lieu idéal pour profiter des compétitions de football au Stade de Bordeaux. Des écrans géants seront installés pour permettre aux spectateurs de suivre les matchs en direct et de vivre l'excitation du tournoi."
     }
   ],
@@ -62,6 +69,7 @@
       "adresse": "Stade de France, 93216 Saint-Denis, France",
       "latitude": "48.9247",
       "longitude": "2.3600",
+      "image": "https://media.lesechos.com/api/v1/images/view/5bf3c15b3e45462f491acfee/par_defaut/image.jpg",
       "description": "Le Stade de France, célèbre dans le monde entier, est situé à proximité du Parc Georges Valbon. Après avoir assisté aux compétitions de Para Athlétisme, explorez ce stade emblématique qui a accueilli de nombreux événements sportifs majeurs, y compris la Coupe du Monde de la FIFA."
     },
     {
@@ -69,6 +77,7 @@
       "adresse": "1 Rue de la Légion d'Honneur, 93200 Saint-Denis, France",
       "latitude": "48.9367",
       "longitude": "2.3582",
+      "image": "https://www.onetwotrips.com/wp-content/uploads/2022/03/saint-denis-basilique-choeur.jpg",
       "description": "La Basilique de Saint-Denis, chef-d'œuvre de l'art gothique, est un lieu historique majeur situé à proximité du Parc Georges Valbon. Après les compétitions de Para Athlétisme, visitez cette basilique qui abrite les tombeaux des rois de France et découvrez son architecture fascinante."
     }
   ],
@@ -78,6 +87,7 @@
       "adresse": "1 Rue Botzaris, 75019 Paris, France",
       "latitude": "48.8799",
       "longitude": "2.3815",
+      "image": "https://vivreparis.fr/wp-content/uploads/2019/08/butte-chaumont.jpg",
       "description": "Le Parc des Buttes-Chaumont, avec ses paysages pittoresques et ses vastes espaces verts, offre un cadre paisible pour profiter des compétitions à l'Arena Porte de la Chapelle. Après les épreuves, promenez-vous dans ce parc et profitez de sa beauté naturelle."
     },
     {
@@ -85,6 +95,7 @@
       "adresse": "85bis Boulevard de Magenta, 75010 Paris, France",
       "latitude": "48.8784",
       "longitude": "2.3567",
+      "image": "https://www.saint-quentin.fr/uploads/Image/9c/IMF_ACCROCHE/GAB_STQUENTIN/8226_287_accroche_marche.jpg",
       "description": "Le Marché Saint-Quentin est un marché couvert animé où vous pourrez déguster des produits frais et locaux. Après avoir assisté aux compétitions, rendez-vous au marché pour une expérience culinaire authentique et savoureuse."
     },
     {
@@ -92,6 +103,7 @@
       "adresse": "211 Avenue Jean Jaurès, 75019 Paris, France",
       "latitude": "48.8956",
       "longitude": "2.3863",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/85/Parc_de_la_Villette%2C_Paris_2010.jpg",
       "description": "Le Parc de la Villette, avec ses installations culturelles et ses espaces verts, est un lieu idéal pour se détendre après les compétitions. Explorez ce parc et découvrez ses nombreuses attractions, dont la Cité des Sciences et de l'Industrie et la Grande Halle."
     }
   ],
@@ -101,6 +113,7 @@
       "adresse": "Stade de France, 93216 Saint-Denis, France",
       "latitude": "48.9247",
       "longitude": "2.3600",
+      "image": "https://static.apidae-tourisme.com/filestore/objets-touristiques/images/126/155/21994366.jpg",
       "description": "Le Stade de France, célèbre dans le monde entier, est situé à proximité du Parc Georges Valbon. Après avoir assisté aux compétitions de Para Athlétisme, explorez ce stade emblématique qui a accueilli de nombreux événements sportifs majeurs, y compris la Coupe du Monde de la FIFA."
     },
     {
@@ -108,6 +121,7 @@
       "adresse": "1 Rue de la Légion d'Honneur, 93200 Saint-Denis, France",
       "latitude": "48.9367",
       "longitude": "2.3582",
+      "image": "https://www.sncf-connect.com/assets/styles/scale_max_width_961/public/media/2022-10/basilique-saint-denis.jpg?itok=FPqCiJFw",
       "description": "La Basilique de Saint-Denis, chef-d'œuvre de l'art gothique, est un lieu historique majeur situé à proximité du Parc Georges Valbon. Après les compétitions de Para Athlétisme, visitez cette basilique qui abrite les tombeaux des rois de France et découvrez son architecture fascinante."
     }
   ],
@@ -117,6 +131,7 @@
       "adresse": "Place de la République, 36000 Châteauroux, France",
       "latitude": "46.8133",
       "longitude": "1.6916",
+      "image": "https://live.staticflickr.com/1879/29511822387_e7ba6e100f_b.jpg",
       "description": "L'Hôtel de Ville de Châteauroux, situé à proximité du Centre national de tir, est un bâtiment emblématique de la ville. Après les compétitions de Tir, explorez cet édifice historique et découvrez son architecture remarquable."
     },
     {
@@ -124,6 +139,7 @@
       "adresse": "Rue du Parc, 36000 Châteauroux, France",
       "latitude": "46.8151",
       "longitude": "1.7008",
+      "image": "https://www.chateauroux-metropole.fr/fileadmin/medias/Le_Territoire/L_essentiel_du_territoire/Parcs_et_jardins/csm_Parc_Daniel_Bernardet_-_Belle-Isle_-_Chateauroux_-_Credit_photo___Photo_Club_Belle-Isle_-_Jean_Zucchet_a457888ed3.jpg",
       "description": "Le Parc Balsan est un magnifique parc verdoyant où vous pourrez vous détendre après les épreuves de Tir. Profitez de la nature et des paysages paisibles de ce parc pour vous ressourcer et vous promener."
     },
     {
@@ -131,6 +147,7 @@
       "adresse": "2 Rue des Pavillons, 36000 Châteauroux, France",
       "latitude": "46.8147",
       "longitude": "1.6943",
+      "image": "https://www.chateauroux-tourisme.com/app/uploads/iris-images/5079/BSP_8327-1920x1080-f50_50.jpg",
       "description": "Le Musée Bertrand est un musée d'art et d'histoire qui abrite des collections variées. Après les compétitions de Tir, visitez ce musée pour découvrir l'histoire et la culture de la région de Châteauroux."
     }
   ],
@@ -140,6 +157,7 @@
       "adresse": "1 Parvis de la Défense, 92044 Paris La Défense, France",
       "latitude": "48.8902",
       "longitude": "2.2355",
+      "image": "https://upload.wikimedia.org/wikipedia/fr/1/10/Grande_Arche_Janvier_2023.jpeg",
       "description": "La Grande Arche de la Défense, monument emblématique de Paris, offre une vue panoramique sur la ville. Après les compétitions de Natation et de Water-polo à Paris La Défense Arena, montez au sommet de cette structure architecturale impressionnante pour profiter d'une vue spectaculaire sur Paris."
     },
     {
@@ -147,6 +165,7 @@
       "adresse": "92044 Paris La Défense, France",
       "latitude": "48.8897",
       "longitude": "2.2353",
+      "image": "https://res.cloudinary.com/du5jifpgg/image/upload/t_opengraph_image/Surcharge-APIDAE/Esplanade_de_la_D%C3%A9fense.jpg",
       "description": "L'Esplanade de La Défense est un vaste espace public où vous pourrez vous détendre après les épreuves de Para Natation. Profitez de ce lieu pour vous promener et vous imprégner de l'ambiance unique de ce quartier d'affaires moderne."
     },
     {
@@ -154,6 +173,7 @@
       "adresse": "15 Parvis de la Défense, 92800 Puteaux, France",
       "latitude": "48.8905",
       "longitude": "2.2377",
+      "image": "https://www.pagesjaunes.fr/media/agc/a2/97/40/00/00/87/31/de/41/0d/5d39a2974000008731de410d/5d39a2974000008731de410e.jpg",
       "description": "Le Centre Commercial Les Quatre Temps offre une alternative pour regarder les compétitions des Jeux sur écrans géants tout en bénéficiant du confort et des services du centre commercial."
     }
   ],
@@ -163,6 +183,7 @@
       "adresse": "Champ de Mars, 75007 Paris, France",
       "latitude": "48.8567",
       "longitude": "2.2980",
+      "image": "https://media.timeout.com/images/105483583/image.jpg",
       "description": "Le Champ de Mars, situé en face de la Tour Eiffel, sera un lieu idéal pour regarder les compétitions de Volley-ball de plage en direct. Des écrans géants seront installés pour permettre aux spectateurs de suivre les matchs tout en profitant de l'ambiance unique de ce site emblématique de Paris."
     },
     {
@@ -170,6 +191,7 @@
       "adresse": "Quai Branly, 75007 Paris, France",
       "latitude": "48.8612",
       "longitude": "2.2958",
+      "image": "https://www.jardinez.com/parc/pj/75jardindumuseeduquaibranly_16679.jpg?1721388276",
       "description": "Le Quai Branly offre une vue panoramique sur la Tour Eiffel et sera un endroit pittoresque pour regarder les compétitions de Cécifoot. Profitez de cette vue emblématique de Paris tout en soutenant les athlètes paralympiques lors de cet événement unique."
     }
   ],
@@ -179,6 +201,7 @@
       "adresse": "Colline d'Elancourt, 78990 Élancourt, France",
       "latitude": "48.78982",
       "longitude": "1.96427",
+      "image": "https://static.actu.fr/uploads/2023/08/colline-delancourt1.jpg",
       "description": "L'Espace VTT de la Colline d'Elancourt offre des points de vue spectaculaires sur les parcours de cyclisme de montagne. Rejoignez les fans de cyclisme et vivez l'excitation des courses en direct depuis cet endroit stratégique."
     },
     {
@@ -186,6 +209,7 @@
       "adresse": "Colline d'Elancourt, 78990 Élancourt, France",
       "latitude": "48.78981063",
       "longitude": "1.9642379",
+      "image": "https://static.actu.fr/uploads/2023/08/colline-delancourt1.jpg",
       "description": "Le Belvédère de la Colline d'Elancourt offre une vue panoramique sur les pistes de VTT et sera un endroit idéal pour observer les compétitions de cyclisme de montagne. Profitez de cette vue imprenable tout en soutenant les coureurs lors de cet événement olympique unique."
     }
   ],
@@ -195,6 +219,7 @@
       "adresse": "Avenue Winston Churchill, 75008 Paris, France",
       "latitude": "48.8664",
       "longitude": "2.31257",
+      "image": "https://live.staticflickr.com/65535/52257677106_daa81769a9_b.jpg",
       "description": "La Salle d'Armes du Grand Palais sera le lieu principal des compétitions d'escrime et de taekwondo. Venez vivre l'intensité de ces sports olympiques dans ce cadre emblématique où les meilleurs athlètes du monde s'affronteront pour la gloire."
     },
     {
@@ -202,6 +227,7 @@
       "adresse": "Avenue Winston Churchill, 75008 Paris, France",
       "latitude": "48.861",
       "longitude": "2.311",
+      "image": "https://live.staticflickr.com/65535/52257677106_daa81769a9_b.jpg",
       "description": "La Zone VIP du Grand Palais offre une expérience exclusive pour assister aux compétitions d'escrime fauteuil et de para taekwondo. Profitez du confort et des services premium tout en soutenant les athlètes paralympiques lors de ces événements uniques."
     },
     {
@@ -209,6 +235,7 @@
       "adresse": "Avenue Winston Churchill, 75008 Paris, France",
       "latitude": "48.8665",
       "longitude": "2.317",
+      "image": "https://live.staticflickr.com/65535/52257677106_daa81769a9_b.jpg",
       "description": "La Terrasse du Grand Palais offre une vue panoramique sur les compétitions se déroulant à l'intérieur. Profitez de cette vue spectaculaire tout en regardant les épreuves d'escrime et de taekwondo depuis cet emplacement privilégié."
     }
   ],
@@ -218,6 +245,7 @@
       "adresse": "Place de l'Hôtel de Ville, 75004 Paris, France",
       "latitude": "48.8563881",
       "longitude": "2.35222203",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/50/Paris%2C_H%C3%B4tel_de_Ville_--_2014_--_1714.jpg",
       "description": "La Place de l'Hôtel de Ville sera un point de rassemblement animé pour assister aux compétitions d'athlétisme marathon. Rejoignez les spectateurs enthousiastes et soutenez les coureurs alors qu'ils parcourent les rues de Paris lors de cette épreuve intense."
     },
     {
@@ -225,6 +253,7 @@
       "adresse": "Parc Rives de Seine, 75004 Paris, France",
       "latitude": "48.85639",
       "longitude": "2.35228",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Parc_Rives_de_Seine_%40_Seine_%40_Paris_%2833789950794%29.jpg/800px-Parc_Rives_de_Seine_%40_Seine_%40_Paris_%2833789950794%29.jpg",
       "description": "Le Parc Rives de Seine offre un cadre verdoyant et tranquille pour regarder le marathon. Profitez de l'atmosphère détendue de ce parc le long de la Seine tout en encourageant les coureurs lors de leur passage dans cette magnifique partie de Paris."
     }
   ],
@@ -234,6 +263,7 @@
       "adresse": "Esplanade des Invalides, 75007 Paris, France",
       "latitude": "48.857013",
       "longitude": "2.312837",
+      "image": "https://cdn.sortiraparis.com/images/80/110/5891-invalides.jpg",
       "description": "L'Esplanade des Invalides sera le point central des compétitions d'athlétisme marathon, de cyclisme sur route contre-la-montre individuel et de tir à l'arc. Venez vous joindre à l'excitation des Jeux Olympiques et soutenez les athlètes alors qu'ils se surpassent dans ces épreuves captivantes."
     },
     {
@@ -241,6 +271,7 @@
       "adresse": "Musée de l'Armée, 129 Rue de Grenelle, 75007 Paris, France",
       "latitude": "48.85701",
       "longitude": "2.312835932",
+      "image": "https://cdn.sortiraparis.com/images/80/99029/782912-visuel-journees-du-patrimoine-matrimoine-invalides-musee-de-l-armee.jpg",
       "description": "La Cour d'Honneur du Musée de l'Armée offre un cadre historique et majestueux pour regarder les compétitions de Para Tir à l'arc et de Para-athlétisme marathon paralympique. Venez admirer les performances des athlètes paralympiques alors qu'ils repoussent leurs limites pour la médaille d'or."
     },
     {
@@ -248,6 +279,7 @@
       "adresse": "Pont Alexandre III, 75008 Paris, France",
       "latitude": "48.857041",
       "longitude": "2.312835932",
+      "image": "https://img.olympics.com/images/image/private/t_s_16_9_g_auto/t_s_w960/f_auto/primary/yhjrtevgfd8fac6blbau",
       "description": "Le Pont Alexandre III offre une vue panoramique sur la Seine et sera un lieu pittoresque pour assister aux compétitions olympiques et paralympiques à Invalides. Profitez de l'ambiance unique de ce pont emblématique de Paris tout en encourageant les athlètes lors de ces événements exceptionnels."
     }
   ],
@@ -257,6 +289,7 @@
       "adresse": "Site d'escalade du Bourget, 93350 Le Bourget, France",
       "latitude": "48.93693402",
       "longitude": "2.41997931",
+      "image": "https://img.olympics.com/images/image/private/t_s_16_9_g_auto/t_s_w960/f_auto/primary/yxea1ra5ucjisw6k8ccn",
       "description": "La tribune principale du Site d'escalade offre une vue imprenable sur les grimpeurs en action. Rejoignez les spectateurs passionnés et vivez l'excitation de l'escalade lors de cet événement olympique."
     },
     {
@@ -264,6 +297,7 @@
       "adresse": "Site d'escalade du Bourget, 93350 Le Bourget, France",
       "latitude": "48.93693402",
       "longitude": "2.41997931",
+      "image": "https://img.olympics.com/images/image/private/t_s_16_9_g_auto/t_s_w960/f_auto/primary/yxea1ra5ucjisw6k8ccn",
       "description": "La zone de repos et de restauration est l'endroit idéal pour se détendre entre les épreuves. Profitez d'une ambiance conviviale et d'une variété de plats tout en suivant les compétitions d'escalade."
     }
   ],
@@ -273,6 +307,7 @@
       "adresse": "La Concorde 1, 75008 Paris, France",
       "latitude": "48.866293",
       "longitude": "2.319581",
+      "image": "https://www.francetvinfo.fr/pictures/cJ4gdfll8F7qr78gAEJT1UjRaAY/1200x1200/2022/10/20/phpIO7Np2.jpg",
       "description": "La tribune principale de La Concorde 1 offre une vue panoramique sur les terrains de basketball 3x3 et les compétitions de breaking. Rejoignez les fans enthousiastes et vivez l'excitation de ces sports urbains lors de cet événement olympique."
     },
     {
@@ -280,6 +315,7 @@
       "adresse": "La Concorde 1, 75008 Paris, France",
       "latitude": "48.866292",
       "longitude": "2.319580",
+      "image": "https://www.francetvinfo.fr/pictures/cJ4gdfll8F7qr78gAEJT1UjRaAY/1200x1200/2022/10/20/phpIO7Np2.jpg",
       "description": "L'espace de restauration et de détente de La Concorde 1 est l'endroit idéal pour se détendre entre les matchs. Profitez d'une variété de collations et de boissons tout en suivant les compétitions de basketball 3x3 et de breaking à La Concorde 1."
     }
   ],
@@ -289,6 +325,7 @@
       "adresse": "La Concorde 2, 75008 Paris, France",
       "latitude": "48.865085",
       "longitude": "2.321447",
+      "image": "https://cdn.sortiraparis.com/images/80/74061/652111-paris-2024-les-premieres-images-du-site-olympique-de-la-place-de-la-concorde.jpg",
       "description": "La zone principale de spectateurs de La Concorde 2 offre une vue privilégiée sur les performances de BMX freestyle. Venez admirer les acrobaties et les figures impressionnantes des cyclistes lors de cet événement olympique."
     },
     {
@@ -296,6 +333,7 @@
       "adresse": "La Concorde 2, 75008 Paris, France",
       "latitude": "48.864751",
       "longitude": "2.320903",
+      "image": "https://cdn.sortiraparis.com/images/80/74061/652111-paris-2024-les-premieres-images-du-site-olympique-de-la-place-de-la-concorde.jpg",
       "description": "L'espace de détente et de restauration de La Concorde 2 est l'endroit idéal pour se détendre et se restaurer entre les sessions de BMX freestyle. Profitez d'une ambiance décontractée tout en regardant les performances des athlètes à La Concorde 2."
     }
   ],
@@ -305,6 +343,7 @@
       "adresse": "La Concorde 3, 75008 Paris, France",
       "latitude": "48.86486788",
       "longitude": "2.32139191",
+      "image": "https://cdn.sortiraparis.com/images/80/74061/462484-run-paris-2024-sur-la-place-de-la-concorde.jpg",
       "description": "La tribune principale de La Concorde 3 offre une vue spectaculaire sur les compétitions de Skateboard - Street. Venez encourager les skateboarders alors qu'ils exécutent leurs figures et leurs tricks lors de cet événement olympique."
     },
     {
@@ -312,6 +351,7 @@
       "adresse": "La Concorde 3, 75008 Paris, France",
       "latitude": "48.8664256",
       "longitude": "2.3203041",
+      "image": "https://cdn.sortiraparis.com/images/80/74061/462484-run-paris-2024-sur-la-place-de-la-concorde.jpg",
       "description": "L'espace de détente et de restauration de La Concorde 3 est l'endroit idéal pour se relaxer entre les sessions de Skateboard - Street. Profitez d'une ambiance décontractée et savourez une variété de collations tout en regardant les compétitions à La Concorde 3."
     }
   ],
@@ -321,6 +361,7 @@
       "adresse": "La Concorde 4, 75008 Paris, France",
       "latitude": "48.86573765",
       "longitude": "2.3220383",
+      "image": "https://img.olympics.com/images/image/private/t_s_16_9_g_auto/t_s_w960/f_auto/primary/dkysx7e06ynhwfb3v0w9",
       "description": "La zone de spectateurs principale de La Concorde 4 offre une vue imprenable sur les compétitions de skateboard - park. Venez admirer les figures impressionnantes des skateurs et ressentez l'énergie de cet événement olympique."
     },
     {
@@ -328,6 +369,7 @@
       "adresse": "La Concorde 4, 75008 Paris, France",
       "latitude": "48.866112",
       "longitude": "2.322227",
+      "image": "https://img.olympics.com/images/image/private/t_s_16_9_g_auto/t_s_w960/f_auto/primary/dkysx7e06ynhwfb3v0w9",
       "description": "L'espace de restauration et de détente de La Concorde 4 est l'endroit idéal pour se détendre entre les sessions de skateboard - park. Profitez d'une variété de boissons et de collations tout en regardant les performances des skateurs à La Concorde 4."
     }
   ],
@@ -338,6 +380,7 @@
       "adresse": "Golf National, 2 Avenue du Golf, 78280 Guyancourt, France",
       "latitude": "48.7532",
       "longitude": "2.0758",
+      "image": "https://cdn.sortiraparis.com/images/80/94880/1058467-golf-national.jpg",
       "description": "La zone de spectateurs principale offre une vue imprenable sur les compétitions de golf. Venez admirer les performances des golfeurs dans ce cadre exceptionnel."
     },
     {
@@ -345,6 +388,7 @@
       "adresse": "Golf National, 2 Avenue du Golf, 78280 Guyancourt, France",
       "latitude": "48.7550",
       "longitude": "2.0785",
+      "image": "https://cdn.sortiraparis.com/images/80/94880/1058467-golf-national.jpg",
       "description": "L'espace de restauration et de détente est l'endroit idéal pour se détendre entre les matchs. Profitez d'une variété de boissons et de collations tout en suivant les compétitions de golf."
     }
   ],
@@ -354,6 +398,7 @@
       "adresse": "Stade Pierre Mauroy, 261 Boulevard de Tournai, 59650 Villeneuve-d'Ascq, France",
       "latitude": "50.6118",
       "longitude": "3.1302",
+      "image": "https://cdn.prod.website-files.com/65f3124e10b20c68a7052958/6638da6b81e1a14bf8878d60_Stade%20Pierre%20Mauroy%20-%20EXT%20-%20OLY-min-min.jpg",
       "description": "La Tribune Nord offre une vue panoramique sur les compétitions de basketball et de handball au Stade Pierre Mauroy. Venez soutenir votre équipe préférée depuis cette tribune animée."
     },
     {
@@ -361,6 +406,7 @@
       "adresse": "Stade Pierre Mauroy, 261 Boulevard de Tournai, 59650 Villeneuve-d'Ascq, France",
       "latitude": "50.6119",
       "longitude": "3.1306",
+      "image": "https://cdn.prod.website-files.com/65f3124e10b20c68a7052958/6638da6b81e1a14bf8878d60_Stade%20Pierre%20Mauroy%20-%20EXT%20-%20OLY-min-min.jpg",
       "description": "La Tribune Sud du Stade Pierre Mauroy est l'endroit idéal pour profiter des compétitions de basketball et de handball dans une ambiance dynamique. Venez vivre l'excitation des Jeux depuis cette tribune!"
     }
   ],
@@ -371,6 +417,7 @@
       "adresse": "Stade de Lyon, 10 Avenue Simone Veil, 69150 Décines-Charpieu, France",
       "latitude": "45.7662",
       "longitude": "4.9808",
+      "image": "https://cdn.prod.website-files.com/65f3124e10b20c68a7052958/6638d90ff5aedbf04d2138ec_Stade%20de%20Lyon%20-%20EXT%20-%20OLY-min.jpg",
       "description": "La Tribune Est offre une vue imprenable sur le terrain de football au Stade de Lyon. Rejoignez les supporters passionnés et vivez l'ambiance électrique des matchs depuis cette tribune animée."
     },
     {
@@ -378,6 +425,7 @@
       "adresse": "Stade de Lyon, 10 Avenue Simone Veil, 69150 Décines-Charpieu, France",
       "latitude": "45.7643",
       "longitude": "4.9809",
+      "image": "https://cdn.prod.website-files.com/65f3124e10b20c68a7052958/6638d90ff5aedbf04d2138ec_Stade%20de%20Lyon%20-%20EXT%20-%20OLY-min.jpg",
       "description": "Profitez d'une pause bien méritée dans la zone de restauration et de détente du Stade de Lyon. Dégustez une variété de plats et de boissons tout en regardant les matchs de football."
     },
     {
@@ -385,6 +433,7 @@
       "adresse": "Stade de Lyon, 10 Avenue Simone Veil, 69150 Décines-Charpieu, France",
       "latitude": "45.766836",
       "longitude": "4.980392",
+      "image": "https://cdn.prod.website-files.com/65f3124e10b20c68a7052958/6638d90ff5aedbf04d2138ec_Stade%20de%20Lyon%20-%20EXT%20-%20OLY-min.jpg",
       "description": "Emmenez vos enfants dans la zone d'animation dédiée pour une expérience ludique et divertissante pendant les matchs de football au Stade de Lyon. Des activités passionnantes les attendent!"
     }
   ],
@@ -394,6 +443,7 @@
       "adresse": "Marina de Marseille, Quai de la Fraternité, 13002 Marseille, France",
       "latitude": "43.2663",
       "longitude": "5.3677",
+      "image": "https://pictures.laprovence.com/cdn-cgi/image/,trim.left=0,trim.top=63,trim.height=1121,trim.width=2000/media/2024/04/01/280324GBR02-13.jpg",
       "description": "Rejoignez le Club de Voile de la Marina pour une vue privilégiée sur les compétitions de voile. Profitez de l'ambiance maritime et soutenez vos équipes favorites depuis ce spot idéal."
     },
     {
@@ -401,6 +451,7 @@
       "adresse": "Marina de Marseille, Quai de la Fraternité, 13002 Marseille, France",
       "latitude": "43.2660",
       "longitude": "5.3675",
+      "image": "https://pictures.laprovence.com/cdn-cgi/image/,trim.left=0,trim.top=63,trim.height=1121,trim.width=2000/media/2024/04/01/280324GBR02-13.jpg",
       "description": "Détendez-vous et profitez de délicieux plats et boissons dans l'espace de restauration en bord de mer de la Marina de Marseille. Savourez des mets raffinés tout en admirant les compétitions de voile."
     }
   ],
@@ -410,6 +461,7 @@
       "adresse": "Stade de Marseille, 3 Boulevard Michelet, 13008 Marseille, France",
       "latitude": "43.2710",
       "longitude": "5.3957",
+      "image": "https://www.pagesjaunes.fr/media/agc/0c/91/30/00/00/9f/a8/ba/7e/32/65c50c913000009fa8ba7e32/65c50c913000009fa8ba7e33.jpg",
       "description": "Prenez place dans la Tribune Nord pour une vue imprenable sur le terrain de football. Rejoignez les supporters passionnés et vivez l'excitation des matchs au Stade de Marseille depuis cette tribune animée."
     },
     {
@@ -417,6 +469,7 @@
       "adresse": "Stade de Marseille, 3 Boulevard Michelet, 13008 Marseille, France",
       "latitude": "43.2695",
       "longitude": "5.3949",
+      "image": "https://www.pagesjaunes.fr/media/agc/0c/91/30/00/00/9f/a8/ba/7e/32/65c50c913000009fa8ba7e32/65c50c913000009fa8ba7e33.jpg",
       "description": "Profitez d'une pause bien méritée dans la zone de restauration et de détente du Stade de Marseille. Dégustez une variété de plats et de boissons tout en regardant les matchs de football."
     }
   ],
@@ -426,6 +479,7 @@
       "adresse": "Stade de la Beaujoire, Route de Saint-Joseph de Porterie, 44300 Nantes, France",
       "latitude": "47.2563",
       "longitude": "-1.5252",
+      "image": "https://api-infonantes.nantesmetropole.fr/banque/public/images/lieux/n/e104-3-nm-stade-de-la-beaujoire-vue-aerienne-copyright-jean-felix-fayolle-nantes-metropole.jpg",
       "description": "Prenez place dans la Tribune Principale pour une vue privilégiée sur le terrain de football. Rejoignez les supporters passionnés et vivez l'excitation des matchs au Stade de la Beaujoire depuis cette tribune animée."
     },
     {
@@ -433,6 +487,7 @@
       "adresse": "Stade de la Beaujoire, Route de Saint-Joseph de Porterie, 44300 Nantes, France",
       "latitude": "47.2558",
       "longitude": "-1.5238",
+      "image": "https://api-infonantes.nantesmetropole.fr/banque/public/images/lieux/n/e104-3-nm-stade-de-la-beaujoire-vue-aerienne-copyright-jean-felix-fayolle-nantes-metropole.jpg",
       "description": "Profitez d'une pause bien méritée dans la zone de restauration et de détente du Stade de la Beaujoire. Dégustez une variété de plats et de boissons tout en regardant les matchs de football."
     }
   ],
@@ -442,6 +497,7 @@
       "adresse": "Stade de Nice, Boulevard des Jardiniers, 06200 Nice, France",
       "latitude": "43.7055",
       "longitude": "7.1919",
+      "image": "https://static.apidae-tourisme.com/filestore/objets-touristiques/images/250/215/19978234.jpg",
       "description": "Prenez place dans la Tribune Principale pour une vue privilégiée sur le terrain de football. Rejoignez les supporters passionnés et vivez l'excitation des matchs au Stade de Nice depuis cette tribune animée."
     },
     {
@@ -449,6 +505,7 @@
       "adresse": "Stade de Nice, Boulevard des Jardiniers, 06200 Nice, France",
       "latitude": "43.7049",
       "longitude": "7.1916",
+      "image": "https://static.apidae-tourisme.com/filestore/objets-touristiques/images/250/215/19978234.jpg",
       "description": "Profitez d'une pause bien méritée dans la zone de restauration et de détente du Stade de Nice. Dégustez une variété de plats et de boissons tout en regardant les matchs de football."
     }
   ],
@@ -458,6 +515,7 @@
       "adresse": "Arena Paris Nord, 8 Rue Gaston Tessier, 75019 Paris, France",
       "latitude": "48.9725",
       "longitude": "2.5146",
+      "image": "https://cloudfront-eu-central-1.images.arcpublishing.com/leparisien/ONAAKWP5GZGQFHFHWDHQ6LVRWU.jpg",
       "description": "Prenez place dans la Tribune Principale pour une vue imprenable sur les compétitions de volleyball assis, de boxe et de pentathlon moderne. Rejoignez les fans enthousiastes et vivez l'excitation de ces sports paralympiques et olympiques depuis cette tribune animée."
     },
     {
@@ -465,6 +523,7 @@
       "adresse": "Arena Paris Nord, 8 Rue Gaston Tessier, 75019 Paris, France",
       "latitude": "48.9722",
       "longitude": "2.5143",
+      "image": "https://cloudfront-eu-central-1.images.arcpublishing.com/leparisien/ONAAKWP5GZGQFHFHWDHQ6LVRWU.jpg",
       "description": "Faites une pause dans la zone de restauration et de détente de l'Arena Paris Nord. Profitez d'une variété de collations et de boissons tout en suivant les compétitions de volleyball assis, de boxe et de pentathlon moderne."
     },
     {
@@ -472,6 +531,7 @@
       "adresse": "Arena Paris Nord, 8 Rue Gaston Tessier, 75019 Paris, France",
       "latitude": "48.9728",
       "longitude": "2.5152",
+      "image": "https://cloudfront-eu-central-1.images.arcpublishing.com/leparisien/ONAAKWP5GZGQFHFHWDHQ6LVRWU.jpg",
       "description": "Rencontrez d'autres passionnés de sport dans l'espace de rencontre et d'échange de l'Arena Paris Nord. Discutez des performances des athlètes et partagez votre enthousiasme pour les jeux paralympiques et olympiques."
     }
   ],
@@ -481,6 +541,7 @@
       "adresse": "Parc des Princes, 24 Rue du Commandant Guilbaud, 75016 Paris, France",
       "latitude": "48.8413",
       "longitude": "2.2533",
+      "image": "https://cdn.prod.website-files.com/65f3124e10b20c68a7052958/660d8477af76774c1efc03f4_PARIS2024-JO-PARIS-FOOT-16_9-2-scaled.webp",
       "description": "Prenez place dans la Tribune Principale pour une vue privilégiée sur le terrain de football. Rejoignez les supporters passionnés et vivez l'excitation des matchs au Parc des Princes depuis cette tribune animée."
     },
     {
@@ -488,6 +549,7 @@
       "adresse": "Parc des Princes, 24 Rue du Commandant Guilbaud, 75016 Paris, France",
       "latitude": "48.8418",
       "longitude": "2.2537",
+      "image": "https://cdn.prod.website-files.com/65f3124e10b20c68a7052958/660d8477af76774c1efc03f4_PARIS2024-JO-PARIS-FOOT-16_9-2-scaled.webp",
       "description": "Profitez d'une pause bien méritée dans la zone de restauration et de détente du Parc des Princes. Dégustez une variété de plats et de boissons tout en regardant les matchs de football."
     }
   ],
@@ -498,6 +560,7 @@
       "adresse": "Stade Roland Garros, 2 Avenue Gordon Bennett, 75016 Paris, France",
       "latitude": "48.8461",
       "longitude": "2.2535",
+      "image": "https://cdn.prod.website-files.com/65f3124e10b20c68a7052958/6617bc9d9d097752bfb1e5cb_oyroczfbfrehrdt6oiq1.jpg",
       "description": "Prenez place dans la Tribune Principale pour une vue imprenable sur les matchs de tennis et de boxe au Stade Roland Garros. Vivez l'intensité des compétitions depuis cet emplacement privilégié."
     },
     {
@@ -505,6 +568,7 @@
       "adresse": "Stade Roland Garros, 2 Avenue Gordon Bennett, 75016 Paris, France",
       "latitude": "48.8455",
       "longitude": "2.2530",
+      "image": "https://cdn.prod.website-files.com/65f3124e10b20c68a7052958/6617bc9d9d097752bfb1e5cb_oyroczfbfrehrdt6oiq1.jpg",
       "description": "Faites une pause et détendez-vous dans la zone de restauration et de détente du Stade Roland Garros. Profitez d'une variété de collations et de boissons tout en suivant les matchs."
     }
   ],
@@ -514,6 +578,7 @@
       "adresse": "Arena Paris Sud 1, 75000 Paris, France",
       "latitude": "48.832968",
       "longitude": "2.2840069",
+      "image": "https://img.olympics.com/images/image/private/t_social_share_thumb/f_auto/primary/hxy4xq7xymfyls2qo8jt",
       "description": "La tribune principale de l'Arena Paris Sud 1 offre une vue panoramique sur les matchs de volleyball. Venez soutenir votre équipe préférée et ressentez l'ambiance électrique de cet événement olympique."
     },
     {
@@ -521,6 +586,7 @@
       "adresse": "Arena Paris Sud 1, 75000 Paris, France",
       "latitude": "48.83298",
       "longitude": "2.284009",
+      "image": "https://img.olympics.com/images/image/private/t_social_share_thumb/f_auto/primary/hxy4xq7xymfyls2qo8jt",
       "description": "Profitez d'une pause détente dans l'espace de restauration et de détente de l'Arena Paris Sud 1. Dégustez une variété de collations et de boissons tout en suivant les matchs de volleyball."
     }
   ],
@@ -531,6 +597,7 @@
       "adresse": "Arena Paris Sud 4, 75000 Paris, France",
       "latitude": "48.830184",
       "longitude": "2.289033",
+      "image": "https://cdn.prod.website-files.com/65f3124e10b20c68a7052958/664f07b46602ae068f1e4ab6_Arena%20Paris%20Nord%20-%20EXT%20-%20OLY%20-%20Grande.jpeg",
       "description": "La zone spectateurs principale de l'Arena Paris Sud 4 offre une vue optimale sur les matchs de tennis de table. Venez soutenir vos joueurs préférés et vivez l'atmosphère passionnante de cet événement olympique."
     },
     {
@@ -538,6 +605,7 @@
       "adresse": "Arena Paris Sud 4, 75000 Paris, France",
       "latitude": "48.8302",
       "longitude": "2.2889",
+      "image": "https://cdn.prod.website-files.com/65f3124e10b20c68a7052958/664f07b46602ae068f1e4ab6_Arena%20Paris%20Nord%20-%20EXT%20-%20OLY%20-%20Grande.jpeg",
       "description": "Profitez d'une pause gourmande dans l'espace de restauration et de détente de l'Arena Paris Sud 4. Dégustez des collations délicieuses tout en suivant les matchs de tennis de table."
     }
   ],
@@ -547,6 +615,7 @@
       "adresse": "Arena Paris Sud 6, 75000 Paris, France",
       "latitude": "48.829381",
       "longitude": "2.290865",
+      "image": "https://www.transilien.com/sites/transilien/files/styles/cards_crop/public/2024-03/Arena-Porte-Chapelle-JO-2024-3_0.jpg?h=173f6202&itok=CkdBRIrT",
       "description": "La zone spectateurs principale de l'Arena Paris Sud 6 offre une vue optimale sur les matchs de handball. Venez soutenir vos équipes favorites et ressentez l'ambiance électrique de cet événement olympique."
     },
     {
@@ -554,6 +623,7 @@
       "adresse": "Arena Paris Sud 6, 75000 Paris, France",
       "latitude": "48.8294",
       "longitude": "2.2909",
+      "image": "https://www.transilien.com/sites/transilien/files/styles/cards_crop/public/2024-03/Arena-Porte-Chapelle-JO-2024-3_0.jpg?h=173f6202&itok=CkdBRIrT",
       "description": "Profitez d'une pause gourmande dans l'espace de restauration et de détente de l'Arena Paris Sud 6. Dégustez des collations délicieuses tout en suivant les matchs de handball."
     }
   ],
@@ -563,6 +633,7 @@
       "adresse": "Stade de France, 93216 Saint-Denis, France",
       "latitude": "48.924475",
       "longitude": "2.360127",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/StadeFranceNationsLeague2018.jpg",
       "description": "La tribune principale du Stade de France offre une vue panoramique sur les compétitions d'athlétisme. Venez soutenir vos athlètes préférés et ressentez l'ambiance électrique de cet événement olympique."
     },
     {
@@ -570,6 +641,7 @@
       "adresse": "Stade de France, 93216 Saint-Denis, France",
       "latitude": "48.9247",
       "longitude": "2.3602",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/StadeFranceNationsLeague2018.jpg",
       "description": "Profitez d'une pause gourmande dans l'espace de restauration et de détente du Stade de France. Dégustez des collations délicieuses tout en suivant les compétitions d'athlétisme."
     }
   ],
@@ -579,6 +651,7 @@
       "adresse": "Stade Geoffroy-Guichard, 42000 Saint-Étienne, France",
       "latitude": "45.4607",
       "longitude": "4.3902",
+      "image": "https://ofcm.fr/wp-content/uploads/2023/09/stade-geoffroy-guichard-exterieur-1024x722.png",
       "description": "Rejoignez la zone des supporters principale pour vivre l'excitation du football au Stade Geoffroy-Guichard. Encouragez votre équipe favorite parmi une foule passionnée et partagez des moments inoubliables avec d'autres fans."
     },
     {
@@ -586,6 +659,7 @@
       "adresse": "Stade Geoffroy-Guichard, 42000 Saint-Étienne, France",
       "latitude": "45.4608",
       "longitude": "4.3903",
+      "image": "https://ofcm.fr/wp-content/uploads/2023/09/stade-geoffroy-guichard-exterieur-1024x722.png",
       "description": "Détendez-vous et profitez d'une pause gourmande dans l'espace de restauration du Stade Geoffroy-Guichard. Dégustez une variété de plats et de boissons tout en discutant des matchs avec d'autres supporters."
     }
   ],
@@ -595,6 +669,7 @@
       "adresse": "Tahiti Teahupo'o, Tahiti, French Polynesia",
       "latitude": "-17.86693",
       "longitude": "-149.25208",
+      "image": "https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(jpeg)/origin-imgresizer.eurosport.com/2024/07/22/image-249349b2-5881-4051-a233-52bbcb9bf289-85-2560-1440.jpeg",
       "description": "Rejoignez la zone de visionnage principale à Tahiti Teahupo'o pour assister aux compétitions de surf. Profitez d'une vue imprenable sur les vagues et admirez les performances des surfeurs professionnels lors de cet événement olympique."
     },
     {
@@ -602,6 +677,7 @@
       "adresse": "Tahiti Teahupo'o, Tahiti, French Polynesia",
       "latitude": "-17.86692",
       "longitude": "-149.25209",
+      "image": "https://img.20mn.fr/P-MK8MkqRrmRjshA-l_jNCk/1444x920_this-photograph-taken-on-november-10-2021-shows-the-teahupo-o-bridge-with-the-logo-of-the-olympic-games-in-teahupo-o-tahiti-french-polynesia-the-paris-2024-olympic-delegation-led-by-its-director-general-etienne-thobois-visited-tahiti-from-november-9-to-12-accompanied-by-local-actors-they-visited-the-various-sites-that-will-host-the-surfing-events-of-the-2024-olympics-in-teahupo-o-photo-by-suliane-favennec-afp",
       "description": "Détendez-vous sur la plage et profitez de l'ambiance détendue de Tahiti Teahupo'o entre les sessions de surf. Rafraîchissez-vous dans l'eau cristalline et savourez des moments de calme et de beauté naturelle."
     }
   ],
@@ -611,6 +687,7 @@
       "adresse": "Trocadéro, 75016 Paris, France",
       "latitude": "48.85972558",
       "longitude": "2.29221884",
+      "image": "https://img.lemde.fr/2024/06/11/486/0/11656/7770/1440/960/60/0/ab75693_1718127616746-chantiers-jo-paris-terencebk-46.jpg",
       "description": "Soyez au cœur de l'action en rejoignant la zone de visionnage principale pour l'athlétisme marche. Profitez d'une vue panoramique sur le parcours et encouragez les athlètes alors qu'ils se lancent dans cette épreuve exigeante."
     },
     {
@@ -618,6 +695,7 @@
       "adresse": "Trocadéro, 75016 Paris, France",
       "latitude": "48.859730",
       "longitude": "2.292220",
+      "image": "https://cdn.sortiraparis.com/images/80/74061/666284-jo-de-tokyo-une-fan-zone-gratuite-dans-les-jardins-du-trocadero-a-paris.jpg",
       "description": "Joignez-vous à la foule énergique dans la zone de supporters pour le cyclisme sur route. Vivez l'excitation de la course alors que les coureurs passent devant vous et ressentez la passion de cet événement olympique."
     },
     {
@@ -625,6 +703,7 @@
       "adresse": "Trocadéro, 75016 Paris, France",
       "latitude": "48.859735",
       "longitude": "2.292225",
+      "image": "https://www.1001salles.com/images/provider/61247/1716284143_664c6aef57568.webp",
       "description": "Prenez une pause bien méritée dans l'espace de détente et de restauration du Trocadéro. Dégustez des collations délicieuses tout en profitant de l'atmosphère animée de cet événement sportif unique."
     }
   ],
@@ -634,6 +713,7 @@
       "adresse": "Vélodrome National de Saint-Quentin-en-Yvelines, 78180 Montigny-le-Bretonneux, France",
       "latitude": "48.78800979",
       "longitude": "2.03498269",
+      "image": "https://img.olympics.com/images/image/private/t_social_share_thumb/f_auto/primary/h95mr152jgubt6n4mlm5",
       "description": "Assistez aux épreuves passionnantes de Para Cyclisme sur piste depuis la tribune principale. Encouragez les athlètes alors qu'ils donnent le meilleur d'eux-mêmes dans cette compétition paralympique captivante."
     },
     {
@@ -641,6 +721,7 @@
       "adresse": "Vélodrome National de Saint-Quentin-en-Yvelines, 78180 Montigny-le-Bretonneux, France",
       "latitude": "48.788011",
       "longitude": "2.034980",
+      "image": "https://img.olympics.com/images/image/private/t_social_share_thumb/f_auto/primary/h95mr152jgubt6n4mlm5",
       "description": "Rejoignez la zone de supporters et vivez l'excitation du Para Cyclisme sur piste de plus près. Encouragez les cyclistes paralympiques tout en profitant de l'ambiance électrique de cet événement sportif."
     }
   ],
@@ -650,6 +731,7 @@
       "adresse": "Stade BMX de Saint-Quentin-en-Yvelines, 78180 Montigny-le-Bretonneux, France",
       "latitude": "48.78800979",
       "longitude": "2.03498269",
+      "image": "https://cdn.prod.website-files.com/65f3124e10b20c68a7052958/6617bc3b9c0ccbc0ef03e455_ioso0xkk0v6j8biry0av.jpg",
       "description": "Assistez au départ des courses palpitantes de BMX Racing depuis la zone de départ. Vivez l'adrénaline des départs rapides et des compétitions passionnantes de cet événement olympique."
     }
   ],
@@ -659,6 +741,7 @@
       "adresse": "Château de Versailles, 78000 Versailles, France",
       "latitude": "48.81432266",
       "longitude": "2.08452588",
+      "image": "https://www.chateauversailles.fr/sites/default/files/dji_0446.jpg",
       "description": "Assistez aux compétitions équestres de dressage, de concours complet et de saut d'obstacles dans le magnifique stade équestre du Château de Versailles. Vivez l'élégance et la puissance des chevaux lors de cet événement olympique."
     },
     {
@@ -666,6 +749,7 @@
       "adresse": "Château de Versailles, 78000 Versailles, France",
       "latitude": "48.81432275",
       "longitude": "2.08452595",
+      "image": "https://www.chateauversailles.fr/sites/default/files/dji_0446.jpg",
       "description": "Rejoignez la zone de départ du Pentathlon Moderne au Château de Versailles et assistez au départ des athlètes pour une compétition passionnante mêlant cinq disciplines. Vivez l'excitation de cet événement olympique."
     }
   ],
@@ -675,6 +759,7 @@
       "adresse": "Stade nautique de Vaires-sur-Marne, 77360 Vaires-sur-Marne, France",
       "latitude": "48.8632",
       "longitude": "2.6325",
+      "image": "https://img.olympics.com/images/image/private/t_s_16_9_g_auto/t_s_w960/f_auto/primary/ds4on9lqxe03vrl9urbx",
       "description": "Venez encourager les athlètes de Para Aviron sur la piste d'aviron au Stade nautique de Vaires-sur-Marne. Ressentez l'émotion de cette compétition paralympique alors que les rameurs s'affrontent pour la victoire."
     },
     {
@@ -682,6 +767,7 @@
       "adresse": "Stade nautique de Vaires-sur-Marne, 77360 Vaires-sur-Marne, France",
       "latitude": "48.8628",
       "longitude": "2.6332",
+      "image": "https://img.olympics.com/images/image/private/t_s_16_9_g_auto/t_s_w960/f_auto/primary/ds4on9lqxe03vrl9urbx",
       "description": "Ne manquez pas l'action du Para Canoë sur le circuit de canoë au Stade nautique de Vaires-sur-Marne. Observez les athlètes naviguer avec habileté à travers les obstacles dans cette compétition paralympique captivante."
     }
   ],
@@ -691,6 +777,7 @@
       "adresse": "Stade nautique de Vaires-sur-Marne - stade d'eau vive, 77360 Vaires-sur-Marne, France",
       "latitude": "48.8632",
       "longitude": "2.6325",
+      "image": "https://img.olympics.com/images/image/private/t_s_16_9_g_auto/t_s_w960/f_auto/primary/ds4on9lqxe03vrl9urbx",
       "description": "Vivez l'excitation du Canoë-kayak slalom sur le parcours de canoë-kayak au Stade nautique de Vaires-sur-Marne. Regardez les kayakistes naviguer habilement à travers les portes dans cette compétition olympique passionnante."
     },
     {
@@ -698,6 +785,7 @@
       "adresse": "Stade nautique de Vaires-sur-Marne - stade d'eau vive, 77360 Vaires-sur-Marne, France",
       "latitude": "48.8628",
       "longitude": "2.6332",
+      "image": "https://img.olympics.com/images/image/private/t_s_16_9_g_auto/t_s_w960/f_auto/primary/ds4on9lqxe03vrl9urbx",
       "description": "Obtenez une vue imprenable sur l'action du Canoë-kayak slalom depuis la zone de spectateurs au Stade nautique de Vaires-sur-Marne. Encouragez les athlètes alors qu'ils affrontent les rapides dans cette discipline passionnante des sports nautiques olympiques."
     }
   ],
@@ -707,6 +795,7 @@
       "adresse": "Stade Yves-du-Manoir, 75000 Paris, France",
       "latitude": "48.9295",
       "longitude": "2.2476",
+      "image": "https://img.olympics.com/images/image/private/t_s_16_9_g_auto/t_s_w960/f_auto/primary/tzvgxey7cbfreyala4wo",
       "description": "Assistez aux matchs passionnants de hockey sur le terrain principal du Stade Yves-du-Manoir. Vivez l'intensité de chaque action et soutenez votre équipe favorite dans cette discipline dynamique des Jeux Olympiques."
     },
     {
@@ -714,6 +803,7 @@
       "adresse": "Stade Yves-du-Manoir, 75000 Paris, France",
       "latitude": "48.9291",
       "longitude": "2.2480",
+      "image": "https://img.olympics.com/images/image/private/t_s_16_9_g_auto/t_s_w960/f_auto/primary/tzvgxey7cbfreyala4wo",
       "description": "Profitez d'une vue imprenable sur les matchs de hockey depuis la zone de spectateurs au Stade Yves-du-Manoir. Encouragez les athlètes alors qu'ils rivalisent pour la médaille d'or dans cette compétition olympique palpitante."
     }
   ]
