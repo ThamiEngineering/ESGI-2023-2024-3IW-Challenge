@@ -67,7 +67,7 @@ export default class PageEvents extends Blink.Component {
                 "Paralympic Venues": this.paralympicLayer
             }).addTo(this.map);
 
-            console.log('Map initialized:', this.map);
+            // console.log('Map initialized:', this.map);
             this.mapInitialized = true;
             this.getUserLocation();
         } else {
@@ -130,7 +130,7 @@ export default class PageEvents extends Blink.Component {
             do {
                 const response = await fetch(`https://data.paris2024.org/api/explore/v2.1/catalog/datasets/paris-2024-sites-de-competition/records?limit=${pageSize}&offset=${(page - 1) * pageSize}`);
                 const data = await response.json();
-                console.log(`Fetched data for page ${page}:`, data);
+                // console.log(`Fetched data for page ${page}:`, data);
 
                 data.results.forEach(record => {
                     record.id = idCounter++;
@@ -146,7 +146,7 @@ export default class PageEvents extends Blink.Component {
         };
 
         fetchAllPages().then(records => {
-            console.log('All fetched records:', records);
+            // console.log('All fetched records:', records);
 
             let upcomingEvents = records.filter(record => {
                 const now = new Date();
@@ -163,10 +163,10 @@ export default class PageEvents extends Blink.Component {
 
             const sportsList = [...new Set(records.map(record => record.sports))];
 
-            console.log('Upcoming events:', upcomingEvents);
-            console.log('Next event:', nextEvent);
-            console.log('Visible events:', visibleEvents);
-            console.log('Sports list:', sportsList);
+            // console.log('Upcoming events:', upcomingEvents);
+            // console.log('Next event:', nextEvent);
+            // console.log('Visible events:', visibleEvents);
+            // console.log('Sports list:', sportsList);
 
             this.setState({ nextEvent, upcomingEvents, visibleEvents, sportsList });
             this.addMarkers(records);
@@ -214,14 +214,14 @@ export default class PageEvents extends Blink.Component {
 
         records.forEach(record => {
             const { latitude, longitude, code_site, nom_site, category_id, id, sports, start_date, end_date, image } = record;
-            console.log(`Record ${id} fields:`, record);
+            // console.log(`Record ${id} fields:`, record);
 
             const lat = parseFloat(latitude.replace(',', '.'));
             const lon = parseFloat(longitude.replace(',', '.'));
             if (this.isValidCoordinate(lat) && this.isValidCoordinate(lon)) {
-                console.log(`Adding marker for ${nom_site} at [${lat}, ${lon}]`);
+                // console.log(`Adding marker for ${nom_site} at [${lat}, ${lon}]`);
 
-                storage.setItem("eventDetails", record);
+                // storage.setItem("eventDetails", record);
 
                 const popupContent = `
                     <div class="flex flex-col justify-center">
@@ -472,7 +472,7 @@ export default class PageEvents extends Blink.Component {
 
     handleClick = (event) => {
         storage.setItem("eventDetails", event);
-        console.log("Event details stored:", event);
+        // console.log("Event details stored:", event);
     }
 
     render() {

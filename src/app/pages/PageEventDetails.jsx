@@ -53,7 +53,6 @@ export default class PageEventDetails extends Blink.Component {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(this.map);
-      console.log('Map initialized:', this.map);
       this.mapInitialized = true;
     } else {
       console.error('Map container or event coordinates not found');
@@ -62,7 +61,6 @@ export default class PageEventDetails extends Blink.Component {
 
   async loadEventData() {
     const eventDetails = storage.getItem("eventDetails");
-    console.log("eventDetails: " + eventDetails);
 
     try {
       const response = await fetch("../../spots.json");
@@ -146,7 +144,6 @@ export default class PageEventDetails extends Blink.Component {
 
   render() {
     const { eventDetails, spotsEvent } = this.state;
-    console.log('spotsEvent', spotsEvent);
     return (
       <div>
         <Navbar />

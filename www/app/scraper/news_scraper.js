@@ -44,7 +44,6 @@ async function articlesScraper() {
         const articles = extractArticles(html);
 
         if (articles.length > 0) {
-            console.log(articles);
             return articles;
         } else {
             return [];

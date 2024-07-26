@@ -93,7 +93,6 @@ export default class HomePage extends Blink.Component {
             do {
                 const response = await fetch(`https://data.paris2024.org/api/explore/v2.1/catalog/datasets/paris-2024-sites-de-competition/records?limit=${pageSize}&offset=${(page - 1) * pageSize}`);
                 const data = await response.json();
-                console.log(`Fetched data for page ${page}:`, data);
 
                 data.results.forEach(record => {
                     record.id = idCounter++;
@@ -109,8 +108,6 @@ export default class HomePage extends Blink.Component {
         };
 
         fetchAllPages().then(records => {
-            console.log('All fetched records:', records);
-
             let upcomingEvents = records.filter(record => {
                 const now = new Date();
                 const startDate = new Date(record.start_date);
@@ -123,10 +120,6 @@ export default class HomePage extends Blink.Component {
             }, null);
 
             const visibleEvents = upcomingEvents.slice(0, 3);
-
-            console.log('Upcoming events:', upcomingEvents);
-            console.log('Next event:', nextEvent);
-            console.log('Visible events:', visibleEvents)
 
             this.setState({ nextEvent, upcomingEvents, visibleEvents });
 
@@ -171,12 +164,10 @@ export default class HomePage extends Blink.Component {
 
     handleClick = (event) => {
         storage.setItem("eventDetails", event);
-        console.log("Event details stored:", event);
     }
 
     render() {
         const { visibleEvents } = this.state;
-        console.log(this.state.visibleArticles);
         return (
             <div class="bg-white w-full">
                 <Navbar />
